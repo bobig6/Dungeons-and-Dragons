@@ -13,4 +13,10 @@ int main(int argc, char** argv){
 
     cout<<gameController;
 
+    Hero m = Hero();
+
+    cin>>m;
+
+    cout<<m;
+
 }

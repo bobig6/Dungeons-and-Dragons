@@ -6,11 +6,33 @@ class Monster{
 
     Armor armor;
 
-    int posX;
-    int posY;
-
 public:
+    // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
+    void save(ostream& os){
+        os<<strength;
+        os<<mana;
+        os<<health;
+        armor.save(os);
+    }
+
+
+    // SECTION: CONSTRUCTORS-------------------------------------------------------------------------------
+    Monster() {
+        strength = 25;
+        mana = 25;
+        health = 50;
+
+        armor = Armor("Dragon Scales", "The dragon scales decrease the damage done by 15%", 15);
+    }
+
+    Monster(float strength, float mana, float health, const Armor &armor) : strength(strength), mana(mana),
+                                                                            health(health), armor(armor) {}
+
+    Monster(const Monster &other) : Monster(other.strength, other.mana, other.health, other.armor){}
+
+
+    // SECTION: OPERATORS---------------------------------------------------------------------------------
     /*! Assignment operator for the Monster class*/
     Monster& operator=(const Monster& other){
         if(this != &other){
@@ -18,10 +40,80 @@ public:
             this->mana = other.mana;
             this->health = other.health;
             this->armor = other.armor;
-            this->posX = other.posX;
-            this->posY = other.posY;
         }
         return *this;
     };
 
+    friend ostream& operator<<(ostream& os, Monster& cl);
+    friend istream& operator>>(std::istream& in,  Monster& cl);
+
+
+    //SECTION: GETTERS AND SETTERS------------------------------------------------------------------------
+
+
+
+    float getStrength() const {
+        return strength;
+    }
+
+    void setStrength(float newStrength) {
+        Monster::strength = newStrength;
+    }
+
+    float getMana() const {
+        return mana;
+    }
+
+    void setMana(float newMana) {
+        Monster::mana = newMana;
+    }
+
+    float getHealth() const {
+        return health;
+    }
+
+    void setHealth(float newHealth) {
+        Monster::health = newHealth;
+    }
+
+    const Armor &getArmor() const {
+        return armor;
+    }
+
+    void setArmor(const Armor &newArmor) {
+        Monster::armor = newArmor;
+    }
+
 };
+
+/*! Outputs information about monster to ostream*/
+ostream& operator<<(ostream& os, Monster& cl){
+    os<<"Monster: "<<endl;
+
+    os<<"strength: "<<cl.strength << " | mana: " << cl.mana << " | health: " << cl.health << endl;
+    os<<"Armor: " << cl.armor << endl;
+    return os;
+}
+
+/*! Inputs info about Monster in format:
+ *      - strength
+ *      - mana
+ *      - health
+ *      - Armor:
+ *          - name
+ *          - description
+ *          - percent
+ */
+std::istream& operator >> (std::istream& in, Monster& cl){
+    in>>cl.strength;
+    in>>cl.mana;
+    in>>cl.health;
+
+    // Skip line
+    char next;
+    while(in.get(next)) if (next == '\n')  break;
+
+    in>>cl.armor;
+
+    return in;
+}

@@ -21,6 +21,12 @@ public:
         return obj;
     }
 
+    void save(ostream& os){
+        os<<name<<endl;
+        os<<description<<endl;
+        os<<percent;
+    }
+
     // SECTION: CONSTRUCTORS---------------------------------------------------------------------------------------------
     Item(){
         name = "Default item";
