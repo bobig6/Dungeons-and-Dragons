@@ -2,17 +2,27 @@
 #include "../Map/Map.cpp"
 #include "InputMode.cpp"
 #include "../Character/Monster.cpp"
+#include "../GameController.cpp"
 
 class ConsoleHandler{
     InputMode inputMode;
-    Map map;
-    Hero hero;
-    Item* treasures;
-    Monster* monsters;
+    GameController gameController;
+
+
 
 public:
+    ConsoleHandler() : gameController(){
+        inputMode = GAME_START;
+    };
+
+    explicit ConsoleHandler(const GameController &gameController) : gameController(gameController) {
+        inputMode = GAME_START;
+    }
+
     // SECTION: PRINTERS-----------------------------------------------------------------------------------------
-    void printMap(){}
+    void printMap(){
+
+    }
     void printHeroStats(){}
     void delimiter(){}
 
@@ -24,6 +34,7 @@ public:
     void exit(){}
     void open(){}
     void newGame(){}
+    void move(){}
 
     // SECTION: EVENTS-------------------------------------------------------------------------------------------
     void foundTreasure(){}

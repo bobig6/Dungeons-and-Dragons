@@ -37,6 +37,27 @@ public:
         }
     }
 
+    /*! This function resizes the map field*/
+    void resize(int newWidth, int newHeight){
+        // Backing up the map
+        Map buff = Map(field, width, height);
+
+        // Setting the width and the height
+        setWight(newWidth);
+        setHeight(newHeight);
+
+        deleteField();
+
+        // Resizing the field and putting the new values in
+        allocField();
+        for (int i = 0; i < buff.height; ++i) {
+            for (int j = 0; j < buff.width; ++j) {
+                field[i][j] = buff.field[i][j];
+            }
+        }
+        findCurrentHeroPosition();
+    }
+
     /*! A function to save the map into a text file*/
     void save(ofstream& os){
         for (int i = 0; i < height; ++i) {
@@ -245,6 +266,7 @@ public:
 
 };
 
+/*! Output map to ostream*/
 ostream& operator<<(ostream& os, Map& map)
 {
     for (int i = 0; i < map.height; ++i) {
@@ -257,6 +279,7 @@ ostream& operator<<(ostream& os, Map& map)
     return os;
 }
 
+/*! Inputs map to istream*/
 istream& operator>> (istream& is, Map& map)
 {
     for (int i = 0; i < map.height; ++i) {

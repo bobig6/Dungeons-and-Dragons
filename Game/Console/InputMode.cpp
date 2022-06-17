@@ -11,5 +11,7 @@ enum InputMode{
     /*! Game over mode. The player has options to start from the last save, start new game and exit*/
     GAME_OVER,
     /*! In this mode the player has passed a level. The player is given points to add to their abilities*/
-    LEVEL_COMPLETED
+    LEVEL_COMPLETED,
+    /*! In this mode the player can use W,A,S,D to move*/
+    MOVE
 };
