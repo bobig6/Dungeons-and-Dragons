@@ -19,16 +19,7 @@ public:
     int level;
     // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
-    /*! This function loads the map and the treasure list from a file. The file has to have:
-     *      - width of the map
-     *      - height of the map
-     *      - the map itself in a hxw char matrix
-     *      - number of treasures
-     *      - list of all the treasures with:
-     *          - name
-     *          - description
-     *          - percent
-     */
+
     void loadFromFile(string fileName){
         // Opening the file
         ifstream in;
@@ -37,6 +28,26 @@ public:
             throw invalid_argument("Couldn't open file");
         }
 
+        load(in);
+
+        in.close();
+    }
+
+
+    /*! This function loads the map and the treasure list from a file. The file has to have:
+     *      - level
+     *      - width of the map
+     *      - height of the map
+     *      - the map itself in a hxw char matrix
+     *      - Hero (look at his operator >> for more details)
+     *      - number of treasures
+     *      - list of all the treasures with:
+     *          - name
+     *          - description
+     *          - percent
+     */
+    void load(ifstream& in){
+        in>>level;
         // Reading the width and the height of the map
         int width = 0;
         in>>width;
@@ -53,6 +64,9 @@ public:
         // Reading the map
         map.load(in);
 
+        //Reading the Hero
+        in>>hero;
+
         // Reading number of treasures
         in>>tr_size;
 
@@ -66,9 +80,29 @@ public:
             while(in.get(next)) if (next == '\n')  break;
         }
 
-        in.close();
     }
 
+    /*! Saves the GameController in this format:
+     *      - level
+     *      - map width
+     *      - map height
+     *      - map
+     *      - hero
+     *      - tr_size
+     *      - list of all treasures*/
+    void save(ofstream& out){
+        out<<level<<endl;
+        out<<map.getWight()<<endl;
+        out<<map.getHeight()<<endl;
+        map.save(out);
+        hero.save(out);
+
+        out<<tr_size<<endl;
+
+        for (int i = 0; i < tr_size; ++i) {
+            treasures[i].save(out);
+        }
+    }
 
     // SECTION: CONSTRUCTORS--------------------------------------------------------------------------------------------
 

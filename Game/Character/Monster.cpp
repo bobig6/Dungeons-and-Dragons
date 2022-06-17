@@ -16,6 +16,14 @@ public:
         armor.save(os);
     }
 
+    /*! Levels up the monster by increasing every stat by 10 for every level and armor by 5 for every level*/
+    void levelUp(float level){
+        strength += level*10;
+        mana += level*10;
+        health += level*10;
+        armor.setPercent(armor.getPercent()+level*5);
+    }
+
 
     // SECTION: CONSTRUCTORS-------------------------------------------------------------------------------
     Monster() {

@@ -18,6 +18,15 @@ public:
 
     // SECTION: HELPER FUNCTIONS-------------------------------------------------------------------------
 
+    /*! Saves the human in this format:
+     *      - Race
+     *      - strength
+     *      - mana
+     *      - health
+     *      - weapon
+     *      - armor
+     *      - spell
+     */
     void save(ostream& os){
         switch (race) {
             case Human:
@@ -30,9 +39,9 @@ public:
                 os<<"Warrior";
                 break;
         }
-        os<<strength;
-        os<<mana;
-        os<<health;
+        os<<endl<<strength<<endl;
+        os<<mana<<endl;
+        os<<health<<endl;
         weapon.save(os);
         armor.save(os);
         spell.save(os);
@@ -43,6 +52,7 @@ public:
     /*! Default constructor creates a Hero with race Human and no items*/
     Hero(): Hero(Race::Human){}
 
+    /*! Constructor for hero gives default items and stats according to the race*/
     explicit Hero(Race race){
         this-> race = race;
         switch (race) {

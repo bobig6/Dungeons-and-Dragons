@@ -24,7 +24,7 @@ public:
     void save(ostream& os){
         os<<name<<endl;
         os<<description<<endl;
-        os<<percent;
+        os<<percent<<endl;
     }
 
     // SECTION: CONSTRUCTORS---------------------------------------------------------------------------------------------

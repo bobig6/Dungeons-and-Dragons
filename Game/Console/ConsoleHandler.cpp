@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "../Character/Hero.cpp"
 #include "../Map/Map.cpp"
 #include "InputMode.cpp"
@@ -7,6 +9,7 @@
 #include "BufferToogle.cpp"
 
 class ConsoleHandler{
+    string fileName;
     InputMode inputMode;
     GameController gameController;
 
@@ -14,11 +17,19 @@ class ConsoleHandler{
 
 public:
     ConsoleHandler() : gameController(){
+        fileName = "Default.txt";
         inputMode = GAME_START;
     };
 
     explicit ConsoleHandler(const GameController &gameController) : gameController(gameController) {
         inputMode = GAME_START;
+        fileName = "Default.txt";
+    }
+
+    explicit ConsoleHandler(string filename){
+        inputMode = GAME_START;
+        gameController = GameController();
+        gameController.loadFromFile(std::move(filename));
     }
 
     // SECTION: PRINTERS-----------------------------------------------------------------------------------------
@@ -41,12 +52,32 @@ public:
 
 
     // SECTION: COMMANDS-----------------------------------------------------------------------------------------
-    void save(){}
+    /*! Saves the game at current file*/
+    void save(){
+        saveAs(fileName);
+    }
+
+
     void close(){}
-    void saveAs(){}
+
+    /*! Saves the game in a file with a given name*/
+    void saveAs(const string& name){
+        // Opening the file
+        ofstream out;
+        out.open(name, ios::out);
+        if(!out){
+            throw invalid_argument("Couldn't open file");
+        }
+
+        gameController.save(out);
+
+        out.close();
+    }
     void help(){}
     void exit(){}
-    void open(){}
+    void open(){
+
+    }
     void newGame(){}
 
     /*! In this mode the player uses W,A,S,D to move in the map. To end the move you press q*/
@@ -105,6 +136,7 @@ public:
         gameController.level++;
     }
 
+    /*! Clears the screen and then prints the map and the hero stats*/
     void refresh(){
         std::system("clear");
         delimiter(0);
