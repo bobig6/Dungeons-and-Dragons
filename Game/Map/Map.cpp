@@ -101,11 +101,12 @@ public:
         width = 10;
         height = 10;
 
-        // Creating new field with width 10 and height 10 and only filled with *
+        // Creating new field with width 10 and height 10 and only filled with #
         field = new char*[height];
         allocField();
+        field[0][0] = 'H';
         for (int i = 0; i < height; ++i) {
-            for (int j = 0; j < width; ++j) {
+            for (int j = 1; j < width; ++j) {
                 field[i][j] = '#';
             }
         }
@@ -148,6 +149,7 @@ public:
             this->currentY = other.currentY;
             this->width = other.width;
             this->height = other.height;
+            allocField();
             setField(other.field, other.width, other.height);
         }
         return *this;

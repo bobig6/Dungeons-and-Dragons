@@ -4,6 +4,8 @@
 #include "../Character/Monster.cpp"
 #include "../GameController.cpp"
 
+#include "BufferToogle.cpp"
+
 class ConsoleHandler{
     InputMode inputMode;
     GameController gameController;
@@ -21,10 +23,22 @@ public:
 
     // SECTION: PRINTERS-----------------------------------------------------------------------------------------
     void printMap(){
-
+        cout<<"Level "<<gameController.level<<endl;
+        cout<<gameController.map;
     }
-    void printHeroStats(){}
-    void delimiter(){}
+
+    void printHeroStats(){
+        cout<<gameController.hero;
+    }
+
+    void delimiter(int size){
+        for (int i = 0; i < size; ++i) {
+            cout<<'-';
+        }
+        cout<<endl;
+    }
+
+
 
     // SECTION: COMMANDS-----------------------------------------------------------------------------------------
     void save(){}
@@ -34,16 +48,69 @@ public:
     void exit(){}
     void open(){}
     void newGame(){}
-    void move(){}
+
+    /*! In this mode the player uses W,A,S,D to move in the map. To end the move you press q*/
+    void move(){
+        // Refresh the screen
+        refresh();
+
+        char c;
+
+        // Set the terminal to raw mode
+        BufferToggle bf{};
+        bf.off();
+
+        while(true) {
+            c = (char)std::getchar();
+            // terminate when "q" is pressed
+            if(c == 'q') {
+                break;
+            }
+            std::cout << "\b \b";
+            char last_char = ' ';
+
+            // check the input
+            switch (c) {
+                case 'w':
+                    last_char = gameController.map.moveUp();
+                    refresh();
+                    break;
+                case 'a':
+                    last_char = gameController.map.moveLeft();
+                    refresh();
+                    break;
+                case 's':
+                    last_char = gameController.map.moveDown();
+                    refresh();
+                    break;
+                case 'd':
+                    last_char = gameController.map.moveRight();
+                    refresh();
+                    break;
+            }
+
+            // Checking what is the player stepped onto
+            if(last_char == 'M') fight();
+            if(last_char == 'T') foundTreasure();
+            if(last_char == '0') levelCompleted();
+        }
+        bf.on();
+    }
 
     // SECTION: EVENTS-------------------------------------------------------------------------------------------
     void foundTreasure(){}
     void fight(){}
     void gameOver(){}
-    void levelCompleted(){}
+    void levelCompleted(){
+        gameController.level++;
+    }
 
     void refresh(){
-
+        std::system("clear");
+        delimiter(0);
+        printMap();
+        printHeroStats();
+        delimiter(100);
     }
 
     InputMode getInputMode() const {

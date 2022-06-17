@@ -5,6 +5,7 @@
 using namespace std;
 
 class GameController{
+public:
     /*! This contains the map of the current game*/
     Map map;
     /*! This is the main player's hero*/
@@ -13,10 +14,9 @@ class GameController{
     Item* treasures;
     /*! The number of treasures on the map*/
     int tr_size;
+
     /*! The current level number*/
     int level;
-
-public:
     // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
     /*! This function loads the map and the treasure list from a file. The file has to have:
@@ -130,48 +130,12 @@ public:
 
     //SECTION: GETTERS AND SETTERS-----------------------------------------------------------------------
 
-    Map getMap() const {
-        return map;
-    }
-
-    void setMap(const Map &newMap) {
-        GameController::map = newMap;
-    }
-
-    const Hero &getHero() const {
-        return hero;
-    }
-
-    void setHero(const Hero &newHero) {
-        GameController::hero = newHero;
-    }
-
-    Item *getTreasures() const {
-        return treasures;
-    }
-
     void setTreasures(Item *newTreasures) {
         delete [] treasures;
         treasures = new Item[tr_size];
         for (int i = 0; i < tr_size; ++i) {
             treasures[i] = newTreasures[i];
         }
-    }
-
-    int getTrSize() const {
-        return tr_size;
-    }
-
-    void setTrSize(int trSize) {
-        tr_size = trSize;
-    }
-
-    int getLevel() const {
-        return level;
-    }
-
-    void setLevel(int newLevel) {
-        GameController::level = newLevel;
     }
 
 };

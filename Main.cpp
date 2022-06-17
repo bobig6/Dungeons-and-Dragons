@@ -11,12 +11,10 @@ int main(int argc, char** argv){
     GameController gameController = GameController();
     gameController.loadFromFile("Level1_map.txt");
 
-    cout<<gameController;
 
-    Hero m = Hero();
-
-    cin>>m;
-
-    cout<<m;
-
+    ConsoleHandler ch = ConsoleHandler(gameController);
+//
+//    ch.printMap();
+//    ch.delimiter(100);
+    ch.move();
 }
