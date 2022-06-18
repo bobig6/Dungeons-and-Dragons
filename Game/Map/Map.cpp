@@ -39,6 +39,14 @@ public:
 
     /*! This function resizes the map field*/
     void resize(int newWidth, int newHeight){
+        // If smaller size is given the map is deleted and alloced again with new size
+        if(newHeight < height || newWidth < width){
+            deleteField();
+            setWight(newWidth);
+            setHeight(newHeight);
+            allocField();
+            return;
+        }
         // Backing up the map
         Map buff = Map(field, width, height);
 

@@ -21,6 +21,12 @@ public:
 
 
     void resizeTreasures(int new_size){
+        if(new_size < tr_size){
+            delete [] treasures;
+            treasures = new Item[new_size];
+            tr_size = new_size;
+            return;
+        }
         Item* buff = new Item[tr_size];
         for (int i = 0; i < tr_size; ++i) {
             buff[i] = treasures[i];

@@ -306,9 +306,93 @@ public:
     void gameOver(){
         isSaved = false;
     }
+
+    /*! This function is called when the level is complete.
+     * It gives the player the opportunity to increase his stats by 30 points
+     * When he does it tries to find a file for the next level. If it can't it asks for a filename for the next level*/
     void levelCompleted(){
+        // Increases the level number and clears the screen
         isSaved = false;
         gameController.level++;
+        system("clear");
+
+        // Prints stats
+        cout<<"Congratulations!!! You have completed this level"<<endl;
+        cout<<"You have 30 bonus points to your skills:"<<endl;
+        cout<<gameController.hero;
+
+        int bonus = 30;
+        int strBonus = 0;
+        int manaBonus = 0;
+
+        // This loop is for input of the bonus points
+        while(true){
+            bonus = 30;
+            strBonus = 0;
+            manaBonus = 0;
+
+            while (true) {
+                cout << "Give strength: ";
+                cin >> strBonus;
+                if (strBonus > bonus || strBonus < 0) {
+                    cout << "Invalid value. Try again" << endl;
+                } else {
+                    bonus -= strBonus;
+                    break;
+                }
+            }
+
+            cout << "You have " << bonus << " points left" << endl;
+            while (true) {
+                cout << "Give mana: ";
+                cin >> manaBonus;
+                if (manaBonus > bonus || manaBonus < 0) {
+                    cout << "Invalid value. Try again" << endl;
+                } else {
+                    bonus -= manaBonus;
+                    break;
+                }
+            }
+
+            cout << "Points left for health: " << bonus << endl;
+            cout << "Do you want to save those points (y/n): " << endl;
+            char res;
+            cin>>res;
+            if(res == 'y'){
+                break;
+            }
+        }
+
+
+        // Sets the bonus points
+        gameController.hero.setStrength(gameController.hero.getStrength() + (float)strBonus);
+        gameController.hero.setMana(gameController.hero.getMana() + (float)manaBonus);
+        gameController.hero.setHealth(gameController.hero.getHealth() + (float)bonus);
+
+        // Trying to load the next level
+        cout<<endl<<"Loading next level...."<<endl;
+        string next = "Level" + to_string(gameController.level) + ".txt";
+        cout<<"Opening file: " << next << endl;
+
+        bool isOpened = gameController.loadMapFromFile(next);
+        if(!isOpened) {
+
+            // If it doesn't find a file with that name it asks for a name for the next level
+            cout << "The next level seems to be missing." << endl;
+
+            while (true) {
+                string name;
+                cout << "Type the file name of the next level: ";
+                getline(cin, name);
+                // Checks if there is a valid file with that name
+                if(gameController.loadMapFromFile(name)){
+                    break;
+                }
+            }
+        };
+        cout<<"File opened successfully"<<endl;
+        refresh();
+        // Returns to move()
     }
 
     /*! Clears the screen and then prints the map and the hero stats*/

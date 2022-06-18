@@ -1,37 +1,21 @@
-3
+2
 11
 11
-...........
+H..........
 ##.#######.
 ...........
 .##########
 ...........
-##########.
-....H......
-.##########
+####T#####.
 ...........
-##########.
+.#######M##
+......#...T
+###.#######
 0..........
-Human
-10
-10
-20
-Mech
-Super seriozno silen mech
-10
-Bronq
-Nqkva bahti silnata bronq chovek
-100
-Skidadul skidudal
-taq magiq ti pravi dick is now a noodle
-13
-3
+2
 Armor
 This is armor
 23
 Sword
 This is sword
-12
-Sword2
-This is sword2
 12
