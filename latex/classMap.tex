@@ -1,0 +1,684 @@
+\hypertarget{classMap}{}\doxysection{Map Class Reference}
+\label{classMap}\index{Map@{Map}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMap_a5453bb867dd27ccfdffc225b8edac198}{delete\+Field}} ()
+\begin{DoxyCompactList}\small\item\em This function deletes the whole field and deallocates the memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{alloc\+Field}} ()
+\item 
+void \mbox{\hyperlink{classMap_aeb54b961534cb10fd16d708fab0a16a6}{resize}} (int new\+Width, int new\+Height)
+\item 
+void \mbox{\hyperlink{classMap_a3b20c1d4d61ad8e42ece28b3bf985ddd}{save}} (ofstream \&os)
+\item 
+void \mbox{\hyperlink{classMap_a753a976931bdb83b3bfa40048940c81d}{load}} (ifstream \&file)
+\item 
+bool \mbox{\hyperlink{classMap_a4b75a9a56fa95046ea3822edf94f5298}{find\+Current\+Hero\+Position}} ()
+\item 
+\mbox{\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}} ()
+\item 
+\mbox{\hyperlink{classMap_a8497952fd6e1f0584d868e6ceb97d42d}{Map}} (int width, int height)
+\item 
+\mbox{\hyperlink{classMap_afd33eb421dde0ce989f5b1dcbc11fa4f}{Map}} (char $\ast$$\ast$new\+\_\+field, int width, int height)
+\item 
+\mbox{\hyperlink{classMap_af19b58ddac9be188873d8e24133dd95b}{Map}} (const \mbox{\hyperlink{classMap}{Map}} \&other)
+\item 
+\mbox{\hyperlink{classMap}{Map}} \& \mbox{\hyperlink{classMap_af1055bc2b92bf1e019807a84c6e3e448}{operator=}} (const \mbox{\hyperlink{classMap}{Map}} \&other)
+\item 
+char \mbox{\hyperlink{classMap_aad55a208c94785bfde1852ff8c0f4cb0}{move\+Right}} ()
+\item 
+char \mbox{\hyperlink{classMap_a259e1404524c5fa3546c3668960370e0}{move\+Left}} ()
+\item 
+char \mbox{\hyperlink{classMap_a5bee199487e3a0f51a878cd6e7bbe2e1}{move\+Up}} ()
+\item 
+char \mbox{\hyperlink{classMap_a95d5b734c4e1ee7456b7b0c7db3e59c1}{move\+Down}} ()
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{classMap_adb7e38471b0ff86e644f3f586a62db84}{get\+Field}} () const
+\item 
+void \mbox{\hyperlink{classMap_a6e5738b3add37779a3fa6e97ec59e684}{set\+Field}} (char $\ast$$\ast$new\+\_\+field, int new\+\_\+width, int new\+\_\+height)
+\item 
+int \mbox{\hyperlink{classMap_a86d150197a9108a005290ff2a5ec6893}{get\+Wight}} () const
+\item 
+void \mbox{\hyperlink{classMap_ae1c6ebce9f44cfdd588a9a0d4f560415}{set\+Wight}} (int new\+\_\+width)
+\item 
+int \mbox{\hyperlink{classMap_a67113f1ffac80d9a20b15fa18a58edc2}{get\+Height}} () const
+\item 
+void \mbox{\hyperlink{classMap_a8d1840e9d51a7a0583bdad27294bbd1a}{set\+Height}} (int new\+\_\+height)
+\item 
+int \mbox{\hyperlink{classMap_a02d0055de5ee1ede49d526f4bf18fa65}{get\+CurrentX}} () const
+\item 
+void \mbox{\hyperlink{classMap_ab3b6204c156c4974a4f6c97221b9f0d8}{set\+CurrentX}} (int new\+\_\+currentX)
+\item 
+int \mbox{\hyperlink{classMap_a815463f0d10214ef76d41306d43c42c8}{get\+CurrentY}} () const
+\item 
+void \mbox{\hyperlink{classMap_a0a342ca9e2e80b9cf504808b39b19676}{set\+CurrentY}} (int new\+\_\+currentY)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classMap_a3baabaf9c7b401d55485f1d827a78144}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{classMap}{Map}} \&map)
+\item 
+istream \& \mbox{\hyperlink{classMap_a2f7b15e83b20f3745d7d7ec8b0c3bd0f}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classMap}{Map}} \&map)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMap_a0f5ad0fd4563497b4214038cbca8b582}\label{classMap_a0f5ad0fd4563497b4214038cbca8b582}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. Creates 10x10 matrix filled with \mbox{[}\#\mbox{]} 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098          \{}
+\DoxyCodeLine{00099         currentY = 0;}
+\DoxyCodeLine{00100         currentX = 0;}
+\DoxyCodeLine{00101         width = 10;}
+\DoxyCodeLine{00102         height = 10;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104         \textcolor{comment}{// Creating new field with width 10 and height 10 and only filled with \#}}
+\DoxyCodeLine{00105         field = \textcolor{keyword}{new} \textcolor{keywordtype}{char}*[height];}
+\DoxyCodeLine{00106         \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00107         field[0][0] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00108         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00109             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 1; j < width; ++j) \{}
+\DoxyCodeLine{00110                 field[i][j] = \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{00111             \}}
+\DoxyCodeLine{00112         \}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a8497952fd6e1f0584d868e6ceb97d42d}\label{classMap_a8497952fd6e1f0584d868e6ceb97d42d}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \mbox{\hyperlink{classMap}{Map}} class with only height and width. Creates field with all \# 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117                                : width(width), height(height) \{}
+\DoxyCodeLine{00118         currentX = 0;}
+\DoxyCodeLine{00119         currentY = 0;}
+\DoxyCodeLine{00120         field = \textcolor{keyword}{new} \textcolor{keywordtype}{char}*[height];}
+\DoxyCodeLine{00121         \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00122         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00123             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < width; ++j) \{}
+\DoxyCodeLine{00124                 field[i][j] = \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{00125             \}}
+\DoxyCodeLine{00126         \}}
+\DoxyCodeLine{00127     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_afd33eb421dde0ce989f5b1dcbc11fa4f}\label{classMap_afd33eb421dde0ce989f5b1dcbc11fa4f}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{new\+\_\+field,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \mbox{\hyperlink{classMap}{Map}} class. Creates new char$\ast$$\ast$ and calls the setter 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130                                                  : width(width), height(height) \{}
+\DoxyCodeLine{00131         currentX = 0;}
+\DoxyCodeLine{00132         currentY = 0;}
+\DoxyCodeLine{00133         field = \textcolor{keyword}{new} \textcolor{keywordtype}{char}*[height];}
+\DoxyCodeLine{00134         \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00135         setField(new\_field, width, height);}
+\DoxyCodeLine{00136     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_af19b58ddac9be188873d8e24133dd95b}\label{classMap_af19b58ddac9be188873d8e24133dd95b}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138 : \mbox{\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}}(other.field, other.width, other.height)\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_ac1ab46138aa61acd0a58b1fd21e0df37}\label{classMap_ac1ab46138aa61acd0a58b1fd21e0df37}} 
+\index{Map@{Map}!````~Map@{$\sim$Map}}
+\index{````~Map@{$\sim$Map}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{$\sim$Map()}{~Map()}}
+{\footnotesize\ttfamily virtual Map\+::$\sim$\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00140}{140}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140                    \{}
+\DoxyCodeLine{00141         \mbox{\hyperlink{classMap_a5453bb867dd27ccfdffc225b8edac198}{deleteField}}();}
+\DoxyCodeLine{00142     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMap_ace49ceb3f957a6dc7faa8e1d82207038}\label{classMap_ace49ceb3f957a6dc7faa8e1d82207038}} 
+\index{Map@{Map}!allocField@{allocField}}
+\index{allocField@{allocField}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{allocField()}{allocField()}}
+{\footnotesize\ttfamily void Map\+::alloc\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Allocates a field with current width and height 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033                      \{}
+\DoxyCodeLine{00034         field = \textcolor{keyword}{new} \textcolor{keywordtype}{char}*[height];}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00036             field[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[width];}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a5453bb867dd27ccfdffc225b8edac198}\label{classMap_a5453bb867dd27ccfdffc225b8edac198}} 
+\index{Map@{Map}!deleteField@{deleteField}}
+\index{deleteField@{deleteField}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{deleteField()}{deleteField()}}
+{\footnotesize\ttfamily void Map\+::delete\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function deletes the whole field and deallocates the memory. 
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                       \{}
+\DoxyCodeLine{00025         \textcolor{comment}{// Delete the current value of the field object}}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00027             \textcolor{keyword}{delete} [] field[i];}
+\DoxyCodeLine{00028         \}}
+\DoxyCodeLine{00029         \textcolor{keyword}{delete} [] field;}
+\DoxyCodeLine{00030     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a4b75a9a56fa95046ea3822edf94f5298}\label{classMap_a4b75a9a56fa95046ea3822edf94f5298}} 
+\index{Map@{Map}!findCurrentHeroPosition@{findCurrentHeroPosition}}
+\index{findCurrentHeroPosition@{findCurrentHeroPosition}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{findCurrentHeroPosition()}{findCurrentHeroPosition()}}
+{\footnotesize\ttfamily bool Map\+::find\+Current\+Hero\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function finds and sets the current hero position. It returns true if it finds it. If it doesnt find anything it sets the current position to (0,0), overrides the map and returns false 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078                                   \{}
+\DoxyCodeLine{00079         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00080             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < width; ++j) \{}
+\DoxyCodeLine{00081                 \textcolor{keywordflow}{if}(field[i][j] == \textcolor{charliteral}{'H'})\{}
+\DoxyCodeLine{00082                     currentY = i;}
+\DoxyCodeLine{00083                     currentX = j;}
+\DoxyCodeLine{00084                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00085                 \}}
+\DoxyCodeLine{00086             \}}
+\DoxyCodeLine{00087         \}}
+\DoxyCodeLine{00088         cout << \textcolor{stringliteral}{"{}This map doesnt have a hero in it. Putting the hero in (0,0) position"{}}<<endl;}
+\DoxyCodeLine{00089         currentX = 0;}
+\DoxyCodeLine{00090         currentY = 0;}
+\DoxyCodeLine{00091         field[0][0] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00092         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00093     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a02d0055de5ee1ede49d526f4bf18fa65}\label{classMap_a02d0055de5ee1ede49d526f4bf18fa65}} 
+\index{Map@{Map}!getCurrentX@{getCurrentX}}
+\index{getCurrentX@{getCurrentX}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getCurrentX()}{getCurrentX()}}
+{\footnotesize\ttfamily int Map\+::get\+CurrentX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253                             \{}
+\DoxyCodeLine{00254         \textcolor{keywordflow}{return} currentX;}
+\DoxyCodeLine{00255     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a815463f0d10214ef76d41306d43c42c8}\label{classMap_a815463f0d10214ef76d41306d43c42c8}} 
+\index{Map@{Map}!getCurrentY@{getCurrentY}}
+\index{getCurrentY@{getCurrentY}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getCurrentY()}{getCurrentY()}}
+{\footnotesize\ttfamily int Map\+::get\+CurrentY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00261}{261}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00261                             \{}
+\DoxyCodeLine{00262         \textcolor{keywordflow}{return} currentY;}
+\DoxyCodeLine{00263     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_adb7e38471b0ff86e644f3f586a62db84}\label{classMap_adb7e38471b0ff86e644f3f586a62db84}} 
+\index{Map@{Map}!getField@{getField}}
+\index{getField@{getField}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getField()}{getField()}}
+{\footnotesize\ttfamily char $\ast$$\ast$ Map\+::get\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217                             \{}
+\DoxyCodeLine{00218         \textcolor{keywordflow}{return} field;}
+\DoxyCodeLine{00219     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a67113f1ffac80d9a20b15fa18a58edc2}\label{classMap_a67113f1ffac80d9a20b15fa18a58edc2}} 
+\index{Map@{Map}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Map\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245                           \{}
+\DoxyCodeLine{00246         \textcolor{keywordflow}{return} height;}
+\DoxyCodeLine{00247     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a86d150197a9108a005290ff2a5ec6893}\label{classMap_a86d150197a9108a005290ff2a5ec6893}} 
+\index{Map@{Map}!getWight@{getWight}}
+\index{getWight@{getWight}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getWight()}{getWight()}}
+{\footnotesize\ttfamily int Map\+::get\+Wight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00237                          \{}
+\DoxyCodeLine{00238         \textcolor{keywordflow}{return} width;}
+\DoxyCodeLine{00239     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a753a976931bdb83b3bfa40048940c81d}\label{classMap_a753a976931bdb83b3bfa40048940c81d}} 
+\index{Map@{Map}!load@{load}}
+\index{load@{load}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Map\+::load (\begin{DoxyParamCaption}\item[{ifstream \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A function to load the map from a text file 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072                              \{}
+\DoxyCodeLine{00073         file>>(*this);}
+\DoxyCodeLine{00074     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a95d5b734c4e1ee7456b7b0c7db3e59c1}\label{classMap_a95d5b734c4e1ee7456b7b0c7db3e59c1}} 
+\index{Map@{Map}!moveDown@{moveDown}}
+\index{moveDown@{moveDown}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{moveDown()}{moveDown()}}
+{\footnotesize\ttfamily char Map\+::move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function moves the player down by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns \textquotesingle{} \textquotesingle{} as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts \textquotesingle{}.\textquotesingle{}, which means that we can visit only once items and monsters 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207                    \{}
+\DoxyCodeLine{00208         \textcolor{keywordflow}{if}(currentY+1 >= height || field[currentY+1][currentX] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{return} \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00209         field[currentY][currentX] = \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00210         currentY++;}
+\DoxyCodeLine{00211         \textcolor{keywordtype}{char} prev = field[currentY][currentX];}
+\DoxyCodeLine{00212         field[currentY][currentX] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00213         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{00214     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a259e1404524c5fa3546c3668960370e0}\label{classMap_a259e1404524c5fa3546c3668960370e0}} 
+\index{Map@{Map}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily char Map\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function moves the player right by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns \textquotesingle{} \textquotesingle{} as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts \textquotesingle{}.\textquotesingle{}, which means that we can visit only once items and monsters 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181                    \{}
+\DoxyCodeLine{00182         \textcolor{keywordflow}{if}(currentX-\/1 < 0 || field[currentY][currentX-\/1] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{return} \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00183         field[currentY][currentX] = \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00184         currentX-\/-\/;}
+\DoxyCodeLine{00185         \textcolor{keywordtype}{char} prev = field[currentY][currentX];}
+\DoxyCodeLine{00186         field[currentY][currentX] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00187         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{00188     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_aad55a208c94785bfde1852ff8c0f4cb0}\label{classMap_aad55a208c94785bfde1852ff8c0f4cb0}} 
+\index{Map@{Map}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily char Map\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function moves the player left by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns \textquotesingle{} \textquotesingle{} as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts \textquotesingle{}.\textquotesingle{}, which means that we can visit only once items and monsters 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168                     \{}
+\DoxyCodeLine{00169         \textcolor{keywordflow}{if}(currentX+1 >= width || field[currentY][currentX+1] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{return} \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00170         field[currentY][currentX] = \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00171         currentX++;}
+\DoxyCodeLine{00172         \textcolor{keywordtype}{char} prev = field[currentY][currentX];}
+\DoxyCodeLine{00173         field[currentY][currentX] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00174         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{00175     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a5bee199487e3a0f51a878cd6e7bbe2e1}\label{classMap_a5bee199487e3a0f51a878cd6e7bbe2e1}} 
+\index{Map@{Map}!moveUp@{moveUp}}
+\index{moveUp@{moveUp}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{moveUp()}{moveUp()}}
+{\footnotesize\ttfamily char Map\+::move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function moves the player up by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns \textquotesingle{} \textquotesingle{} as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts \textquotesingle{}.\textquotesingle{}, which means that we can visit only once items and monsters 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00194                  \{}
+\DoxyCodeLine{00195         \textcolor{keywordflow}{if}(currentY-\/1 < 0 || field[currentY-\/1][currentX] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{return} \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00196         field[currentY][currentX] = \textcolor{charliteral}{'.'};}
+\DoxyCodeLine{00197         currentY-\/-\/;}
+\DoxyCodeLine{00198         \textcolor{keywordtype}{char} prev = field[currentY][currentX];}
+\DoxyCodeLine{00199         field[currentY][currentX] = \textcolor{charliteral}{'H'};}
+\DoxyCodeLine{00200         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{00201     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_af1055bc2b92bf1e019807a84c6e3e448}\label{classMap_af1055bc2b92bf1e019807a84c6e3e448}} 
+\index{Map@{Map}!operator=@{operator=}}
+\index{operator=@{operator=}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMap}{Map}} \& Map\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146                                     \{}
+\DoxyCodeLine{00147         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{00148             this-\/>currentX = other.currentX;}
+\DoxyCodeLine{00149             this-\/>currentY = other.currentY;}
+\DoxyCodeLine{00150             this-\/>width = other.width;}
+\DoxyCodeLine{00151             this-\/>height = other.height;}
+\DoxyCodeLine{00152             \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00153             setField(other.field, other.width, other.height);}
+\DoxyCodeLine{00154         \}}
+\DoxyCodeLine{00155         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00156     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_aeb54b961534cb10fd16d708fab0a16a6}\label{classMap_aeb54b961534cb10fd16d708fab0a16a6}} 
+\index{Map@{Map}!resize@{resize}}
+\index{resize@{resize}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void Map\+::resize (\begin{DoxyParamCaption}\item[{int}]{new\+Width,  }\item[{int}]{new\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function resizes the map field 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041                                             \{}
+\DoxyCodeLine{00042         \textcolor{comment}{// Backing up the map}}
+\DoxyCodeLine{00043         \mbox{\hyperlink{classMap}{Map}} buff = \mbox{\hyperlink{classMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}}(field, width, height);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         \textcolor{comment}{// Setting the width and the height}}
+\DoxyCodeLine{00046         setWight(newWidth);}
+\DoxyCodeLine{00047         setHeight(newHeight);}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \mbox{\hyperlink{classMap_a5453bb867dd27ccfdffc225b8edac198}{deleteField}}();}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051         \textcolor{comment}{// Resizing the field and putting the new values in}}
+\DoxyCodeLine{00052         \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < buff.height; ++i) \{}
+\DoxyCodeLine{00054             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < buff.width; ++j) \{}
+\DoxyCodeLine{00055                 field[i][j] = buff.field[i][j];}
+\DoxyCodeLine{00056             \}}
+\DoxyCodeLine{00057         \}}
+\DoxyCodeLine{00058         \mbox{\hyperlink{classMap_a4b75a9a56fa95046ea3822edf94f5298}{findCurrentHeroPosition}}();}
+\DoxyCodeLine{00059     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a3b20c1d4d61ad8e42ece28b3bf985ddd}\label{classMap_a3b20c1d4d61ad8e42ece28b3bf985ddd}} 
+\index{Map@{Map}!save@{save}}
+\index{save@{save}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Map\+::save (\begin{DoxyParamCaption}\item[{ofstream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A function to save the map into a text file 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062                            \{}
+\DoxyCodeLine{00063         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < height; ++i) \{}
+\DoxyCodeLine{00064             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < width; ++j) \{}
+\DoxyCodeLine{00065                 os<<field[i][j];}
+\DoxyCodeLine{00066             \}}
+\DoxyCodeLine{00067             os<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_ab3b6204c156c4974a4f6c97221b9f0d8}\label{classMap_ab3b6204c156c4974a4f6c97221b9f0d8}} 
+\index{Map@{Map}!setCurrentX@{setCurrentX}}
+\index{setCurrentX@{setCurrentX}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{setCurrentX()}{setCurrentX()}}
+{\footnotesize\ttfamily void Map\+::set\+CurrentX (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+currentX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00257                                        \{}
+\DoxyCodeLine{00258         Map::currentX = new\_currentX;}
+\DoxyCodeLine{00259     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a0a342ca9e2e80b9cf504808b39b19676}\label{classMap_a0a342ca9e2e80b9cf504808b39b19676}} 
+\index{Map@{Map}!setCurrentY@{setCurrentY}}
+\index{setCurrentY@{setCurrentY}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{setCurrentY()}{setCurrentY()}}
+{\footnotesize\ttfamily void Map\+::set\+CurrentY (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+currentY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00265}{265}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00265                                        \{}
+\DoxyCodeLine{00266         Map::currentY = new\_currentY;}
+\DoxyCodeLine{00267     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a6e5738b3add37779a3fa6e97ec59e684}\label{classMap_a6e5738b3add37779a3fa6e97ec59e684}} 
+\index{Map@{Map}!setField@{setField}}
+\index{setField@{setField}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{setField()}{setField()}}
+{\footnotesize\ttfamily void Map\+::set\+Field (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{new\+\_\+field,  }\item[{int}]{new\+\_\+width,  }\item[{int}]{new\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00221}{221}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00221                                                                    \{}
+\DoxyCodeLine{00222         setHeight(new\_height);}
+\DoxyCodeLine{00223         setWight(new\_width);}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225         \mbox{\hyperlink{classMap_a5453bb867dd27ccfdffc225b8edac198}{deleteField}}();}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227         \textcolor{comment}{// Resizing the field and putting the new values in}}
+\DoxyCodeLine{00228         \mbox{\hyperlink{classMap_ace49ceb3f957a6dc7faa8e1d82207038}{allocField}}();}
+\DoxyCodeLine{00229         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < new\_height; ++i) \{}
+\DoxyCodeLine{00230             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < new\_width; ++j) \{}
+\DoxyCodeLine{00231                 field[i][j] = new\_field[i][j];}
+\DoxyCodeLine{00232             \}}
+\DoxyCodeLine{00233         \}}
+\DoxyCodeLine{00234         \mbox{\hyperlink{classMap_a4b75a9a56fa95046ea3822edf94f5298}{findCurrentHeroPosition}}();}
+\DoxyCodeLine{00235     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a8d1840e9d51a7a0583bdad27294bbd1a}\label{classMap_a8d1840e9d51a7a0583bdad27294bbd1a}} 
+\index{Map@{Map}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void Map\+::set\+Height (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00249                                    \{}
+\DoxyCodeLine{00250         Map::height = new\_height;}
+\DoxyCodeLine{00251     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_ae1c6ebce9f44cfdd588a9a0d4f560415}\label{classMap_ae1c6ebce9f44cfdd588a9a0d4f560415}} 
+\index{Map@{Map}!setWight@{setWight}}
+\index{setWight@{setWight}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{setWight()}{setWight()}}
+{\footnotesize\ttfamily void Map\+::set\+Wight (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00241}{241}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00241                                  \{}
+\DoxyCodeLine{00242         Map::width = new\_width;}
+\DoxyCodeLine{00243     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMap_a3baabaf9c7b401d55485f1d827a78144}\label{classMap_a3baabaf9c7b401d55485f1d827a78144}} 
+\index{Map@{Map}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{classMap}{Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Output map to ostream 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00273 \{}
+\DoxyCodeLine{00274     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < map.height; ++i) \{}
+\DoxyCodeLine{00275         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < map.width; ++j) \{}
+\DoxyCodeLine{00276             os<<map.field[i][j];}
+\DoxyCodeLine{00277             os<<\textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00278         \}}
+\DoxyCodeLine{00279         os<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00280     \}}
+\DoxyCodeLine{00281     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00282 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMap_a2f7b15e83b20f3745d7d7ec8b0c3bd0f}\label{classMap_a2f7b15e83b20f3745d7d7ec8b0c3bd0f}} 
+\index{Map@{Map}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classMap}{Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Inputs map to istream 
+
+Definition at line \mbox{\hyperlink{Map_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{Map_8cpp_source}{Map.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286 \{}
+\DoxyCodeLine{00287     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < map.height; ++i) \{}
+\DoxyCodeLine{00288         \textcolor{keywordtype}{string} buff;}
+\DoxyCodeLine{00289         getline(is, buff);}
+\DoxyCodeLine{00290         \textcolor{keywordflow}{if}(buff.size() < map.width) \textcolor{keywordflow}{throw} std::invalid\_argument( \textcolor{stringliteral}{"{}Invalid format of the file or the map in the file has wrong dimensions"{}} );}
+\DoxyCodeLine{00291         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < map.width; ++j) \{}
+\DoxyCodeLine{00292             map.field[i][j] = buff[j];}
+\DoxyCodeLine{00293         \}}
+\DoxyCodeLine{00294     \}}
+\DoxyCodeLine{00295     map.\mbox{\hyperlink{classMap_a4b75a9a56fa95046ea3822edf94f5298}{findCurrentHeroPosition}}();}
+\DoxyCodeLine{00296     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{00297 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game/\+Map/Map.\+cpp\end{DoxyCompactItemize}

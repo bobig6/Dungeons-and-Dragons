@@ -1,0 +1,47 @@
+\hypertarget{BufferToogle_8cpp_source}{}\doxysection{Buffer\+Toogle.\+cpp}
+\label{BufferToogle_8cpp_source}\index{Game/Console/BufferToogle.cpp@{Game/Console/BufferToogle.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00004}00004 \textcolor{comment}{/* BufferToggle.hpp}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00005}00005 \textcolor{comment}{ * @Author}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00006}00006 \textcolor{comment}{ *    Luc Lieber}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00007}00007 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00008}00008 \textcolor{comment}{ *    A simple class to toggle buffered input}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00009}00009 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <termios.h>}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00014}\mbox{\hyperlink{classBufferToggle}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classBufferToggle}{BufferToggle}}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00016}00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00017}00017     \textcolor{keyword}{struct }termios t;}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00019}00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00021}00021     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00022}00022 \textcolor{comment}{     * Disables buffered input}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00023}00023 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00025}00025     \textcolor{keywordtype}{void} off(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00026}00026     \{}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00027}00027         tcgetattr(STDIN\_FILENO, \&t); \textcolor{comment}{//get the current terminal I/O structure}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00028}00028         t.c\_lflag \&= \string~ICANON; \textcolor{comment}{//Manipulate the flag bits to do what you want it to do}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00029}00029         tcsetattr(STDIN\_FILENO, TCSANOW, \&t); \textcolor{comment}{//Apply the new settings}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00033}00033     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00034}00034 \textcolor{comment}{     * Enables buffered input}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00035}00035 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00037}00037     \textcolor{keywordtype}{void} on(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00038}00038     \{}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00039}00039         tcgetattr(STDIN\_FILENO, \&t); \textcolor{comment}{//get the current terminal I/O structure}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00040}00040         t.c\_lflag |= ICANON; \textcolor{comment}{//Manipulate the flag bits to do what you want it to do}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00041}00041         tcsetattr(STDIN\_FILENO, TCSANOW, \&t); \textcolor{comment}{//Apply the new settings}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{BufferToogle_8cpp_source_l00043}00043 \};}
+
+\end{DoxyCode}

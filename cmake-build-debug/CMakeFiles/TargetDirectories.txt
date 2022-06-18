@@ -1,0 +1,3 @@
+/home/bobi/CLionProjects/Dungeons-And-Dragons/cmake-build-debug/CMakeFiles/Dungeons_And_Dragons.dir
+/home/bobi/CLionProjects/Dungeons-And-Dragons/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/bobi/CLionProjects/Dungeons-And-Dragons/cmake-build-debug/CMakeFiles/rebuild_cache.dir

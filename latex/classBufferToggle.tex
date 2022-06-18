@@ -1,0 +1,62 @@
+\hypertarget{classBufferToggle}{}\doxysection{Buffer\+Toggle Class Reference}
+\label{classBufferToggle}\index{BufferToggle@{BufferToggle}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBufferToggle_a005aec9dfffc9ab1d0985e0affdbe954}{off}} (void)
+\item 
+void \mbox{\hyperlink{classBufferToggle_af0462067de3b36abdcc3d012e3ce42da}{on}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This code is from this thread\+: \href{https://m.cplusplus.com/forum/general/29137/}{\texttt{ https\+://m.\+cplusplus.\+com/forum/general/29137/}} it is used to deactivate buffer mode in the terminal so we can get chars without pressing enter 
+
+Definition at line \mbox{\hyperlink{BufferToogle_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{BufferToogle_8cpp_source}{Buffer\+Toogle.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBufferToggle_a005aec9dfffc9ab1d0985e0affdbe954}\label{classBufferToggle_a005aec9dfffc9ab1d0985e0affdbe954}} 
+\index{BufferToggle@{BufferToggle}!off@{off}}
+\index{off@{off}!BufferToggle@{BufferToggle}}
+\doxysubsubsection{\texorpdfstring{off()}{off()}}
+{\footnotesize\ttfamily void Buffer\+Toggle\+::off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BufferToogle_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{BufferToogle_8cpp_source}{Buffer\+Toogle.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026     \{}
+\DoxyCodeLine{00027         tcgetattr(STDIN\_FILENO, \&t); \textcolor{comment}{//get the current terminal I/O structure}}
+\DoxyCodeLine{00028         t.c\_lflag \&= \string~ICANON; \textcolor{comment}{//Manipulate the flag bits to do what you want it to do}}
+\DoxyCodeLine{00029         tcsetattr(STDIN\_FILENO, TCSANOW, \&t); \textcolor{comment}{//Apply the new settings}}
+\DoxyCodeLine{00030     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBufferToggle_af0462067de3b36abdcc3d012e3ce42da}\label{classBufferToggle_af0462067de3b36abdcc3d012e3ce42da}} 
+\index{BufferToggle@{BufferToggle}!on@{on}}
+\index{on@{on}!BufferToggle@{BufferToggle}}
+\doxysubsubsection{\texorpdfstring{on()}{on()}}
+{\footnotesize\ttfamily void Buffer\+Toggle\+::on (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BufferToogle_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{BufferToogle_8cpp_source}{Buffer\+Toogle.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038     \{}
+\DoxyCodeLine{00039         tcgetattr(STDIN\_FILENO, \&t); \textcolor{comment}{//get the current terminal I/O structure}}
+\DoxyCodeLine{00040         t.c\_lflag |= ICANON; \textcolor{comment}{//Manipulate the flag bits to do what you want it to do}}
+\DoxyCodeLine{00041         tcsetattr(STDIN\_FILENO, TCSANOW, \&t); \textcolor{comment}{//Apply the new settings}}
+\DoxyCodeLine{00042     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game/\+Console/Buffer\+Toogle.\+cpp\end{DoxyCompactItemize}

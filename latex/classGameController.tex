@@ -1,0 +1,557 @@
+\hypertarget{classGameController}{}\doxysection{Game\+Controller Class Reference}
+\label{classGameController}\index{GameController@{GameController}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGameController_affdb968a17265ea8d760df785368ce9e}{resize\+Treasures}} (int new\+\_\+size)
+\item 
+bool \mbox{\hyperlink{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}{load\+From\+File}} (string file\+Name)
+\item 
+void \mbox{\hyperlink{classGameController_adaba29ba3aa2afa29cb266fb05fc9243}{load}} (ifstream \&in)
+\item 
+bool \mbox{\hyperlink{classGameController_a7506314b73b0cf23789ba96afe4539be}{load\+Map\+From\+File}} (string file\+Name)
+\item 
+void \mbox{\hyperlink{classGameController_ab7001cc8185e7e04e785767dfb594e43}{load\+Map}} (ifstream \&in)
+\item 
+void \mbox{\hyperlink{classGameController_a69faa6d0bb273addddf358d87313b579}{save}} (ofstream \&out)
+\item 
+\mbox{\hyperlink{classGameController_a7d72ff3f639acb68578e20fee3649b42}{Game\+Controller}} ()
+\item 
+\mbox{\hyperlink{classGameController_ab0c3d3f37484c8e9772d03e5114d2297}{Game\+Controller}} (const \mbox{\hyperlink{classMap}{Map}} \&\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}, const \mbox{\hyperlink{classHero}{Hero}} \&\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}, \mbox{\hyperlink{classItem}{Item}} $\ast$\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}, int \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\+\_\+size}})
+\item 
+\mbox{\hyperlink{classGameController_a2586f212cbd3245e02d01459f173d32e}{Game\+Controller}} (const \mbox{\hyperlink{classGameController}{Game\+Controller}} \&other)
+\item 
+\mbox{\hyperlink{classGameController_aef10601c42f462333ba76bd9ac250187}{Game\+Controller}} (Race race)
+\item 
+\mbox{\hyperlink{classGameController}{Game\+Controller}} \& \mbox{\hyperlink{classGameController_acbc001fbdd6c53d20c203f74c8691ff6}{operator=}} (const \mbox{\hyperlink{classGameController}{Game\+Controller}} \&other)
+\item 
+void \mbox{\hyperlink{classGameController_a2c622b27963e734aad85aeef7c32691d}{set\+Treasures}} (\mbox{\hyperlink{classItem}{Item}} $\ast$new\+Treasures)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMap}{Map}} \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}
+\item 
+\mbox{\hyperlink{classHero}{Hero}} \mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}
+\item 
+\mbox{\hyperlink{classItem}{Item}} $\ast$ \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}
+\item 
+int \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\+\_\+size}}
+\item 
+int \mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classGameController_adbfa860180a9a3fb7a8528541f880571}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{classGameController}{Game\+Controller}} \&game\+Controller)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameController_a7d72ff3f639acb68578e20fee3649b42}\label{classGameController_a7d72ff3f639acb68578e20fee3649b42}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor creates empty map with default hero and 2 empty treasures and 2 empty monsters, all at level 1 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00199                     \{}
+\DoxyCodeLine{00200         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}} = \mbox{\hyperlink{classMap}{Map}}();}
+\DoxyCodeLine{00201         \mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}} = \mbox{\hyperlink{classHero}{Hero}}();}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203         \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}} = 2;}
+\DoxyCodeLine{00204         \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}} = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}];}
+\DoxyCodeLine{00205         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00206             \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i] = \mbox{\hyperlink{classItem}{Item}}();}
+\DoxyCodeLine{00207         \}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209         \mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}} = 1;}
+\DoxyCodeLine{00210     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_ab0c3d3f37484c8e9772d03e5114d2297}\label{classGameController_ab0c3d3f37484c8e9772d03e5114d2297}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMap}{Map}} \&}]{map,  }\item[{const \mbox{\hyperlink{classHero}{Hero}} \&}]{hero,  }\item[{\mbox{\hyperlink{classItem}{Item}} $\ast$}]{treasures,  }\item[{int}]{tr\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \mbox{\hyperlink{classGameController}{Game\+Controller}} sets level to 1 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00213                                                                                   \{}
+\DoxyCodeLine{00214         this-\/>map = \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}};}
+\DoxyCodeLine{00215         this-\/>hero = \mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
+\DoxyCodeLine{00216         this-\/>\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}} = \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}};}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218         this-\/>treasures = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}];}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220         setTreasures(\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}});}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223         this-\/>\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}} = 1;}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_a2586f212cbd3245e02d01459f173d32e}\label{classGameController_a2586f212cbd3245e02d01459f173d32e}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGameController}{Game\+Controller}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor for \mbox{\hyperlink{classGameController}{Game\+Controller}} 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00228                                                 : \mbox{\hyperlink{classGameController_a7d72ff3f639acb68578e20fee3649b42}{GameController}}(other.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}, other.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}, other.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}, other.\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}})\{}
+\DoxyCodeLine{00229         this-\/>\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}} = other.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}};}
+\DoxyCodeLine{00230     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_aef10601c42f462333ba76bd9ac250187}\label{classGameController_aef10601c42f462333ba76bd9ac250187}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}\item[{Race}]{race }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00232}{232}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00232                                       \{}
+\DoxyCodeLine{00233         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}} = \mbox{\hyperlink{classMap}{Map}}();}
+\DoxyCodeLine{00234         \mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}} = \mbox{\hyperlink{classHero}{Hero}}(race);}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236         \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}} = 2;}
+\DoxyCodeLine{00237         \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}} = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}];}
+\DoxyCodeLine{00238         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00239             \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i] = \mbox{\hyperlink{classItem}{Item}}();}
+\DoxyCodeLine{00240         \}}
+\DoxyCodeLine{00241 }
+\DoxyCodeLine{00242         \mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}} = 1;}
+\DoxyCodeLine{00243     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_a3a9afef2024553c4204d58f880e18db9}\label{classGameController_a3a9afef2024553c4204d58f880e18db9}} 
+\index{GameController@{GameController}!````~GameController@{$\sim$GameController}}
+\index{````~GameController@{$\sim$GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameController()}{~GameController()}}
+{\footnotesize\ttfamily virtual Game\+Controller\+::$\sim$\+Game\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245                              \{}
+\DoxyCodeLine{00246         \textcolor{keyword}{delete} [] \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}};}
+\DoxyCodeLine{00247     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameController_adaba29ba3aa2afa29cb266fb05fc9243}\label{classGameController_adaba29ba3aa2afa29cb266fb05fc9243}} 
+\index{GameController@{GameController}!load@{load}}
+\index{load@{load}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Game\+Controller\+::load (\begin{DoxyParamCaption}\item[{ifstream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function loads the map and the treasure list from a ifstream. The file has to have\+:
+\begin{DoxyItemize}
+\item level
+\item width of the map
+\item height of the map
+\item the map itself in a hxw char matrix
+\item \mbox{\hyperlink{classHero}{Hero}} (look at his operator \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} for more details)
+\item number of treasures
+\item list of all the treasures with\+:
+\begin{DoxyItemize}
+\item name
+\item description
+\item percent 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065                            \{}
+\DoxyCodeLine{00066         in>>\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}};}
+\DoxyCodeLine{00067         \textcolor{comment}{// Reading the width and the height of the map}}
+\DoxyCodeLine{00068         \textcolor{keywordtype}{int} width = 0;}
+\DoxyCodeLine{00069         in>>width;}
+\DoxyCodeLine{00070         \textcolor{keywordtype}{int} height = 0;}
+\DoxyCodeLine{00071         in>>height;}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073         \textcolor{comment}{// Resizing the map}}
+\DoxyCodeLine{00074         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_aeb54b961534cb10fd16d708fab0a16a6}{resize}}(width, height);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         \textcolor{comment}{// This segment skips to the next line}}
+\DoxyCodeLine{00077         \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{00078         \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         \textcolor{comment}{// Reading the map}}
+\DoxyCodeLine{00081         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a753a976931bdb83b3bfa40048940c81d}{load}}(in);}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         \textcolor{comment}{//Reading the Hero}}
+\DoxyCodeLine{00084         in>>\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00088             \textcolor{keywordtype}{int} newSize = 0;}
+\DoxyCodeLine{00089             \textcolor{comment}{// Reading number of treasures}}
+\DoxyCodeLine{00090             in>>newSize;}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092             resizeTreasures(newSize);}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094             \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00095             \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00096             \textcolor{comment}{// Reads all the treasures}}
+\DoxyCodeLine{00097             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00098                 in >> \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i];}
+\DoxyCodeLine{00099                 \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00100                 \textcolor{keywordflow}{while} (in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00101             \}}
+\DoxyCodeLine{00102         \}}
+\DoxyCodeLine{00103         \textcolor{keywordflow}{catch}( \textcolor{keyword}{const} std::exception\& err )}
+\DoxyCodeLine{00104         \{}
+\DoxyCodeLine{00105             \textcolor{keywordtype}{string} e(err.what());}
+\DoxyCodeLine{00106             \textcolor{keywordtype}{string} error = \textcolor{stringliteral}{"{}Error while reading the treasures from file: "{}} + e;}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108             \textcolor{keywordflow}{throw} std::invalid\_argument( error );}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}\label{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}} 
+\index{GameController@{GameController}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool Game\+Controller\+::load\+From\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function loads from specific file. It opens the file for us 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037                                       \{}
+\DoxyCodeLine{00038         \textcolor{comment}{// Opening the file}}
+\DoxyCodeLine{00039         ifstream in;}
+\DoxyCodeLine{00040         in.open(fileName, ios::in);}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{if}(!in)\{}
+\DoxyCodeLine{00042             cout << \textcolor{stringliteral}{"{}Couldn't open file: "{}} << fileName<<endl;}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \mbox{\hyperlink{classGameController_adaba29ba3aa2afa29cb266fb05fc9243}{load}}(in);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         in.close();}
+\DoxyCodeLine{00049         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00050     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_ab7001cc8185e7e04e785767dfb594e43}\label{classGameController_ab7001cc8185e7e04e785767dfb594e43}} 
+\index{GameController@{GameController}!loadMap@{loadMap}}
+\index{loadMap@{loadMap}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{loadMap()}{loadMap()}}
+{\footnotesize\ttfamily void Game\+Controller\+::load\+Map (\begin{DoxyParamCaption}\item[{ifstream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function loads the map and treasures from ifstream. It is used when the next level is loaded or when we create a new game. It doesnt make any changes on the hero. It loads inthe format\+:
+\begin{DoxyItemize}
+\item Width of map
+\item Height of map
+\item \mbox{\hyperlink{classMap}{Map}}
+\item number of treasures
+\item list of all the treasures with\+:
+\begin{DoxyItemize}
+\item name
+\item description
+\item percent 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139                               \{}
+\DoxyCodeLine{00140         in>>\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}};}
+\DoxyCodeLine{00141         \textcolor{comment}{// Reading the width and the height of the map}}
+\DoxyCodeLine{00142         \textcolor{keywordtype}{int} width = 0;}
+\DoxyCodeLine{00143         in>>width;}
+\DoxyCodeLine{00144         \textcolor{keywordtype}{int} height = 0;}
+\DoxyCodeLine{00145         in>>height;}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147         \textcolor{comment}{// Resizing the map}}
+\DoxyCodeLine{00148         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_aeb54b961534cb10fd16d708fab0a16a6}{resize}}(width, height);}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150         \textcolor{comment}{// This segment skips to the next line}}
+\DoxyCodeLine{00151         \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{00152         \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154         \textcolor{comment}{// Reading the map}}
+\DoxyCodeLine{00155         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a753a976931bdb83b3bfa40048940c81d}{load}}(in);}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157         \textcolor{keywordtype}{int} newSize = 0;}
+\DoxyCodeLine{00158         \textcolor{comment}{// Reading number of treasures}}
+\DoxyCodeLine{00159         in>>newSize;}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161         resizeTreasures(newSize);}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163         \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00164         \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166         \textcolor{comment}{// Reads all the treasures}}
+\DoxyCodeLine{00167         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00168             in>>\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i];}
+\DoxyCodeLine{00169             \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00170             \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00171         \}}
+\DoxyCodeLine{00172     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_a7506314b73b0cf23789ba96afe4539be}\label{classGameController_a7506314b73b0cf23789ba96afe4539be}} 
+\index{GameController@{GameController}!loadMapFromFile@{loadMapFromFile}}
+\index{loadMapFromFile@{loadMapFromFile}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{loadMapFromFile()}{loadMapFromFile()}}
+{\footnotesize\ttfamily bool Game\+Controller\+::load\+Map\+From\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function loads the map from specific file. It opens the file for us 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113                                          \{}
+\DoxyCodeLine{00114         \textcolor{comment}{// Opening the file}}
+\DoxyCodeLine{00115         ifstream in;}
+\DoxyCodeLine{00116         in.open(fileName, ios::in);}
+\DoxyCodeLine{00117         \textcolor{keywordflow}{if}(!in)\{}
+\DoxyCodeLine{00118             cout << \textcolor{stringliteral}{"{}Couldn't open file: "{}} << fileName<<endl;}
+\DoxyCodeLine{00119             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00120         \}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122         \mbox{\hyperlink{classGameController_ab7001cc8185e7e04e785767dfb594e43}{loadMap}}(in);}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124         in.close();}
+\DoxyCodeLine{00125         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00126     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_acbc001fbdd6c53d20c203f74c8691ff6}\label{classGameController_acbc001fbdd6c53d20c203f74c8691ff6}} 
+\index{GameController@{GameController}!operator=@{operator=}}
+\index{operator=@{operator=}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGameController}{Game\+Controller}} \& Game\+Controller\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGameController}{Game\+Controller}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253                                                           \{}
+\DoxyCodeLine{00254         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{00255             this-\/>\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}} = other.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}};}
+\DoxyCodeLine{00256             this-\/>\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}} = other.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
+\DoxyCodeLine{00257             this-\/>\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}} = other.\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}};}
+\DoxyCodeLine{00258             this-\/>\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}} = other.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}};}
+\DoxyCodeLine{00259             setTreasures(other.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}});}
+\DoxyCodeLine{00260         \}}
+\DoxyCodeLine{00261         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00262     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_affdb968a17265ea8d760df785368ce9e}\label{classGameController_affdb968a17265ea8d760df785368ce9e}} 
+\index{GameController@{GameController}!resizeTreasures@{resizeTreasures}}
+\index{resizeTreasures@{resizeTreasures}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{resizeTreasures()}{resizeTreasures()}}
+{\footnotesize\ttfamily void Game\+Controller\+::resize\+Treasures (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023                                       \{}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classItem}{Item}}* buff = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}];}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00026             buff[i] = \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i];}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028         \textcolor{keyword}{delete} [] \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}};}
+\DoxyCodeLine{00029         \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}} = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[new\_size];}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00031             \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i] = buff[i];}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033         \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}} = new\_size;}
+\DoxyCodeLine{00034     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_a69faa6d0bb273addddf358d87313b579}\label{classGameController_a69faa6d0bb273addddf358d87313b579}} 
+\index{GameController@{GameController}!save@{save}}
+\index{save@{save}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Game\+Controller\+::save (\begin{DoxyParamCaption}\item[{ofstream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Saves the \mbox{\hyperlink{classGameController}{Game\+Controller}} in this format\+:
+\begin{DoxyItemize}
+\item level
+\item map width
+\item map height
+\item map
+\item hero
+\item tr\+\_\+size
+\item list of all treasures 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00182                             \{}
+\DoxyCodeLine{00183         out<<\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}<<endl;}
+\DoxyCodeLine{00184         out<<\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.getWight()<<endl;}
+\DoxyCodeLine{00185         out<<\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.getHeight()<<endl;}
+\DoxyCodeLine{00186         \mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a3b20c1d4d61ad8e42ece28b3bf985ddd}{save}}(out);}
+\DoxyCodeLine{00187         \mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.\mbox{\hyperlink{classHero_a0f9d8cced41cb9b477430583f61d00e9}{save}}(out);}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189         out<<\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}<<endl;}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00192             \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i].save(out);}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameController_a2c622b27963e734aad85aeef7c32691d}\label{classGameController_a2c622b27963e734aad85aeef7c32691d}} 
+\index{GameController@{GameController}!setTreasures@{setTreasures}}
+\index{setTreasures@{setTreasures}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{setTreasures()}{setTreasures()}}
+{\footnotesize\ttfamily void Game\+Controller\+::set\+Treasures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classItem}{Item}} $\ast$}]{new\+Treasures }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00269}{269}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00269                                           \{}
+\DoxyCodeLine{00270         \textcolor{keyword}{delete} [] \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}};}
+\DoxyCodeLine{00271         \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}} = \textcolor{keyword}{new} \mbox{\hyperlink{classItem}{Item}}[\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}];}
+\DoxyCodeLine{00272         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00273             \mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i] = newTreasures[i];}
+\DoxyCodeLine{00274         \}}
+\DoxyCodeLine{00275     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classGameController_adbfa860180a9a3fb7a8528541f880571}\label{classGameController_adbfa860180a9a3fb7a8528541f880571}} 
+\index{GameController@{GameController}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{classGameController}{Game\+Controller}} \&}]{game\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00280}{280}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281 \{}
+\DoxyCodeLine{00282     os<<gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}<<endl;}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     os<<gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}<<endl;}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286 }
+\DoxyCodeLine{00287     os<<\textcolor{stringliteral}{"{}Treasures: "{}}<<endl;}
+\DoxyCodeLine{00288     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < gameController.\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}; ++i) \{}
+\DoxyCodeLine{00289         os<<gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[i]<<endl;}
+\DoxyCodeLine{00290     \}}
+\DoxyCodeLine{00291     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00292 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}\label{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}} 
+\index{GameController@{GameController}!hero@{hero}}
+\index{hero@{hero}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{hero}{hero}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHero}{Hero}} Game\+Controller\+::hero}
+
+This is the main player\textquotesingle{}s hero 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+\mbox{\Hypertarget{classGameController_a21cc090502aeb0b011486f0925f90951}\label{classGameController_a21cc090502aeb0b011486f0925f90951}} 
+\index{GameController@{GameController}!level@{level}}
+\index{level@{level}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Game\+Controller\+::level}
+
+The current level number 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+\mbox{\Hypertarget{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}\label{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}} 
+\index{GameController@{GameController}!map@{map}}
+\index{map@{map}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMap}{Map}} Game\+Controller\+::map}
+
+This contains the map of the current game 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+\mbox{\Hypertarget{classGameController_ad85c5068db465de9a0a01d6bed475304}\label{classGameController_ad85c5068db465de9a0a01d6bed475304}} 
+\index{GameController@{GameController}!tr\_size@{tr\_size}}
+\index{tr\_size@{tr\_size}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{tr\_size}{tr\_size}}
+{\footnotesize\ttfamily int Game\+Controller\+::tr\+\_\+size}
+
+The number of treasures on the map 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+\mbox{\Hypertarget{classGameController_ad34002ae74e376542cbf1a8cff28c99f}\label{classGameController_ad34002ae74e376542cbf1a8cff28c99f}} 
+\index{GameController@{GameController}!treasures@{treasures}}
+\index{treasures@{treasures}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{treasures}{treasures}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classItem}{Item}}$\ast$ Game\+Controller\+::treasures}
+
+A list with all the items on the map 
+
+Definition at line \mbox{\hyperlink{GameController_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{GameController_8cpp_source}{Game\+Controller.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game/Game\+Controller.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,227 @@
+\hypertarget{Hero_8cpp_source}{}\doxysection{Hero.\+cpp}
+\label{Hero_8cpp_source}\index{Game/Character/Hero.cpp@{Game/Character/Hero.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}Race.cpp"{}}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../Items/Weapon.cpp"{}}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../Items/Armor.cpp"{}}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../Items/Spell.cpp"{}}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00007}\mbox{\hyperlink{classHero}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classHero}{Hero}}\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00008}00008     Race race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00009}00009     \textcolor{keywordtype}{float} strength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00010}00010     \textcolor{keywordtype}{float} mana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00011}00011     \textcolor{keywordtype}{float} health;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00013}00013     \mbox{\hyperlink{classWeapon}{Weapon}} weapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00014}00014     \mbox{\hyperlink{classArmor}{Armor}} armor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00015}00015     \mbox{\hyperlink{classSpell}{Spell}} spell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00019}00019     \textcolor{comment}{// SECTION: HELPER FUNCTIONS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00030}\mbox{\hyperlink{classHero_a0f9d8cced41cb9b477430583f61d00e9}{00030}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classHero_a0f9d8cced41cb9b477430583f61d00e9}{save}}(ostream\& os)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00031}00031         \textcolor{keywordflow}{switch} (race) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00032}00032             \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00033}00033                 os<<\textcolor{stringliteral}{"{}Human"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00034}00034                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00035}00035             \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00036}00036                 os<<\textcolor{stringliteral}{"{}Mage"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00037}00037                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00038}00038             \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00039}00039                 os<<\textcolor{stringliteral}{"{}Warrior"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00040}00040                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00042}00042         os<<endl<<strength<<endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00043}00043         os<<mana<<endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00044}00044         os<<health<<endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00045}00045         weapon.save(os);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00046}00046         armor.save(os);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00047}00047         spell.save(os);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00050}00050     \textcolor{comment}{// SECTION: CONSTRUCTORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00053}\mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{00053}}     \mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}}(): \mbox{\hyperlink{classHero}{Hero}}(Race::Human)\{\}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00056}\mbox{\hyperlink{classHero_a5219d245f1ac1d9f433e3f0e932aaae4}{00056}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classHero_a5219d245f1ac1d9f433e3f0e932aaae4}{Hero}}(Race race)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00057}00057         this-\/> race = race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00058}00058         \textcolor{keywordflow}{switch} (race) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00059}00059             \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00060}00060                 strength = 30;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00061}00061                 mana = 20;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00062}00062                 health = 50;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00063}00063                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00064}00064             \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00065}00065                 strength = 10;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00066}00066                 mana = 40;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00067}00067                 health = 50;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00068}00068                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00069}00069             \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00070}00070                 strength = 40;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00071}00071                 mana = 10;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00072}00072                 health = 50;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00073}00073                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00075}00075         weapon = \mbox{\hyperlink{classWeapon}{Weapon}}();}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00076}00076         armor = \mbox{\hyperlink{classArmor}{Armor}}();}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00077}00077         spell = \mbox{\hyperlink{classSpell}{Spell}}();}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00080}00080     \mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}}(Race race, \textcolor{keywordtype}{float} strength, \textcolor{keywordtype}{float} mana, \textcolor{keywordtype}{float} health, \textcolor{keyword}{const} \mbox{\hyperlink{classWeapon}{Weapon}}\& weapon, \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}}\& armor, \textcolor{keyword}{const} \mbox{\hyperlink{classSpell}{Spell}}\& spell)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00081}00081         this-\/>race = race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00082}00082         this-\/>strength = strength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00083}00083         this-\/>mana = mana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00084}00084         this-\/>health = health;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00085}00085         this-\/>weapon = weapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00086}00086         this-\/>armor = armor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00087}00087         this-\/>spell = spell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00090}00090     \mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHero}{Hero}} \&other) : \mbox{\hyperlink{classHero}{Hero}}(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell)\{\}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00093}00093     \textcolor{comment}{// SECTION: OPERATORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00096}\mbox{\hyperlink{classHero_a27c2fe99399cf8370aec5161ea59c25a}{00096}}     \mbox{\hyperlink{classHero}{Hero}}\& \mbox{\hyperlink{classHero_a27c2fe99399cf8370aec5161ea59c25a}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHero}{Hero}}\& other)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00097}00097         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00098}00098             this-\/>race = other.race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00099}00099             this-\/>strength = other.strength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00100}00100             this-\/>mana = other.mana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00101}00101             this-\/>health = other.health;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00102}00102             this-\/>weapon = other.weapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00103}00103             this-\/>armor = other.armor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00104}00104             this-\/>spell = other.spell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00105}00105         \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00106}00106         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00107}00107     \};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00109}00109     \textcolor{keyword}{friend} ostream\& operator<<(ostream\& os, \mbox{\hyperlink{classHero}{Hero}}\& hero);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00110}00110     \textcolor{keyword}{friend} std::istream\& operator >> (std::istream\& in,  \mbox{\hyperlink{classHero}{Hero}}\& cl);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00113}00113     \textcolor{comment}{// SECTION: GETTERS AND SETTERS}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00115}00115     Race getRace()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00116}00116         \textcolor{keywordflow}{return} race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00117}00117     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00119}00119     \textcolor{keywordtype}{void} setRace(Race newRace) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00120}00120         Hero::race = newRace;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00123}00123     \textcolor{keywordtype}{float} getStrength()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00124}00124         \textcolor{keywordflow}{return} strength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00127}00127     \textcolor{keywordtype}{void} setStrength(\textcolor{keywordtype}{float} newStrength) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00128}00128         Hero::strength = newStrength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00129}00129     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00131}00131     \textcolor{keywordtype}{float} getMana()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00132}00132         \textcolor{keywordflow}{return} mana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00133}00133     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00135}00135     \textcolor{keywordtype}{void} setMana(\textcolor{keywordtype}{float} newMana) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00136}00136         Hero::mana = newMana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00137}00137     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00139}00139     \textcolor{keywordtype}{float} getHealth()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00140}00140         \textcolor{keywordflow}{return} health;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00141}00141     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00143}00143     \textcolor{keywordtype}{void} setHealth(\textcolor{keywordtype}{float} newHealth) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00144}00144         Hero::health = newHealth;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00145}00145     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00147}00147     \textcolor{keyword}{const} \mbox{\hyperlink{classWeapon}{Weapon}} \&getWeapon()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00148}00148         \textcolor{keywordflow}{return} weapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00149}00149     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00151}00151     \textcolor{keywordtype}{void} setWeapon(\textcolor{keyword}{const} \mbox{\hyperlink{classWeapon}{Weapon}} \&newWeapon) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00152}00152         Hero::weapon = newWeapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00156}00156     \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&getArmor()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00157}00157         \textcolor{keywordflow}{return} armor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00158}00158     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00160}00160     \textcolor{keywordtype}{void} setArmor(\textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&newArmor) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00161}00161         Hero::armor = newArmor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00162}00162     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00164}00164     \textcolor{keyword}{const} \mbox{\hyperlink{classSpell}{Spell}} \&getSpell()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00165}00165         \textcolor{keywordflow}{return} spell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00166}00166     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00168}00168     \textcolor{keywordtype}{void} setSpell(\textcolor{keyword}{const} \mbox{\hyperlink{classSpell}{Spell}} \&newSpell) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00169}00169         Hero::spell = newSpell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00170}00170     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00173}00173 \};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00175}00175 ostream\& operator<<(ostream\& os, \mbox{\hyperlink{classHero}{Hero}}\& hero)}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00176}00176 \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00177}00177     os<<\textcolor{stringliteral}{"{}Hero("{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00179}00179     \textcolor{keywordflow}{switch} (hero.race) \{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00180}00180         \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00181}00181             os<<\textcolor{stringliteral}{"{}Human"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00182}00182             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00183}00183         \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00184}00184             os<<\textcolor{stringliteral}{"{}Mage"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00185}00185             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00186}00186         \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00187}00187             os<<\textcolor{stringliteral}{"{}Warrior"{}};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00188}00188             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00189}00189     \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00191}00191     os<<\textcolor{stringliteral}{"{}):"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00192}00192     os<<\textcolor{stringliteral}{"{}strength: "{}}<<hero.strength << \textcolor{stringliteral}{"{} | mana: "{}} << hero.mana << \textcolor{stringliteral}{"{} | health: "{}} << hero.health << endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00193}00193     os<<\textcolor{stringliteral}{"{}Weapon: "{}} << hero.weapon << endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00194}00194     os<<\textcolor{stringliteral}{"{}Armor: "{}} << hero.armor << endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00195}00195     os<<\textcolor{stringliteral}{"{}Spell: "{}} << hero.spell << endl;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00197}00197     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00198}00198 \}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00200}00200 \textcolor{comment}{/* This accepts input from istream in format:}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00201}00201 \textcolor{comment}{ *      -\/ Race}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00202}00202 \textcolor{comment}{ *      -\/ strength}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00203}00203 \textcolor{comment}{ *      -\/ mana}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00204}00204 \textcolor{comment}{ *      -\/ health}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00205}00205 \textcolor{comment}{ *      -\/ Weapon}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00206}00206 \textcolor{comment}{ *      -\/ Armor}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00207}00207 \textcolor{comment}{ *      -\/ Spell}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00208}00208 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00209}00209 std::istream\& operator >> (std::istream\& in, \mbox{\hyperlink{classHero}{Hero}}\& cl)\{}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00210}00210     \textcolor{keywordtype}{string} race;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00212}00212     getline(in, race);}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00214}00214     \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Human"{}}) cl.race = Human;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00215}00215     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Mage"{}}) cl.race = Mage;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00216}00216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Warrior"{}}) cl.race = Warrior;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00217}00217     \textcolor{keywordflow}{else} \textcolor{keywordflow}{throw} std::invalid\_argument( \textcolor{stringliteral}{"{}File does not provide a valid race for the player"{}} );}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00219}00219     in>>cl.strength;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00220}00220     in>>cl.mana;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00221}00221     in>>cl.health;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00223}00223     \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00224}00224     \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00225}00225     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00226}00226     in>>cl.weapon;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00227}00227     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00228}00228     in>>cl.armor;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00229}00229     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00230}00230     in>>cl.spell;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00232}00232     \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{\Hypertarget{Hero_8cpp_source_l00233}00233 \}}
+
+\end{DoxyCode}

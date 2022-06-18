@@ -1,0 +1,527 @@
+\hypertarget{classItem}{}\doxysection{Item Class Reference}
+\label{classItem}\index{Item@{Item}}
+Inheritance diagram for Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classItem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float \mbox{\hyperlink{classItem_a07a294a4cd7e7a2e437c4f296ffe0be0}{effect}} (float obj)
+\item 
+void \mbox{\hyperlink{classItem_a67c6f323e45b19540d374096faa80e95}{save}} (ostream \&os)
+\item 
+\mbox{\hyperlink{classItem_a7f0cdc268ed51d913c3a74c0a883779b}{Item}} (const string \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, const string \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}})
+\item 
+\mbox{\hyperlink{classItem_a44f7e3f580bd6c0fa2e1c288dff484be}{Item}} (const \mbox{\hyperlink{classItem}{Item}} \&other)
+\item 
+\mbox{\hyperlink{classItem}{Item}} \& \mbox{\hyperlink{classItem_abb787be2e7a475b2dd0b4232690b7e2e}{operator=}} (const \mbox{\hyperlink{classItem}{Item}} \&other)
+\item 
+const string \& \mbox{\hyperlink{classItem_ad0a01d142d0649d1447ab50b31d5b1f2}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{classItem_a87f7f462007266e898b0c945768c262f}{set\+Name}} (const string \&new\+Name)
+\item 
+const string \& \mbox{\hyperlink{classItem_acd1d0137c8c13e5dd736c05546056a4c}{get\+Description}} () const
+\item 
+void \mbox{\hyperlink{classItem_aeca713ec59ace9c2cda51fe5c01b3201}{set\+Description}} (const string \&new\+Description)
+\item 
+float \mbox{\hyperlink{classItem_aa48f1a8fa010502543caf0883b51fac2}{get\+Percent}} () const
+\item 
+void \mbox{\hyperlink{classItem_ac9ca8e57d61a4a6663251eab67102b13}{set\+Percent}} (float new\+Percent)
+\item 
+string \mbox{\hyperlink{classItem_ab56f7e5c583af0ca6322e9c1c4ecaa29}{get\+Percent\+As\+String}} ()
+\item 
+string \mbox{\hyperlink{classItem_a9c69ae8f500dfdb48af3dc7a7947ca30}{get\+As\+String}} ()
+\item 
+bool \mbox{\hyperlink{classItem_a00c1348f4f2537a1744df29bbdf993f1}{operator==}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classItem_ac76ecf1fc155aee4c13c69170dee348c}{operator!=}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classItem_af568ecfc748c3d652659e2f3b01d5074}{operator$<$}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classItem_a966eb806da1cb114f45e75a924e03415}{operator$>$}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classItem_a21bf0835c1a34a801bd0b3ef1f41caaf}{operator$<$=}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classItem_a0aebc98c784d7c8ee3230fa6b9ee5775}{operator$>$=}} (const \mbox{\hyperlink{classItem}{Item}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}
+\item 
+string \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}
+\item 
+float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classItem_a69a9299fa0156644a86f73ebbc028242}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{classItem}{Item}} \&item)
+\item 
+istream \& \mbox{\hyperlink{classItem_aff4c0544f529e21b3e489410851cedc0}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classItem}{Item}} \&item)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a common class for all the items 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classItem_a297720c02984eab37332ae795d22189d}\label{classItem_a297720c02984eab37332ae795d22189d}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031           \{}
+\DoxyCodeLine{00032         \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} = \textcolor{stringliteral}{"{}Default item"{}};}
+\DoxyCodeLine{00033         \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} = \textcolor{stringliteral}{"{}This is the default item."{}};}
+\DoxyCodeLine{00034         \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}} = 0;}
+\DoxyCodeLine{00035     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a7f0cdc268ed51d913c3a74c0a883779b}\label{classItem_a7f0cdc268ed51d913c3a74c0a883779b}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{description,  }\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for the \mbox{\hyperlink{classItem}{Item}} object 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038                                                                        :\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}(\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{}
+\DoxyCodeLine{00039         this-\/>\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} = \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}};}
+\DoxyCodeLine{00040         this-\/>\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} = \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}};}
+\DoxyCodeLine{00041     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a44f7e3f580bd6c0fa2e1c288dff484be}\label{classItem_a44f7e3f580bd6c0fa2e1c288dff484be}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043 : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}})\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classItem_a07a294a4cd7e7a2e437c4f296ffe0be0}\label{classItem_a07a294a4cd7e7a2e437c4f296ffe0be0}} 
+\index{Item@{Item}!effect@{effect}}
+\index{effect@{effect}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{effect()}{effect()}}
+{\footnotesize\ttfamily virtual float Item\+::effect (\begin{DoxyParamCaption}\item[{float}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This is the default effect function. Its virtual and it is supposed to be overrode. By default returns the object that is given 
+
+Reimplemented in \mbox{\hyperlink{classArmor_a3dff941cec4145530e25b94ae1ecfa5f}{Armor}}, \mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{Spell}}, and \mbox{\hyperlink{classWeapon_ab198208d65636075ec9c3d094fbc5c4e}{Weapon}}.
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                    \{}
+\DoxyCodeLine{00020         cout<<\textcolor{stringliteral}{"{}Default effect called. No change was made"{}}<<endl;}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{return} obj;}
+\DoxyCodeLine{00022     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a9c69ae8f500dfdb48af3dc7a7947ca30}\label{classItem_a9c69ae8f500dfdb48af3dc7a7947ca30}} 
+\index{Item@{Item}!getAsString@{getAsString}}
+\index{getAsString@{getAsString}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getAsString()}{getAsString()}}
+{\footnotesize\ttfamily string Item\+::get\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \mbox{\hyperlink{classItem}{Item}} as string in format\+: Name\+: \{Name\} $\vert$ \{Description\} $\vert$ Effect\+: \{Percent\}\% ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098                         \{}
+\DoxyCodeLine{00099         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Name: "{}} + \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} + \textcolor{stringliteral}{"{} | "{}} + \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} + \textcolor{stringliteral}{"{} | Effect: "{}} + getPercentAsString() + \textcolor{stringliteral}{"{}\%"{}};}
+\DoxyCodeLine{00100     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_acd1d0137c8c13e5dd736c05546056a4c}\label{classItem_acd1d0137c8c13e5dd736c05546056a4c}} 
+\index{Item@{Item}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily const string \& Item\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064                                          \{}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}};}
+\DoxyCodeLine{00066     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_ad0a01d142d0649d1447ab50b31d5b1f2}\label{classItem_ad0a01d142d0649d1447ab50b31d5b1f2}} 
+\index{Item@{Item}!getName@{getName}}
+\index{getName@{getName}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const string \& Item\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                                   \{}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{return} \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}};}
+\DoxyCodeLine{00058     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_aa48f1a8fa010502543caf0883b51fac2}\label{classItem_aa48f1a8fa010502543caf0883b51fac2}} 
+\index{Item@{Item}!getPercent@{getPercent}}
+\index{getPercent@{getPercent}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getPercent()}{getPercent()}}
+{\footnotesize\ttfamily float Item\+::get\+Percent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072                              \{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return} \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}};}
+\DoxyCodeLine{00074     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_ab56f7e5c583af0ca6322e9c1c4ecaa29}\label{classItem_ab56f7e5c583af0ca6322e9c1c4ecaa29}} 
+\index{Item@{Item}!getPercentAsString@{getPercentAsString}}
+\index{getPercentAsString@{getPercentAsString}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getPercentAsString()}{getPercentAsString()}}
+{\footnotesize\ttfamily string Item\+::get\+Percent\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080                                \{}
+\DoxyCodeLine{00081         \textcolor{keywordtype}{string} str = to\_string(\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}});}
+\DoxyCodeLine{00082         \textcolor{comment}{// Find the decimal point;}}
+\DoxyCodeLine{00083         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{while} (i < str.size()) \{}
+\DoxyCodeLine{00085             i++;}
+\DoxyCodeLine{00086             \textcolor{keywordflow}{if} (str[i] == \textcolor{charliteral}{'.'}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00087         \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         \textcolor{comment}{// Remove everything that is 2 symbols after the decimal point;}}
+\DoxyCodeLine{00090         \textcolor{keywordflow}{if}(i < str.size() -\/ 3 )\{}
+\DoxyCodeLine{00091             i += 3;}
+\DoxyCodeLine{00092         \}}
+\DoxyCodeLine{00093         str.erase(i, str.size()-\/1);}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{00095     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_ac76ecf1fc155aee4c13c69170dee348c}\label{classItem_ac76ecf1fc155aee4c13c69170dee348c}} 
+\index{Item@{Item}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Item\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111                                            \{}
+\DoxyCodeLine{00112         \textcolor{keywordflow}{return} !(rhs == *\textcolor{keyword}{this});}
+\DoxyCodeLine{00113     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_af568ecfc748c3d652659e2f3b01d5074}\label{classItem_af568ecfc748c3d652659e2f3b01d5074}} 
+\index{Item@{Item}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Item\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares two items by their percent of effect 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117                                           \{}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{return} \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}} < rhs.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}};}
+\DoxyCodeLine{00119     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a21bf0835c1a34a801bd0b3ef1f41caaf}\label{classItem_a21bf0835c1a34a801bd0b3ef1f41caaf}} 
+\index{Item@{Item}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Item\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares two items by their percent of effect 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127                                            \{}
+\DoxyCodeLine{00128         \textcolor{keywordflow}{return} !(rhs < *\textcolor{keyword}{this});}
+\DoxyCodeLine{00129     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_abb787be2e7a475b2dd0b4232690b7e2e}\label{classItem_abb787be2e7a475b2dd0b4232690b7e2e}} 
+\index{Item@{Item}!operator=@{operator=}}
+\index{operator=@{operator=}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classItem}{Item}} \& Item\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045                                       \{}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{00047             this-\/>\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} = other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}};}
+\DoxyCodeLine{00048             this-\/>\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} = other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}};}
+\DoxyCodeLine{00049             this-\/>\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}} = other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}};}
+\DoxyCodeLine{00050         \}}
+\DoxyCodeLine{00051         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00052     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a00c1348f4f2537a1744df29bbdf993f1}\label{classItem_a00c1348f4f2537a1744df29bbdf993f1}} 
+\index{Item@{Item}!operator==@{operator==}}
+\index{operator==@{operator==}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Item\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105                                            \{}
+\DoxyCodeLine{00106         \textcolor{keywordflow}{return} \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} == rhs.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}} \&\&}
+\DoxyCodeLine{00107                \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} == rhs.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}} \&\&}
+\DoxyCodeLine{00108                \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}} == rhs.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}};}
+\DoxyCodeLine{00109     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a966eb806da1cb114f45e75a924e03415}\label{classItem_a966eb806da1cb114f45e75a924e03415}} 
+\index{Item@{Item}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Item\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares two items by their percent of effect 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122                                           \{}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{return} rhs < *\textcolor{keyword}{this};}
+\DoxyCodeLine{00124     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a0aebc98c784d7c8ee3230fa6b9ee5775}\label{classItem_a0aebc98c784d7c8ee3230fa6b9ee5775}} 
+\index{Item@{Item}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Item\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares two items by their percent of effect 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132                                            \{}
+\DoxyCodeLine{00133         \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} < rhs);}
+\DoxyCodeLine{00134     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a67c6f323e45b19540d374096faa80e95}\label{classItem_a67c6f323e45b19540d374096faa80e95}} 
+\index{Item@{Item}!save@{save}}
+\index{save@{save}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Item\+::save (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                           \{}
+\DoxyCodeLine{00025         os<<\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}<<endl;}
+\DoxyCodeLine{00026         os<<\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}<<endl;}
+\DoxyCodeLine{00027         os<<\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}<<endl;}
+\DoxyCodeLine{00028     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_aeca713ec59ace9c2cda51fe5c01b3201}\label{classItem_aeca713ec59ace9c2cda51fe5c01b3201}} 
+\index{Item@{Item}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void Item\+::set\+Description (\begin{DoxyParamCaption}\item[{const string \&}]{new\+Description }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068                                                       \{}
+\DoxyCodeLine{00069         \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{Item::description}} = newDescription;}
+\DoxyCodeLine{00070     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_a87f7f462007266e898b0c945768c262f}\label{classItem_a87f7f462007266e898b0c945768c262f}} 
+\index{Item@{Item}!setName@{setName}}
+\index{setName@{setName}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Item\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060                                         \{}
+\DoxyCodeLine{00061         \mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{Item::name}} = newName;}
+\DoxyCodeLine{00062     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_ac9ca8e57d61a4a6663251eab67102b13}\label{classItem_ac9ca8e57d61a4a6663251eab67102b13}} 
+\index{Item@{Item}!setPercent@{setPercent}}
+\index{setPercent@{setPercent}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setPercent()}{setPercent()}}
+{\footnotesize\ttfamily void Item\+::set\+Percent (\begin{DoxyParamCaption}\item[{float}]{new\+Percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                                       \{}
+\DoxyCodeLine{00077         \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{Item::percent}} = newPercent;}
+\DoxyCodeLine{00078     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classItem_a69a9299fa0156644a86f73ebbc028242}\label{classItem_a69a9299fa0156644a86f73ebbc028242}} 
+\index{Item@{Item}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{classItem}{Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143 \{}
+\DoxyCodeLine{00144     os << item.\mbox{\hyperlink{classItem_a9c69ae8f500dfdb48af3dc7a7947ca30}{getAsString}}();}
+\DoxyCodeLine{00145     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classItem_aff4c0544f529e21b3e489410851cedc0}\label{classItem_aff4c0544f529e21b3e489410851cedc0}} 
+\index{Item@{Item}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{classItem}{Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149 \{}
+\DoxyCodeLine{00150     getline(is, item.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}});}
+\DoxyCodeLine{00151     getline(is, item.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}});}
+\DoxyCodeLine{00152     is >> item.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}};}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154     \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{00155 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classItem_ab848d79aa5638d5699171e85fd676f0b}\label{classItem_ab848d79aa5638d5699171e85fd676f0b}} 
+\index{Item@{Item}!description@{description}}
+\index{description@{description}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily string Item\+::description\hspace{0.3cm}{\ttfamily [protected]}}
+
+Description of the item 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+\mbox{\Hypertarget{classItem_a406cde7962a6b42a66b4a53c9a26db2c}\label{classItem_a406cde7962a6b42a66b4a53c9a26db2c}} 
+\index{Item@{Item}!name@{name}}
+\index{name@{name}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Item\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+The name of the item. Its common for all items 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+\mbox{\Hypertarget{classItem_a54d712442dea4ef68094e43e484f58eb}\label{classItem_a54d712442dea4ef68094e43e484f58eb}} 
+\index{Item@{Item}!percent@{percent}}
+\index{percent@{percent}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{percent}{percent}}
+{\footnotesize\ttfamily float Item\+::percent\hspace{0.3cm}{\ttfamily [protected]}}
+
+The percent of the effect that it does. 
+
+Definition at line \mbox{\hyperlink{Item_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Item_8cpp_source}{Item.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game/\+Items/Item.\+cpp\end{DoxyCompactItemize}

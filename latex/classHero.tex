@@ -1,0 +1,545 @@
+\hypertarget{classHero}{}\doxysection{Hero Class Reference}
+\label{classHero}\index{Hero@{Hero}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHero_a0f9d8cced41cb9b477430583f61d00e9}{save}} (ostream \&os)
+\item 
+\mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}} ()
+\item 
+\mbox{\hyperlink{classHero_a5219d245f1ac1d9f433e3f0e932aaae4}{Hero}} (Race race)
+\item 
+\mbox{\hyperlink{classHero_a4624f6d0a61e964bca72849e3dd39f75}{Hero}} (Race race, float strength, float mana, float health, const \mbox{\hyperlink{classWeapon}{Weapon}} \&weapon, const \mbox{\hyperlink{classArmor}{Armor}} \&armor, const \mbox{\hyperlink{classSpell}{Spell}} \&spell)
+\item 
+\mbox{\hyperlink{classHero_aad3362594bf1861bf7bd0edf129ad288}{Hero}} (const \mbox{\hyperlink{classHero}{Hero}} \&other)
+\item 
+\mbox{\hyperlink{classHero}{Hero}} \& \mbox{\hyperlink{classHero_a27c2fe99399cf8370aec5161ea59c25a}{operator=}} (const \mbox{\hyperlink{classHero}{Hero}} \&other)
+\item 
+Race \mbox{\hyperlink{classHero_a883931d327392989a9932efa753b9dcf}{get\+Race}} () const
+\item 
+void \mbox{\hyperlink{classHero_a7118fc6dd35f69d0f5df012e1db1a89f}{set\+Race}} (Race new\+Race)
+\item 
+float \mbox{\hyperlink{classHero_ad39433c697f06cf6b2f89cf57863a798}{get\+Strength}} () const
+\item 
+void \mbox{\hyperlink{classHero_a4e7cc033408b0c47fd592c31cc72f28c}{set\+Strength}} (float new\+Strength)
+\item 
+float \mbox{\hyperlink{classHero_a48dbbe6c1224b8acf2250528478b7bd2}{get\+Mana}} () const
+\item 
+void \mbox{\hyperlink{classHero_abc62d13be761cab74360a85098308ab1}{set\+Mana}} (float new\+Mana)
+\item 
+float \mbox{\hyperlink{classHero_a200257fa2f786bf1e6758d32b17c383d}{get\+Health}} () const
+\item 
+void \mbox{\hyperlink{classHero_a55aeb1b1fdd6979e044c7bfe97517ea6}{set\+Health}} (float new\+Health)
+\item 
+const \mbox{\hyperlink{classWeapon}{Weapon}} \& \mbox{\hyperlink{classHero_ae8c28ff5f7b4b484a3def0aada36846d}{get\+Weapon}} () const
+\item 
+void \mbox{\hyperlink{classHero_ac12e3d34a81c936fb1984788d34f1d0b}{set\+Weapon}} (const \mbox{\hyperlink{classWeapon}{Weapon}} \&new\+Weapon)
+\item 
+const \mbox{\hyperlink{classArmor}{Armor}} \& \mbox{\hyperlink{classHero_a205bc2f152bf1d4aa3088dc32cb210d7}{get\+Armor}} () const
+\item 
+void \mbox{\hyperlink{classHero_abe458a387436f06e64050f92beb94c7a}{set\+Armor}} (const \mbox{\hyperlink{classArmor}{Armor}} \&new\+Armor)
+\item 
+const \mbox{\hyperlink{classSpell}{Spell}} \& \mbox{\hyperlink{classHero_aafbe92d1e5603092f4afdc7dceecee2d}{get\+Spell}} () const
+\item 
+void \mbox{\hyperlink{classHero_a26159f5b4e397695870593f03a8166a2}{set\+Spell}} (const \mbox{\hyperlink{classSpell}{Spell}} \&new\+Spell)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classHero_a737360a4c41c5f4f54fce1f89b022402}{operator$<$$<$}} (ostream \&os, \mbox{\hyperlink{classHero}{Hero}} \&hero)
+\item 
+std\+::istream \& \mbox{\hyperlink{classHero_a9dd5b6fcf7e3bea5f76c7e27cdc39207}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classHero}{Hero}} \&cl)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHero_ab5920677a4b5cb59d6f513922d037dca}\label{classHero_ab5920677a4b5cb59d6f513922d037dca}} 
+\index{Hero@{Hero}!Hero@{Hero}}
+\index{Hero@{Hero}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{Hero()}{Hero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hero\+::\+Hero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor creates a \mbox{\hyperlink{classHero}{Hero}} with race Human and no items 
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 : \mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}}(Race::Human)\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a5219d245f1ac1d9f433e3f0e932aaae4}\label{classHero_a5219d245f1ac1d9f433e3f0e932aaae4}} 
+\index{Hero@{Hero}!Hero@{Hero}}
+\index{Hero@{Hero}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{Hero()}{Hero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hero\+::\+Hero (\begin{DoxyParamCaption}\item[{Race}]{race }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructor for hero gives default items and stats according to the race 
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                             \{}
+\DoxyCodeLine{00057         this-\/> race = race;}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{switch} (race) \{}
+\DoxyCodeLine{00059             \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{00060                 strength = 30;}
+\DoxyCodeLine{00061                 mana = 20;}
+\DoxyCodeLine{00062                 health = 50;}
+\DoxyCodeLine{00063                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00064             \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{00065                 strength = 10;}
+\DoxyCodeLine{00066                 mana = 40;}
+\DoxyCodeLine{00067                 health = 50;}
+\DoxyCodeLine{00068                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069             \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{00070                 strength = 40;}
+\DoxyCodeLine{00071                 mana = 10;}
+\DoxyCodeLine{00072                 health = 50;}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00074         \}}
+\DoxyCodeLine{00075         weapon = \mbox{\hyperlink{classWeapon}{Weapon}}();}
+\DoxyCodeLine{00076         armor = \mbox{\hyperlink{classArmor}{Armor}}();}
+\DoxyCodeLine{00077         spell = \mbox{\hyperlink{classSpell}{Spell}}();}
+\DoxyCodeLine{00078     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a4624f6d0a61e964bca72849e3dd39f75}\label{classHero_a4624f6d0a61e964bca72849e3dd39f75}} 
+\index{Hero@{Hero}!Hero@{Hero}}
+\index{Hero@{Hero}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{Hero()}{Hero()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hero\+::\+Hero (\begin{DoxyParamCaption}\item[{Race}]{race,  }\item[{float}]{strength,  }\item[{float}]{mana,  }\item[{float}]{health,  }\item[{const \mbox{\hyperlink{classWeapon}{Weapon}} \&}]{weapon,  }\item[{const \mbox{\hyperlink{classArmor}{Armor}} \&}]{armor,  }\item[{const \mbox{\hyperlink{classSpell}{Spell}} \&}]{spell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080                                                                                                                            \{}
+\DoxyCodeLine{00081         this-\/>race = race;}
+\DoxyCodeLine{00082         this-\/>strength = strength;}
+\DoxyCodeLine{00083         this-\/>mana = mana;}
+\DoxyCodeLine{00084         this-\/>health = health;}
+\DoxyCodeLine{00085         this-\/>weapon = weapon;}
+\DoxyCodeLine{00086         this-\/>armor = armor;}
+\DoxyCodeLine{00087         this-\/>spell = spell;}
+\DoxyCodeLine{00088     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_aad3362594bf1861bf7bd0edf129ad288}\label{classHero_aad3362594bf1861bf7bd0edf129ad288}} 
+\index{Hero@{Hero}!Hero@{Hero}}
+\index{Hero@{Hero}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{Hero()}{Hero()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hero\+::\+Hero (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHero}{Hero}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090 : \mbox{\hyperlink{classHero_ab5920677a4b5cb59d6f513922d037dca}{Hero}}(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHero_a205bc2f152bf1d4aa3088dc32cb210d7}\label{classHero_a205bc2f152bf1d4aa3088dc32cb210d7}} 
+\index{Hero@{Hero}!getArmor@{getArmor}}
+\index{getArmor@{getArmor}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getArmor()}{getArmor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classArmor}{Armor}} \& Hero\+::get\+Armor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00156                                   \{}
+\DoxyCodeLine{00157         \textcolor{keywordflow}{return} armor;}
+\DoxyCodeLine{00158     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a200257fa2f786bf1e6758d32b17c383d}\label{classHero_a200257fa2f786bf1e6758d32b17c383d}} 
+\index{Hero@{Hero}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily float Hero\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139                             \{}
+\DoxyCodeLine{00140         \textcolor{keywordflow}{return} health;}
+\DoxyCodeLine{00141     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a48dbbe6c1224b8acf2250528478b7bd2}\label{classHero_a48dbbe6c1224b8acf2250528478b7bd2}} 
+\index{Hero@{Hero}!getMana@{getMana}}
+\index{getMana@{getMana}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getMana()}{getMana()}}
+{\footnotesize\ttfamily float Hero\+::get\+Mana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131                           \{}
+\DoxyCodeLine{00132         \textcolor{keywordflow}{return} mana;}
+\DoxyCodeLine{00133     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a883931d327392989a9932efa753b9dcf}\label{classHero_a883931d327392989a9932efa753b9dcf}} 
+\index{Hero@{Hero}!getRace@{getRace}}
+\index{getRace@{getRace}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getRace()}{getRace()}}
+{\footnotesize\ttfamily Race Hero\+::get\+Race (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115                          \{}
+\DoxyCodeLine{00116         \textcolor{keywordflow}{return} race;}
+\DoxyCodeLine{00117     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_aafbe92d1e5603092f4afdc7dceecee2d}\label{classHero_aafbe92d1e5603092f4afdc7dceecee2d}} 
+\index{Hero@{Hero}!getSpell@{getSpell}}
+\index{getSpell@{getSpell}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getSpell()}{getSpell()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classSpell}{Spell}} \& Hero\+::get\+Spell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164                                   \{}
+\DoxyCodeLine{00165         \textcolor{keywordflow}{return} spell;}
+\DoxyCodeLine{00166     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_ad39433c697f06cf6b2f89cf57863a798}\label{classHero_ad39433c697f06cf6b2f89cf57863a798}} 
+\index{Hero@{Hero}!getStrength@{getStrength}}
+\index{getStrength@{getStrength}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getStrength()}{getStrength()}}
+{\footnotesize\ttfamily float Hero\+::get\+Strength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123                               \{}
+\DoxyCodeLine{00124         \textcolor{keywordflow}{return} strength;}
+\DoxyCodeLine{00125     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_ae8c28ff5f7b4b484a3def0aada36846d}\label{classHero_ae8c28ff5f7b4b484a3def0aada36846d}} 
+\index{Hero@{Hero}!getWeapon@{getWeapon}}
+\index{getWeapon@{getWeapon}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{getWeapon()}{getWeapon()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classWeapon}{Weapon}} \& Hero\+::get\+Weapon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147                                     \{}
+\DoxyCodeLine{00148         \textcolor{keywordflow}{return} weapon;}
+\DoxyCodeLine{00149     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a27c2fe99399cf8370aec5161ea59c25a}\label{classHero_a27c2fe99399cf8370aec5161ea59c25a}} 
+\index{Hero@{Hero}!operator=@{operator=}}
+\index{operator=@{operator=}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHero}{Hero}} \& Hero\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHero}{Hero}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator for the \mbox{\hyperlink{classHero}{Hero}} class 
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096                                       \{}
+\DoxyCodeLine{00097         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{00098             this-\/>race = other.race;}
+\DoxyCodeLine{00099             this-\/>strength = other.strength;}
+\DoxyCodeLine{00100             this-\/>mana = other.mana;}
+\DoxyCodeLine{00101             this-\/>health = other.health;}
+\DoxyCodeLine{00102             this-\/>weapon = other.weapon;}
+\DoxyCodeLine{00103             this-\/>armor = other.armor;}
+\DoxyCodeLine{00104             this-\/>spell = other.spell;}
+\DoxyCodeLine{00105         \}}
+\DoxyCodeLine{00106         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00107     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a0f9d8cced41cb9b477430583f61d00e9}\label{classHero_a0f9d8cced41cb9b477430583f61d00e9}} 
+\index{Hero@{Hero}!save@{save}}
+\index{save@{save}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Hero\+::save (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Saves the human in this format\+:
+\begin{DoxyItemize}
+\item Race
+\item strength
+\item mana
+\item health
+\item weapon
+\item armor
+\item spell 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030                           \{}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{switch} (race) \{}
+\DoxyCodeLine{00032             \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{00033                 os<<\textcolor{stringliteral}{"{}Human"{}};}
+\DoxyCodeLine{00034                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00035             \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{00036                 os<<\textcolor{stringliteral}{"{}Mage"{}};}
+\DoxyCodeLine{00037                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00038             \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{00039                 os<<\textcolor{stringliteral}{"{}Warrior"{}};}
+\DoxyCodeLine{00040                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00041         \}}
+\DoxyCodeLine{00042         os<<endl<<strength<<endl;}
+\DoxyCodeLine{00043         os<<mana<<endl;}
+\DoxyCodeLine{00044         os<<health<<endl;}
+\DoxyCodeLine{00045         weapon.save(os);}
+\DoxyCodeLine{00046         armor.save(os);}
+\DoxyCodeLine{00047         spell.save(os);}
+\DoxyCodeLine{00048     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_abe458a387436f06e64050f92beb94c7a}\label{classHero_abe458a387436f06e64050f92beb94c7a}} 
+\index{Hero@{Hero}!setArmor@{setArmor}}
+\index{setArmor@{setArmor}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setArmor()}{setArmor()}}
+{\footnotesize\ttfamily void Hero\+::set\+Armor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArmor}{Armor}} \&}]{new\+Armor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160                                          \{}
+\DoxyCodeLine{00161         Hero::armor = newArmor;}
+\DoxyCodeLine{00162     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a55aeb1b1fdd6979e044c7bfe97517ea6}\label{classHero_a55aeb1b1fdd6979e044c7bfe97517ea6}} 
+\index{Hero@{Hero}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Hero\+::set\+Health (\begin{DoxyParamCaption}\item[{float}]{new\+Health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143                                     \{}
+\DoxyCodeLine{00144         Hero::health = newHealth;}
+\DoxyCodeLine{00145     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_abc62d13be761cab74360a85098308ab1}\label{classHero_abc62d13be761cab74360a85098308ab1}} 
+\index{Hero@{Hero}!setMana@{setMana}}
+\index{setMana@{setMana}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setMana()}{setMana()}}
+{\footnotesize\ttfamily void Hero\+::set\+Mana (\begin{DoxyParamCaption}\item[{float}]{new\+Mana }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135                                 \{}
+\DoxyCodeLine{00136         Hero::mana = newMana;}
+\DoxyCodeLine{00137     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a7118fc6dd35f69d0f5df012e1db1a89f}\label{classHero_a7118fc6dd35f69d0f5df012e1db1a89f}} 
+\index{Hero@{Hero}!setRace@{setRace}}
+\index{setRace@{setRace}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setRace()}{setRace()}}
+{\footnotesize\ttfamily void Hero\+::set\+Race (\begin{DoxyParamCaption}\item[{Race}]{new\+Race }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119                                \{}
+\DoxyCodeLine{00120         Hero::race = newRace;}
+\DoxyCodeLine{00121     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a26159f5b4e397695870593f03a8166a2}\label{classHero_a26159f5b4e397695870593f03a8166a2}} 
+\index{Hero@{Hero}!setSpell@{setSpell}}
+\index{setSpell@{setSpell}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setSpell()}{setSpell()}}
+{\footnotesize\ttfamily void Hero\+::set\+Spell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSpell}{Spell}} \&}]{new\+Spell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168                                          \{}
+\DoxyCodeLine{00169         Hero::spell = newSpell;}
+\DoxyCodeLine{00170     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a4e7cc033408b0c47fd592c31cc72f28c}\label{classHero_a4e7cc033408b0c47fd592c31cc72f28c}} 
+\index{Hero@{Hero}!setStrength@{setStrength}}
+\index{setStrength@{setStrength}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setStrength()}{setStrength()}}
+{\footnotesize\ttfamily void Hero\+::set\+Strength (\begin{DoxyParamCaption}\item[{float}]{new\+Strength }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127                                         \{}
+\DoxyCodeLine{00128         Hero::strength = newStrength;}
+\DoxyCodeLine{00129     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_ac12e3d34a81c936fb1984788d34f1d0b}\label{classHero_ac12e3d34a81c936fb1984788d34f1d0b}} 
+\index{Hero@{Hero}!setWeapon@{setWeapon}}
+\index{setWeapon@{setWeapon}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{setWeapon()}{setWeapon()}}
+{\footnotesize\ttfamily void Hero\+::set\+Weapon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classWeapon}{Weapon}} \&}]{new\+Weapon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151                                             \{}
+\DoxyCodeLine{00152         Hero::weapon = newWeapon;}
+\DoxyCodeLine{00153     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classHero_a737360a4c41c5f4f54fce1f89b022402}\label{classHero_a737360a4c41c5f4f54fce1f89b022402}} 
+\index{Hero@{Hero}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{os,  }\item[{\mbox{\hyperlink{classHero}{Hero}} \&}]{hero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176 \{}
+\DoxyCodeLine{00177     os<<\textcolor{stringliteral}{"{}Hero("{}};}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{keywordflow}{switch} (hero.race) \{}
+\DoxyCodeLine{00180         \textcolor{keywordflow}{case} Human:}
+\DoxyCodeLine{00181             os<<\textcolor{stringliteral}{"{}Human"{}};}
+\DoxyCodeLine{00182             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00183         \textcolor{keywordflow}{case} Mage:}
+\DoxyCodeLine{00184             os<<\textcolor{stringliteral}{"{}Mage"{}};}
+\DoxyCodeLine{00185             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00186         \textcolor{keywordflow}{case} Warrior:}
+\DoxyCodeLine{00187             os<<\textcolor{stringliteral}{"{}Warrior"{}};}
+\DoxyCodeLine{00188             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00189     \}}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     os<<\textcolor{stringliteral}{"{}):"{}}<<endl;}
+\DoxyCodeLine{00192     os<<\textcolor{stringliteral}{"{}strength: "{}}<<hero.strength << \textcolor{stringliteral}{"{} | mana: "{}} << hero.mana << \textcolor{stringliteral}{"{} | health: "{}} << hero.health << endl;}
+\DoxyCodeLine{00193     os<<\textcolor{stringliteral}{"{}Weapon: "{}} << hero.weapon << endl;}
+\DoxyCodeLine{00194     os<<\textcolor{stringliteral}{"{}Armor: "{}} << hero.armor << endl;}
+\DoxyCodeLine{00195     os<<\textcolor{stringliteral}{"{}Spell: "{}} << hero.spell << endl;}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00198 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHero_a9dd5b6fcf7e3bea5f76c7e27cdc39207}\label{classHero_a9dd5b6fcf7e3bea5f76c7e27cdc39207}} 
+\index{Hero@{Hero}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hero@{Hero}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classHero}{Hero}} \&}]{cl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Hero_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{Hero_8cpp_source}{Hero.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209                                                   \{}
+\DoxyCodeLine{00210     \textcolor{keywordtype}{string} race;}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212     getline(in, race);}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214     \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Human"{}}) cl.race = Human;}
+\DoxyCodeLine{00215     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Mage"{}}) cl.race = Mage;}
+\DoxyCodeLine{00216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Warrior"{}}) cl.race = Warrior;}
+\DoxyCodeLine{00217     \textcolor{keywordflow}{else} \textcolor{keywordflow}{throw} std::invalid\_argument( \textcolor{stringliteral}{"{}File does not provide a valid race for the player"{}} );}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219     in>>cl.strength;}
+\DoxyCodeLine{00220     in>>cl.mana;}
+\DoxyCodeLine{00221     in>>cl.health;}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00224     \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{00225     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00226     in>>cl.weapon;}
+\DoxyCodeLine{00227     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00228     in>>cl.armor;}
+\DoxyCodeLine{00229     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00230     in>>cl.spell;}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232     \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{00233 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game/\+Character/Hero.\+cpp\end{DoxyCompactItemize}
