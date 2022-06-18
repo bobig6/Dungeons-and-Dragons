@@ -27,6 +27,11 @@ public:
         os<<percent<<endl;
     }
 
+    void clear(){
+        name.clear();
+        description.clear();
+    }
+
     // SECTION: CONSTRUCTORS---------------------------------------------------------------------------------------------
     Item(){
         name = "Default item";

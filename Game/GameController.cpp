@@ -37,6 +37,7 @@ public:
             treasures[i] = buff[i];
         }
         tr_size = new_size;
+        delete [] buff;
     }
 
     /*! This function loads from specific file. It opens the file for us*/

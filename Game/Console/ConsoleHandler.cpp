@@ -28,6 +28,9 @@ public:
         bool isOpened = gameController.loadFromFile(std::move(filename));
         if(!isOpened){
             cout<<"Trying to open file with constructor failed";
+            gameController.map.deleteField();
+            delete [] gameController.treasures;
+            gameController.hero.clear();
             std::exit(1);
         }
     }
@@ -195,10 +198,16 @@ public:
     void exit(){
         if(isSaved){
             cout<<"Exiting program...";
+            gameController.map.deleteField();
+            delete [] gameController.treasures;
+            gameController.hero.clear();
             std::exit(0);
         }
         else{
             if(fileName == " ") {
+                gameController.map.deleteField();
+                delete [] gameController.treasures;
+                gameController.hero.clear();
                 cout<<"Exiting program...";
                 std::exit(0);
             }

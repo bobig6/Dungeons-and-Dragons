@@ -47,6 +47,12 @@ public:
         spell.save(os);
     }
 
+    void clear(){
+        weapon.clear();
+        armor.clear();
+        spell.clear();
+    }
+
     // SECTION: CONSTRUCTORS------------------------------------------------------------------------------
 
     /*! Default constructor creates a Hero with race Human and no items*/

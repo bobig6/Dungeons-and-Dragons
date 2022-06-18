@@ -26,7 +26,7 @@ public:
         for (int i = 0; i < height; ++i) {
             delete [] field[i];
         }
-        delete [] field;
+        delete[] field;
     }
 
     /*! Allocates a field with current width and height */
@@ -110,7 +110,6 @@ public:
         height = 10;
 
         // Creating new field with width 10 and height 10 and only filled with #
-        field = new char*[height];
         allocField();
         field[0][0] = 'H';
         for (int i = 0; i < height; ++i) {
@@ -138,7 +137,7 @@ public:
     Map(char **new_field, int width, int height) : width(width), height(height) {
         currentX = 0;
         currentY = 0;
-        field = new char*[height];
+//        field = new char*[height];
         allocField();
         setField(new_field, width, height);
     }
@@ -157,7 +156,7 @@ public:
             this->currentY = other.currentY;
             this->width = other.width;
             this->height = other.height;
-            allocField();
+            //allocField();
             setField(other.field, other.width, other.height);
         }
         return *this;
@@ -227,10 +226,12 @@ public:
     }
 
     void setField(char **new_field, int new_width, int new_height) {
-        setHeight(new_height);
-        setWight(new_width);
+
 
         deleteField();
+
+        setHeight(new_height);
+        setWight(new_width);
 
         // Resizing the field and putting the new values in
         allocField();
