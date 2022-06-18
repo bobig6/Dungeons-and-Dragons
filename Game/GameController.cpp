@@ -20,21 +20,37 @@ public:
     // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
 
-    void loadFromFile(string fileName){
+    void resizeTreasures(int new_size){
+        Item* buff = new Item[tr_size];
+        for (int i = 0; i < tr_size; ++i) {
+            buff[i] = treasures[i];
+        }
+        delete [] treasures;
+        treasures = new Item[new_size];
+        for (int i = 0; i < tr_size; ++i) {
+            treasures[i] = buff[i];
+        }
+        tr_size = new_size;
+    }
+
+    /*! This function loads from specific file. It opens the file for us*/
+    bool loadFromFile(string fileName){
         // Opening the file
         ifstream in;
         in.open(fileName, ios::in);
         if(!in){
-            throw invalid_argument("Couldn't open file");
+            cout << "Couldn't open file: " << fileName<<endl;
+            return false;
         }
 
         load(in);
 
         in.close();
+        return true;
     }
 
 
-    /*! This function loads the map and the treasure list from a file. The file has to have:
+    /*! This function loads the map and the treasure list from a ifstream. The file has to have:
      *      - level
      *      - width of the map
      *      - height of the map
@@ -67,8 +83,82 @@ public:
         //Reading the Hero
         in>>hero;
 
+
+        try {
+            int newSize = 0;
+            // Reading number of treasures
+            in>>newSize;
+
+            resizeTreasures(newSize);
+
+            // Skip line
+            while(in.get(next)) if (next == '\n')  break;
+            // Reads all the treasures
+            for (int i = 0; i < tr_size; ++i) {
+                in >> treasures[i];
+                // Skip line
+                while (in.get(next)) if (next == '\n') break;
+            }
+        }
+        catch( const std::exception& err )
+        {
+            string e(err.what());
+            string error = "Error while reading the treasures from file: " + e;
+
+            throw std::invalid_argument( error );
+        }
+    }
+
+    /*! This function loads the map from specific file. It opens the file for us*/
+    bool loadMapFromFile(string fileName){
+        // Opening the file
+        ifstream in;
+        in.open(fileName, ios::in);
+        if(!in){
+            cout << "Couldn't open file: " << fileName<<endl;
+            return false;
+        }
+
+        loadMap(in);
+
+        in.close();
+        return true;
+    }
+
+    /*! This function loads the map and treasures from ifstream. It is used when the next level is loaded
+     * or when we create a new game. It doesnt make any changes on the hero. It loads inthe format:
+     *      - Width of map
+     *      - Height of map
+     *      - Map
+     *      - number of treasures
+     *      - list of all the treasures with:
+     *          - name
+     *          - description
+     *          - percent
+     */
+    void loadMap(ifstream& in){
+        in>>level;
+        // Reading the width and the height of the map
+        int width = 0;
+        in>>width;
+        int height = 0;
+        in>>height;
+
+        // Resizing the map
+        map.resize(width, height);
+
+        // This segment skips to the next line
+        char next;
+        while(in.get(next)) if (next == '\n')  break;
+
+        // Reading the map
+        map.load(in);
+
+        int newSize = 0;
         // Reading number of treasures
-        in>>tr_size;
+        in>>newSize;
+
+        resizeTreasures(newSize);
 
         // Skip line
         while(in.get(next)) if (next == '\n')  break;
@@ -79,7 +169,6 @@ public:
             // Skip line
             while(in.get(next)) if (next == '\n')  break;
         }
-
     }
 
     /*! Saves the GameController in this format:
@@ -138,6 +227,19 @@ public:
     /*! Copy constructor for GameController*/
     GameController(const GameController &other) : GameController(other.map, other.hero, other.treasures, other.tr_size){
         this->level = other.level;
+    }
+
+    explicit GameController(Race race){
+        map = Map();
+        hero = Hero(race);
+
+        tr_size = 2;
+        treasures = new Item[tr_size];
+        for (int i = 0; i < tr_size; ++i) {
+            treasures[i] = Item();
+        }
+
+        level = 1;
     }
 
     virtual ~GameController(){

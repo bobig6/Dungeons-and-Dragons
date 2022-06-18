@@ -287,6 +287,7 @@ istream& operator>> (istream& is, Map& map)
     for (int i = 0; i < map.height; ++i) {
         string buff;
         getline(is, buff);
+        if(buff.size() < map.width) throw std::invalid_argument( "Invalid format of the file or the map in the file has wrong dimensions" );
         for (int j = 0; j < map.width; ++j) {
             map.field[i][j] = buff[j];
         }
