@@ -127,6 +127,7 @@ public:
         Item::type = newType;
     }
 
+    /*! Returns the percent as a string formatted to the second decimal point*/
     string getPercentAsString(){
         string str = to_string(percent);
         // Find the decimal point;
@@ -195,12 +196,21 @@ ostream& operator<<(ostream& os, Item& item)
     return os;
 }
 
+/*! Reads the item from istream in the format:
+ *      - name
+ *      - description
+ *      - percent
+ *      - Item type
+ */
 istream& operator>> (istream& is, Item& item)
 {
+
     getline(is, item.name);
     getline(is, item.description);
     is >> item.percent;
 
+    char next;
+    while(is.get(next)) if (next == '\n')  break;
     string type;
     getline(is, type);
 
@@ -213,6 +223,7 @@ istream& operator>> (istream& is, Item& item)
     } else{
         item.type = WeaponType;
     }
+
 
     return is;
 }

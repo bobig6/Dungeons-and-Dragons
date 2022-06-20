@@ -126,7 +126,9 @@ public:
                 helpGameStart();
             }
             else if(current_command == "move"){
-                move();
+                if(!move()){
+                    return false;
+                }
                 system("clear");
             }
             else{
@@ -217,6 +219,8 @@ public:
         cout<<"Successfully opened "<< fileName <<endl;
 
     }
+
+
     /*! Creates a new game with a given name. It gives the player the opportunity to choose a race.
      * Then it creates a new game with those parameters BUT DOESNT SAVE IT!!!*/
     bool newGame(string new_name){
@@ -226,7 +230,7 @@ public:
             // Get the race
             string race;
             cout << "Select race (Human | Mage | Warrior): ";
-            cin>>race;
+            getline(cin, race);
             //Determining the race
             if(race == "Human"){
                 gameController = GameController(Human);
@@ -249,7 +253,7 @@ public:
     }
 
     /*! In this mode the player uses W,A,S,D to move in the map. To end the move you press q*/
-    void move(){
+    bool move(){
         // Refresh the screen
         refresh();
 
@@ -289,11 +293,17 @@ public:
             }
 
             // Checking what is the player stepped onto
-            if(last_char == 'M') fight();
+            if(last_char == 'M') {
+                if(!fight()) {
+                    bf.on();
+                    return false;
+                }
+            }
             if(last_char == 'T') foundTreasure();
             if(last_char == '0') levelCompleted();
         }
         bf.on();
+        return true;
     }
 
     // SECTION: EVENTS-------------------------------------------------------------------------------------------
@@ -346,13 +356,106 @@ public:
         refresh();
 
     }
+
+
     /*! This function is called when a player meets a monster. For a better game experience I decided to make the monsters not spawn randomly, but instead to be
      * placed on the map by the game designer. */
-    void fight(){
+    bool fight(){
         isSaved = false;
-    }
-    void gameOver(){
-        isSaved = false;
+        cout << "You have met a Monster. A fight has begun:" << endl;
+        // Create the monster
+        Monster enemy = Monster();
+        enemy.levelUp((float)gameController.level);
+
+        float heroHealth = gameController.hero.getHealth();
+
+        // Random pick who is first
+        bool heroTurn = false;
+        std::random_device rd; // obtain a random number from hardware
+        std::mt19937 gen(rd()); // seed the generator
+        std::uniform_int_distribution<> distr(0, 100); // define the range
+        int rando = distr(gen);
+        if(rando < 50) heroTurn = true;
+        cout << "Your stats: "<<endl;
+        printHeroStats();
+        delimiter(100);
+        cout << enemy;
+        delimiter(100);
+
+
+        while (true) {
+            // Hero's turn
+            if(heroTurn){
+                float total_attack = 0;
+                cout << "Your turn:" << endl;
+                while(true) {
+                    string decision;
+                    cout << "Chose what to do (attack/spell): " << endl; getline(cin, decision);
+                    if(decision == "attack"){
+                        total_attack = gameController.hero.useAttack();
+                        break;
+                    }else if(decision == "spell"){
+                        total_attack = gameController.hero.useSpell();
+                        break;
+                    }else{
+                        cout << "Invalid command. Try again: " << endl;
+                    }
+                }
+
+                enemy.dealDamage(total_attack);
+                heroTurn = false;
+            }
+            // Monster's turn
+            else{
+                cout << "Enemy's turn:" << endl;
+                float total_attack = 0;
+                rando = distr(gen);
+                if(rando < 50) {
+                    // Monster calls Attack
+                    total_attack = enemy.getStrength();
+                    cout << "Monster chose to attack you" << endl;
+                }else{
+                    // Monster calls Spell
+                    total_attack = enemy.getMana();
+                    cout << "Monster chose to use a spell on you" << endl;
+                }
+
+                gameController.hero.dealDamage(total_attack);
+
+                heroTurn = true;
+            }
+
+            string c;
+            cout<< "Type anything to continue: "; cin>>c;
+
+            // Refresh the screen
+            system("clear");
+            cout << "Your stats: "<<endl;
+            printHeroStats();
+            delimiter(100);
+            cout << enemy;
+            delimiter(100);
+
+            if(gameController.hero.getHealth() <= 0){
+                cout << "You died! You will be redirected to the Main Menu. You can load your last save." << endl;
+                return false;
+            }
+            if(enemy.getHealth() <= 0){
+                break;
+            }
+
+        }
+
+        cout<<"You won!!!" << endl;
+        if(gameController.hero.getHealth() < 0.5 * heroHealth){
+            gameController.hero.setHealth(0.5f * heroHealth);
+            cout << "You've taken too much damage. It's time to heal... Your health is restored to 50% of it's original state: " << gameController.hero.getHealth() << " points" << endl;
+        }
+
+        string c;
+        cout<< "Type anything to continue: "; cin>>c;
+        refresh();
+        return true;
     }
 
     /*! This function is called when the level is complete.
@@ -379,9 +482,12 @@ public:
             strBonus = 0;
             manaBonus = 0;
 
+
             while (true) {
                 cout << "Give strength: ";
-                cin >> strBonus;
+                string str;
+                getline(cin, str);
+                strBonus = stoi(str);
                 if (strBonus > bonus || strBonus < 0) {
                     cout << "Invalid value. Try again" << endl;
                 } else {
@@ -393,7 +499,9 @@ public:
             cout << "You have " << bonus << " points left" << endl;
             while (true) {
                 cout << "Give mana: ";
-                cin >> manaBonus;
+                string str;
+                getline(cin, str);
+                manaBonus = stoi(str);
                 if (manaBonus > bonus || manaBonus < 0) {
                     cout << "Invalid value. Try again" << endl;
                 } else {

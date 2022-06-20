@@ -9,6 +9,12 @@ class Monster{
 public:
     // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
+    /*! Saves the monster in format:
+     *      - strength
+     *      - mana
+     *      - health
+     *      - armor
+     */
     void save(ostream& os){
         os<<strength;
         os<<mana;
@@ -18,12 +24,19 @@ public:
 
     /*! Levels up the monster by increasing every stat by 10 for every level and armor by 5 for every level*/
     void levelUp(float level){
+        level--;
         strength += level*10;
         mana += level*10;
         health += level*10;
         armor.setPercent(armor.getPercent()+level*5);
     }
 
+    /*! Reduces the damage dealt to the enemy by its armor percent*/
+    void dealDamage(float damage){
+        // Reduce damage by armor
+        damage = armor.effect(damage);
+        health -= damage;
+    }
 
     // SECTION: CONSTRUCTORS-------------------------------------------------------------------------------
     Monster() {

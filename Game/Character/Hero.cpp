@@ -47,10 +47,29 @@ public:
         spell.save(os);
     }
 
+    //! This method is used to clear the items of the hero
     void clear(){
         weapon.clear();
         armor.clear();
         spell.clear();
+    }
+
+
+    /*! Reduces the damage to the player by the armor percent and then deals the remaining damage*/
+    void dealDamage(float damage){
+        // Reduce damage by armor
+        damage = armor.effect(damage);
+        health -= damage;
+    }
+
+    /*! Applies the effect of the weapon to the strength of the player*/
+    float useAttack(){
+        return weapon.effect(strength);
+    }
+
+    /*! Applies the effect of the spell to the mana of the player*/
+    float useSpell(){
+        return spell.effect(mana);
     }
 
     // SECTION: CONSTRUCTORS------------------------------------------------------------------------------

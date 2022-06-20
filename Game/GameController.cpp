@@ -20,6 +20,7 @@ public:
     // SECTION: HELPER FUNCTIONS--------------------------------------------------------------------------
 
 
+    /*! This function resizes treasures. If a smaller number is given all the data in the array is deleted */
     void resizeTreasures(int new_size){
         if(new_size < tr_size){
             delete [] treasures;
@@ -173,8 +174,6 @@ public:
         // Reads all the treasures
         for (int i = 0; i < tr_size; ++i) {
             in>>treasures[i];
-            // Skip line
-            while(in.get(next)) if (next == '\n')  break;
         }
     }
 

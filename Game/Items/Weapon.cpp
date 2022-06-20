@@ -13,7 +13,9 @@ public:
     /*! Copy constructor*/
     explicit Weapon(const Item &other) : Item(other.name, other.description, other.percent, other.type){}
 
-    /*! This function increases the attack of the hero by certain percent*/
+    /*! This function increases the attack of the hero by certain percent. The idea is that if the player choses to use attack,
+     * the damage dealt is strength + (weaponPercent)*strength. That way if the player is a warrior his strength will be bigger and
+     * it will make more sense to use his attack*/
     float effect(float obj) override{
         obj = obj + (percent/100)*obj;
         return obj;

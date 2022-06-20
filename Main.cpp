@@ -8,14 +8,6 @@
 using namespace std;
 
 int main(int argc, char** argv){
-
-
-
-    ConsoleHandler ch = ConsoleHandler("Level1_map.txt");
-
+    ConsoleHandler ch = ConsoleHandler();
     ch.main();
-    //ch.foundTreasure();
-
-
-
 }
