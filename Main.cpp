@@ -11,10 +11,10 @@ int main(int argc, char** argv){
 
 
 
-    ConsoleHandler ch = ConsoleHandler();
+    ConsoleHandler ch = ConsoleHandler("Level1_map.txt");
 
     ch.main();
-
+    //ch.foundTreasure();
 
 
 

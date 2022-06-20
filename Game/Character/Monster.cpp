@@ -31,7 +31,7 @@ public:
         mana = 25;
         health = 50;
 
-        armor = Armor("Dragon Scales", "The dragon scales decrease the damage done by 15%", 15);
+        armor = Armor("Dragon Scales", "The dragon scales decrease the damage done by 15%", 15, ArmorType);
     }
 
     Monster(float strength, float mana, float health, const Armor &armor) : strength(strength), mana(mana),

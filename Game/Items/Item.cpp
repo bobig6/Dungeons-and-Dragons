@@ -2,17 +2,21 @@
 #include <string.h>
 #include <fstream>
 
+#include "ItemType.cpp"
+
 using namespace std;
 
 /*! This is a common class for all the items*/
 class Item{
-protected:
+public:
      /*! The name of the item. Its common for all items*/
      string name;
      /*! Description of the item*/
      string description;
      /*! The percent of the effect that it does.*/
      float percent;
+     /*! This shows the type of the Item*/
+     ItemType type;
 public:
 
     /*! This is the default effect function. Its virtual and it is supposed to be overrode. By default returns the object that is given */
@@ -25,6 +29,7 @@ public:
         os<<name<<endl;
         os<<description<<endl;
         os<<percent<<endl;
+        os<<getTypeAsString()<<endl;
     }
 
     void clear(){
@@ -32,26 +37,58 @@ public:
         description.clear();
     }
 
+    string getTypeAsString(){
+        switch (type) {
+            case WeaponType:
+                return "Weapon";
+            case ArmorType:
+                return "Armor";
+            case SpellType:
+                return "Spell";
+        }
+    }
+
     // SECTION: CONSTRUCTORS---------------------------------------------------------------------------------------------
     Item(){
         name = "Default item";
         description = "This is the default item.";
         percent = 0;
+        type = WeaponType;
+    }
+
+    explicit Item(ItemType type){
+        this->type = type;
+        switch (type) {
+            case WeaponType:
+                name = "Default weapon";
+                description = "This is the default weapon.";
+                break;
+            case ArmorType:
+                name = "Default armor";
+                description = "This is the default armor.";
+                break;
+            case SpellType:
+                name = "Default spell";
+                description = "This is the default spell.";
+                break;
+        }
+        percent = 0;
     }
 
     /*! Constructor for the Item object*/
-    Item(const string &name, const string &description, float percent) :percent(percent) {
+    Item(const string &name, const string &description, float percent, ItemType type) :percent(percent), type(type) {
         this->name = name;
         this->description = description;
     }
 
-    Item(const Item& other) : Item(other.name, other.description, other.percent){}
+    Item(const Item& other) : Item(other.name, other.description, other.percent, other.type){}
 
     Item& operator=(const Item& other){
         if(this != &other){
             this->name = other.name;
             this->description = other.description;
             this->percent = other.percent;
+            this->type = other.type;
         }
         return *this;
     };
@@ -82,6 +119,14 @@ public:
         Item::percent = newPercent;
     }
 
+    ItemType getType() const {
+        return type;
+    }
+
+    void setType(ItemType newType) {
+        Item::type = newType;
+    }
+
     string getPercentAsString(){
         string str = to_string(percent);
         // Find the decimal point;
@@ -101,7 +146,7 @@ public:
 
     /*! Returns the Item as string in format: Name: {Name} | {Description} | Effect: {Percent}%  */
     string getAsString(){
-        return "Name: " + name + " | " + description + " | Effect: " + getPercentAsString() + "%";
+        return "(" + getTypeAsString() + ") " + "Name: " + name + " | " + description + " | Effect: " + getPercentAsString() + "%";
     }
 
     // SECTION: OPERATORS------------------------------------------------------------------------------
@@ -110,7 +155,7 @@ public:
     bool operator==(const Item &rhs) const {
         return name == rhs.name &&
                description == rhs.description &&
-               percent == rhs.percent;
+               percent == rhs.percent && type == rhs.type;
     }
 
     bool operator!=(const Item &rhs) const {
@@ -155,6 +200,19 @@ istream& operator>> (istream& is, Item& item)
     getline(is, item.name);
     getline(is, item.description);
     is >> item.percent;
+
+    string type;
+    getline(is, type);
+
+    if(type == "Weapon"){
+        item.type = WeaponType;
+    } else if(type == "Armor"){
+        item.type = ArmorType;
+    } else if(type == "Spell"){
+        item.type = SpellType;
+    } else{
+        item.type = WeaponType;
+    }
 
     return is;
 }

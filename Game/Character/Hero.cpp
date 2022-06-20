@@ -78,9 +78,9 @@ public:
                 health = 50;
                 break;
         }
-        weapon = Weapon();
+        weapon = Weapon("Basic Sword", "This is a basic steel sword", 20, WeaponType);
         armor = Armor();
-        spell = Spell();
+        spell = Spell("Fire Ball", "The fireball is the default spell of the player", 20, SpellType);
     }
 
     Hero(Race race, float strength, float mana, float health, const Weapon& weapon, const Armor& armor, const Spell& spell){

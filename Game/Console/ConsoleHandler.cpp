@@ -7,6 +7,8 @@
 
 #include "BufferToogle.cpp"
 
+#include <random>
+
 class ConsoleHandler{
     string fileName;
     GameController gameController;
@@ -295,9 +297,57 @@ public:
     }
 
     // SECTION: EVENTS-------------------------------------------------------------------------------------------
+
     void foundTreasure(){
         isSaved = false;
+        system("clear");
+        cout << "You have found a treasure!!!" << endl;
+
+        // Picking random item from the list
+        std::random_device rd; // obtain a random number from hardware
+        std::mt19937 gen(rd()); // seed the generator
+        std::uniform_int_distribution<> distr(0, gameController.tr_size-1); // define the range
+
+        int tr_index = distr(gen);
+
+        cout << gameController.treasures[tr_index];
+
+        bool equip = false;
+        while(true){
+            cout << endl << "Do you want to equip it(yes/no): ";
+            string decision;
+            getline(cin, decision);
+            if(decision == "yes"){
+                equip = true;
+                break;
+            } else if(decision == "no"){
+                equip = false;
+                break;
+            }else{
+                cout<<"Answer not recognized. Try again: ";
+            }
+        }
+        if(!equip){
+            refresh();
+            return;
+        }
+
+        switch (gameController.treasures[tr_index].getType()) {
+            case WeaponType:
+                gameController.hero.setWeapon(Weapon(gameController.treasures[tr_index]));
+                break;
+            case ArmorType:
+                gameController.hero.setArmor(Armor(gameController.treasures[tr_index]));
+                break;
+            case SpellType:
+                gameController.hero.setSpell(Spell(gameController.treasures[tr_index]));
+                break;
+        }
+        refresh();
+
     }
+    /*! This function is called when a player meets a monster. For a better game experience I decided to make the monsters not spawn randomly, but instead to be
+     * placed on the map by the game designer. */
     void fight(){
         isSaved = false;
     }

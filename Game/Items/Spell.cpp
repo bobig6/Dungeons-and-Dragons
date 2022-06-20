@@ -9,13 +9,13 @@ public:
     float effectBoost = 0;
 
     /*! Constructor with name, description and percent */
-    Spell(const string &name, const string &description, float percent) : Item(name, description, percent) {}
+    Spell(const string &name, const string &description, float percent, ItemType type) : Item(name, description, percent, type) {}
 
     /*! Default constructor. Creates empty object */
-    Spell() : Item(){}
+    Spell() : Item(ItemType::SpellType){}
 
     /*! Copy constructor*/
-    Spell(const Spell &other) : Item(other.name, other.description, other.percent) {}
+    explicit Spell(const Item &other) : Item(other.name, other.description, other.percent, other.type) {}
 
 
     /*! Adds percent to the attack that is given*/
