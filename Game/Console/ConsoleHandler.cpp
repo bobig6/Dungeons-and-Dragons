@@ -47,6 +47,7 @@ public:
     void main(){
 
         while(true){
+            bool isGameOver = false;
             string current_command;
             getline(cin, current_command);
             if(current_command == "open"){
@@ -54,18 +55,18 @@ public:
                 cout<<"Name of the file: ";
                 getline(cin, file);
                 bool isOpened = open(file);
-                if(isOpened) gameStart();
+                if(isOpened) isGameOver = gameStart();
             }
             else if(current_command == "new game"){
                 string file;
                 cout<<"Name of the file: ";
                 getline(cin, file);
                 bool isOpened = newGame(file);
-                if(isOpened) gameStart();
+                if(isOpened) isGameOver = gameStart();
             }
             else if(current_command == "exit"){
-                exit();
-                break;
+                cout<<"Exiting program...";
+                return;
             }
             else if(current_command == "help"){
                 help();
@@ -76,7 +77,7 @@ public:
             else{
                 cout<<"Command not recognized."<<endl;
             }
-
+            if(isGameOver) return;
         }
     }
 
@@ -89,7 +90,7 @@ public:
      *      - help
      *      - exit
      */
-    void gameStart(){
+    bool gameStart(){
         while(true){
             string current_command;
             getline(cin, current_command);
@@ -107,7 +108,17 @@ public:
                 break;
             }
             else if(current_command == "exit"){
-                exit();
+                if(isSaved){
+                    return true;
+                }
+                else{
+                    if(fileName == " ") {
+                        return true;
+                    }
+                    else{
+                        cout<<"You have an open file with unsaved changes, please select close or save first."<<endl;
+                    }
+                }
             }
             else if(current_command == "help"){
                 helpGameStart();
@@ -121,6 +132,7 @@ public:
             }
 
         }
+        return false;
     }
 
 
@@ -193,29 +205,6 @@ public:
         cout<<"exit                  exits the program"<<endl;
     }
 
-    /*! This function handles the exit command.
-     * If a file is opened and not saved it prints a warning message. Else it just closes the program*/
-    void exit(){
-        if(isSaved){
-            cout<<"Exiting program...";
-            gameController.map.deleteField();
-            delete [] gameController.treasures;
-            gameController.hero.clear();
-            std::exit(0);
-        }
-        else{
-            if(fileName == " ") {
-                gameController.map.deleteField();
-                delete [] gameController.treasures;
-                gameController.hero.clear();
-                cout<<"Exiting program...";
-                std::exit(0);
-            }
-            else{
-                cout<<"You have an open file with unsaved changes, please select close or save first."<<endl;
-            }
-        }
-    }
 
     /*! Opens file with a given name. Returns false if unsuccessfull*/
     bool open(string name){
