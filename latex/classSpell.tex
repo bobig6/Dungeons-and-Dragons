@@ -9,22 +9,13 @@ Inheritance diagram for Spell\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classSpell_a8471a06c405bd5ba16ba823c90380643}{Spell}} (const string \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, const string \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}})
+\mbox{\hyperlink{classSpell_a5ed2e4a6d79484f94c05c3287835f41c}{Spell}} (const string \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, const string \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, Item\+Type \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}})
 \item 
 \mbox{\hyperlink{classSpell_a614361c1702859a162e1572030166cb0}{Spell}} ()
 \item 
-\mbox{\hyperlink{classSpell_afa39ee1e67406847f9b26d8c110df456}{Spell}} (const \mbox{\hyperlink{classSpell}{Spell}} \&other)
+\mbox{\hyperlink{classSpell_aae765935b097d7dd514a9afeed1ad8b6}{Spell}} (const \mbox{\hyperlink{classItem}{Item}} \&other)
 \item 
 float \mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{effect}} (float obj) override
-\item 
-float \mbox{\hyperlink{classSpell_a80c1c222a2c118580318b6e1e33199c5}{deactivate}} (float obj)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{is\+Activated}} = false
-\item 
-float \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effect\+Boost}} = 0
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -37,19 +28,19 @@ Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00004}{4}} of file \mbox{
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classSpell_a8471a06c405bd5ba16ba823c90380643}\label{classSpell_a8471a06c405bd5ba16ba823c90380643}} 
+\mbox{\Hypertarget{classSpell_a5ed2e4a6d79484f94c05c3287835f41c}\label{classSpell_a5ed2e4a6d79484f94c05c3287835f41c}} 
 \index{Spell@{Spell}!Spell@{Spell}}
 \index{Spell@{Spell}!Spell@{Spell}}
 \doxysubsubsection{\texorpdfstring{Spell()}{Spell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Spell\+::\+Spell (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{description,  }\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Spell\+::\+Spell (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{description,  }\item[{float}]{percent,  }\item[{Item\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Constructor with name, description and percent 
 
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
+Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012 : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{\}}
+\DoxyCodeLine{00008 : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) \{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classSpell_a614361c1702859a162e1572030166cb0}\label{classSpell_a614361c1702859a162e1572030166cb0}} 
@@ -60,98 +51,52 @@ Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00012}{12}} of file \mbox
 
 Default constructor. Creates empty object 
 
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
+Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00015 : \mbox{\hyperlink{classItem}{Item}}()\{\}}
+\DoxyCodeLine{00011 : \mbox{\hyperlink{classItem}{Item}}(ItemType::SpellType)\{\}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classSpell_afa39ee1e67406847f9b26d8c110df456}\label{classSpell_afa39ee1e67406847f9b26d8c110df456}} 
+\mbox{\Hypertarget{classSpell_aae765935b097d7dd514a9afeed1ad8b6}\label{classSpell_aae765935b097d7dd514a9afeed1ad8b6}} 
 \index{Spell@{Spell}!Spell@{Spell}}
 \index{Spell@{Spell}!Spell@{Spell}}
 \doxysubsubsection{\texorpdfstring{Spell()}{Spell()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Spell\+::\+Spell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSpell}{Spell}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Spell\+::\+Spell (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 Copy constructor 
 
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
+Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018 : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{\}}
+\DoxyCodeLine{00014 : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, other.\mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) \{\}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classSpell_a80c1c222a2c118580318b6e1e33199c5}\label{classSpell_a80c1c222a2c118580318b6e1e33199c5}} 
-\index{Spell@{Spell}!deactivate@{deactivate}}
-\index{deactivate@{deactivate}!Spell@{Spell}}
-\doxysubsubsection{\texorpdfstring{deactivate()}{deactivate()}}
-{\footnotesize\ttfamily float Spell\+::deactivate (\begin{DoxyParamCaption}\item[{float}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-Deactivates the effect of the spell and returns the attack to default value 
-
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00030                                \{}
-\DoxyCodeLine{00031         \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{isActivated}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{00032         obj = obj -\/ \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}};}
-\DoxyCodeLine{00033         \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}} = 0;}
-\DoxyCodeLine{00034         \textcolor{keywordflow}{return} obj;}
-\DoxyCodeLine{00035     \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}\label{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}} 
 \index{Spell@{Spell}!effect@{effect}}
 \index{effect@{effect}!Spell@{Spell}}
 \doxysubsubsection{\texorpdfstring{effect()}{effect()}}
 {\footnotesize\ttfamily float Spell\+::effect (\begin{DoxyParamCaption}\item[{float}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Adds percent to the attack that is given 
+Adds percent to the mana that is given. My idea is that if you use the spell the attack of the mana gets increased by the percent of the spell. So if you are a mage and your mana is bigger it will be more efficient to use the spell. 
 
 Reimplemented from \mbox{\hyperlink{classItem_a07a294a4cd7e7a2e437c4f296ffe0be0}{Item}}.
 
 
 
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
+Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022                                     \{}
-\DoxyCodeLine{00023         \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}} = (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
-\DoxyCodeLine{00024         \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{isActivated}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{00025         obj = obj + \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}};}
-\DoxyCodeLine{00026         \textcolor{keywordflow}{return} obj;}
-\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00019                                     \{}
+\DoxyCodeLine{00020         \textcolor{keywordflow}{return} obj + (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
+\DoxyCodeLine{00021     \}}
 
 \end{DoxyCode}
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classSpell_a72ae3c7e0e8228854c208cbf58163337}\label{classSpell_a72ae3c7e0e8228854c208cbf58163337}} 
-\index{Spell@{Spell}!effectBoost@{effectBoost}}
-\index{effectBoost@{effectBoost}!Spell@{Spell}}
-\doxysubsubsection{\texorpdfstring{effectBoost}{effectBoost}}
-{\footnotesize\ttfamily float Spell\+::effect\+Boost = 0}
-
-Holds the number by which the attack increases, so later it can be decreased 
-
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
-
-\mbox{\Hypertarget{classSpell_a630e54d599df17e5dd847e2f8428b24c}\label{classSpell_a630e54d599df17e5dd847e2f8428b24c}} 
-\index{Spell@{Spell}!isActivated@{isActivated}}
-\index{isActivated@{isActivated}!Spell@{Spell}}
-\doxysubsubsection{\texorpdfstring{isActivated}{isActivated}}
-{\footnotesize\ttfamily bool Spell\+::is\+Activated = false}
-
-Indicates when the spell is activated 
-
-Definition at line \mbox{\hyperlink{Spell_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{Spell_8cpp_source}{Spell.\+cpp}}.
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

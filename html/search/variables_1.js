@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['effectboost_0',['effectBoost',['../classSpell.html#a72ae3c7e0e8228854c208cbf58163337',1,'Spell']]]
+  ['hero_0',['hero',['../classGameController.html#ad3eb9b5b9ea950f7b612cbc2660210e5',1,'GameController']]]
 ];

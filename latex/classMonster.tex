@@ -7,6 +7,8 @@ void \mbox{\hyperlink{classMonster_a160712807fcb52ac133fc63f3f1b6130}{save}} (os
 \item 
 void \mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{level\+Up}} (float level)
 \item 
+void \mbox{\hyperlink{classMonster_a7e03a1ebfb17f2da8f317d9c0eae6a17}{deal\+Damage}} (float damage)
+\item 
 \mbox{\hyperlink{classMonster_a22b0d03816034af9f8165cb0297e5e54}{Monster}} (float strength, float mana, float health, const \mbox{\hyperlink{classArmor}{Armor}} \&armor)
 \item 
 \mbox{\hyperlink{classMonster_ae395eaa16b17ea528404ac14d2c99c5e}{Monster}} (const \mbox{\hyperlink{classMonster}{Monster}} \&other)
@@ -54,17 +56,17 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00002}{2}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029               \{}
-\DoxyCodeLine{00030         strength = 25;}
-\DoxyCodeLine{00031         mana = 25;}
-\DoxyCodeLine{00032         health = 50;}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034         armor = \mbox{\hyperlink{classArmor}{Armor}}(\textcolor{stringliteral}{"{}Dragon Scales"{}}, \textcolor{stringliteral}{"{}The dragon scales decrease the damage done by 15\%"{}}, 15);}
-\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00042               \{}
+\DoxyCodeLine{00043         strength = 25;}
+\DoxyCodeLine{00044         mana = 25;}
+\DoxyCodeLine{00045         health = 50;}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         armor = \mbox{\hyperlink{classArmor}{Armor}}(\textcolor{stringliteral}{"{}Dragon Scales"{}}, \textcolor{stringliteral}{"{}The dragon scales decrease the damage done by 15\%"{}}, 15, ArmorType);}
+\DoxyCodeLine{00048     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a22b0d03816034af9f8165cb0297e5e54}\label{classMonster_a22b0d03816034af9f8165cb0297e5e54}} 
@@ -75,12 +77,12 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00029}{29}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037                                                                           : strength(strength), mana(mana),}
-\DoxyCodeLine{00038                                                                             health(health), armor(armor) \{\}}
+\DoxyCodeLine{00050                                                                           : strength(strength), mana(mana),}
+\DoxyCodeLine{00051                                                                             health(health), armor(armor) \{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_ae395eaa16b17ea528404ac14d2c99c5e}\label{classMonster_ae395eaa16b17ea528404ac14d2c99c5e}} 
@@ -91,16 +93,35 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00037}{37}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00040 : \mbox{\hyperlink{classMonster}{Monster}}(other.strength, other.mana, other.health, other.armor)\{\}}
+\DoxyCodeLine{00053 : \mbox{\hyperlink{classMonster}{Monster}}(other.strength, other.mana, other.health, other.armor)\{\}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMonster_a7e03a1ebfb17f2da8f317d9c0eae6a17}\label{classMonster_a7e03a1ebfb17f2da8f317d9c0eae6a17}} 
+\index{Monster@{Monster}!dealDamage@{dealDamage}}
+\index{dealDamage@{dealDamage}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{dealDamage()}{dealDamage()}}
+{\footnotesize\ttfamily void Monster\+::deal\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reduces the damage dealt to the enemy by its armor percent 
+
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035                                  \{}
+\DoxyCodeLine{00036         \textcolor{comment}{// Reduce damage by armor}}
+\DoxyCodeLine{00037         damage = armor.\mbox{\hyperlink{classArmor_a3dff941cec4145530e25b94ae1ecfa5f}{effect}}(damage);}
+\DoxyCodeLine{00038         health -\/= damage;}
+\DoxyCodeLine{00039     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMonster_ab24d47a53ce870ec4630fec55054a787}\label{classMonster_ab24d47a53ce870ec4630fec55054a787}} 
 \index{Monster@{Monster}!getArmor@{getArmor}}
 \index{getArmor@{getArmor}!Monster@{Monster}}
@@ -109,13 +130,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00040}{40}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00087                                   \{}
-\DoxyCodeLine{00088         \textcolor{keywordflow}{return} armor;}
-\DoxyCodeLine{00089     \}}
+\DoxyCodeLine{00100                                   \{}
+\DoxyCodeLine{00101         \textcolor{keywordflow}{return} armor;}
+\DoxyCodeLine{00102     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a1b6ab17c9d70cecc45c46f4316f5320f}\label{classMonster_a1b6ab17c9d70cecc45c46f4316f5320f}} 
@@ -126,13 +147,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00087}{87}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079                             \{}
-\DoxyCodeLine{00080         \textcolor{keywordflow}{return} health;}
-\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00092                             \{}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} health;}
+\DoxyCodeLine{00094     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a5afeb0867fa10bda4fd4038f457e274c}\label{classMonster_a5afeb0867fa10bda4fd4038f457e274c}} 
@@ -143,13 +164,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00079}{79}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00071                           \{}
-\DoxyCodeLine{00072         \textcolor{keywordflow}{return} mana;}
-\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00084                           \{}
+\DoxyCodeLine{00085         \textcolor{keywordflow}{return} mana;}
+\DoxyCodeLine{00086     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_acf33128581e24a86eb873db49a9fe09d}\label{classMonster_acf33128581e24a86eb873db49a9fe09d}} 
@@ -160,13 +181,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00071}{71}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00063                               \{}
-\DoxyCodeLine{00064         \textcolor{keywordflow}{return} strength;}
-\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00076                               \{}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{return} strength;}
+\DoxyCodeLine{00078     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a6d25c17e1cf0a08f41acb5d785006190}\label{classMonster_a6d25c17e1cf0a08f41acb5d785006190}} 
@@ -177,16 +198,17 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00063}{63}} of file \mb
 
 Levels up the monster by increasing every stat by 10 for every level and armor by 5 for every level 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020                              \{}
-\DoxyCodeLine{00021         strength += level*10;}
-\DoxyCodeLine{00022         mana += level*10;}
-\DoxyCodeLine{00023         health += level*10;}
-\DoxyCodeLine{00024         armor.setPercent(armor.getPercent()+level*5);}
-\DoxyCodeLine{00025     \}}
+\DoxyCodeLine{00026                              \{}
+\DoxyCodeLine{00027         level-\/-\/;}
+\DoxyCodeLine{00028         strength += level*10;}
+\DoxyCodeLine{00029         mana += level*10;}
+\DoxyCodeLine{00030         health += level*10;}
+\DoxyCodeLine{00031         armor.setPercent(armor.getPercent()+level*5);}
+\DoxyCodeLine{00032     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a880b854b38a4de80455d13607bbe605f}\label{classMonster_a880b854b38a4de80455d13607bbe605f}} 
@@ -197,19 +219,19 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00020}{20}} of file \mb
 
 Assignment operator for the \mbox{\hyperlink{classMonster}{Monster}} class 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00045                                             \{}
-\DoxyCodeLine{00046         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
-\DoxyCodeLine{00047             this-\/>strength = other.strength;}
-\DoxyCodeLine{00048             this-\/>mana = other.mana;}
-\DoxyCodeLine{00049             this-\/>health = other.health;}
-\DoxyCodeLine{00050             this-\/>armor = other.armor;}
-\DoxyCodeLine{00051         \}}
-\DoxyCodeLine{00052         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{00053     \};}
+\DoxyCodeLine{00058                                             \{}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{00060             this-\/>strength = other.strength;}
+\DoxyCodeLine{00061             this-\/>mana = other.mana;}
+\DoxyCodeLine{00062             this-\/>health = other.health;}
+\DoxyCodeLine{00063             this-\/>armor = other.armor;}
+\DoxyCodeLine{00064         \}}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00066     \};}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a160712807fcb52ac133fc63f3f1b6130}\label{classMonster_a160712807fcb52ac133fc63f3f1b6130}} 
@@ -218,18 +240,24 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00045}{45}} of file \mb
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
 {\footnotesize\ttfamily void Monster\+::save (\begin{DoxyParamCaption}\item[{ostream \&}]{os }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Saves the monster in format\+:
+\begin{DoxyItemize}
+\item strength
+\item mana
+\item health
+\item armor 
+\end{DoxyItemize}
 
-
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012                           \{}
-\DoxyCodeLine{00013         os<<strength;}
-\DoxyCodeLine{00014         os<<mana;}
-\DoxyCodeLine{00015         os<<health;}
-\DoxyCodeLine{00016         armor.save(os);}
-\DoxyCodeLine{00017     \}}
+\DoxyCodeLine{00018                           \{}
+\DoxyCodeLine{00019         os<<strength;}
+\DoxyCodeLine{00020         os<<mana;}
+\DoxyCodeLine{00021         os<<health;}
+\DoxyCodeLine{00022         armor.save(os);}
+\DoxyCodeLine{00023     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_ae1f5bc73198b29cd7c2f4a80440ae33e}\label{classMonster_ae1f5bc73198b29cd7c2f4a80440ae33e}} 
@@ -240,13 +268,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00012}{12}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00091                                          \{}
-\DoxyCodeLine{00092         Monster::armor = newArmor;}
-\DoxyCodeLine{00093     \}}
+\DoxyCodeLine{00104                                          \{}
+\DoxyCodeLine{00105         Monster::armor = newArmor;}
+\DoxyCodeLine{00106     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_ac201454523f4e6558973e2af8e025c69}\label{classMonster_ac201454523f4e6558973e2af8e025c69}} 
@@ -257,13 +285,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00091}{91}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00083                                     \{}
-\DoxyCodeLine{00084         Monster::health = newHealth;}
-\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00096                                     \{}
+\DoxyCodeLine{00097         Monster::health = newHealth;}
+\DoxyCodeLine{00098     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_adb40a985bf5bf292d6316c468d2c83a5}\label{classMonster_adb40a985bf5bf292d6316c468d2c83a5}} 
@@ -274,13 +302,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00083}{83}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00075                                 \{}
-\DoxyCodeLine{00076         Monster::mana = newMana;}
-\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00088                                 \{}
+\DoxyCodeLine{00089         Monster::mana = newMana;}
+\DoxyCodeLine{00090     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a20416c887901a7f7e03548fe2ca7b47a}\label{classMonster_a20416c887901a7f7e03548fe2ca7b47a}} 
@@ -291,13 +319,13 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00075}{75}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00067                                         \{}
-\DoxyCodeLine{00068         Monster::strength = newStrength;}
-\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00080                                         \{}
+\DoxyCodeLine{00081         Monster::strength = newStrength;}
+\DoxyCodeLine{00082     \}}
 
 \end{DoxyCode}
 
@@ -311,17 +339,17 @@ Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00067}{67}} of file \mb
 
 Outputs information about monster to ostream 
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098                                              \{}
-\DoxyCodeLine{00099     os<<\textcolor{stringliteral}{"{}Monster: "{}}<<endl;}
-\DoxyCodeLine{00100 }
-\DoxyCodeLine{00101     os<<\textcolor{stringliteral}{"{}strength: "{}}<<cl.strength << \textcolor{stringliteral}{"{} | mana: "{}} << cl.mana << \textcolor{stringliteral}{"{} | health: "{}} << cl.health << endl;}
-\DoxyCodeLine{00102     os<<\textcolor{stringliteral}{"{}Armor: "{}} << cl.armor << endl;}
-\DoxyCodeLine{00103     \textcolor{keywordflow}{return} os;}
-\DoxyCodeLine{00104 \}}
+\DoxyCodeLine{00111                                              \{}
+\DoxyCodeLine{00112     os<<\textcolor{stringliteral}{"{}Monster: "{}}<<endl;}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     os<<\textcolor{stringliteral}{"{}strength: "{}}<<cl.strength << \textcolor{stringliteral}{"{} | mana: "{}} << cl.mana << \textcolor{stringliteral}{"{} | health: "{}} << cl.health << endl;}
+\DoxyCodeLine{00115     os<<\textcolor{stringliteral}{"{}Armor: "{}} << cl.armor << endl;}
+\DoxyCodeLine{00116     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{00117 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMonster_a5501b17c1171a154531ba536c9496423}\label{classMonster_a5501b17c1171a154531ba536c9496423}} 
@@ -343,23 +371,23 @@ Inputs info about \mbox{\hyperlink{classMonster}{Monster}} in format\+:
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
+Definition at line \mbox{\hyperlink{Monster_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{Monster_8cpp_source}{Monster.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00115                                                      \{}
-\DoxyCodeLine{00116     in>>cl.strength;}
-\DoxyCodeLine{00117     in>>cl.mana;}
-\DoxyCodeLine{00118     in>>cl.health;}
-\DoxyCodeLine{00119 }
-\DoxyCodeLine{00120     \textcolor{comment}{// Skip line}}
-\DoxyCodeLine{00121     \textcolor{keywordtype}{char} next;}
-\DoxyCodeLine{00122     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00123 }
-\DoxyCodeLine{00124     in>>cl.armor;}
-\DoxyCodeLine{00125 }
-\DoxyCodeLine{00126     \textcolor{keywordflow}{return} in;}
-\DoxyCodeLine{00127 \}}
+\DoxyCodeLine{00128                                                      \{}
+\DoxyCodeLine{00129     in>>cl.strength;}
+\DoxyCodeLine{00130     in>>cl.mana;}
+\DoxyCodeLine{00131     in>>cl.health;}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{00134     \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{00135     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137     in>>cl.armor;}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{00140 \}}
 
 \end{DoxyCode}
 

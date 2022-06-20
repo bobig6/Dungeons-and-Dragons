@@ -109,195 +109,223 @@ $(function() {
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        spell.save(os);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// SECTION: CONSTRUCTORS------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">   53</a></span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(): <a class="code hl_class" href="classHero.html">Hero</a>(Race::Human){}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">   56</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">Hero</a>(Race race){</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        this-&gt; race = race;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">switch</span> (race) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">case</span> Human:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                strength = 30;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                mana = 20;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                health = 50;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">case</span> Mage:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                strength = 10;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                mana = 40;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                health = 50;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">case</span> Warrior:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                strength = 40;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                mana = 10;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                health = 50;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        weapon = <a class="code hl_class" href="classWeapon.html">Weapon</a>();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        spell = <a class="code hl_class" href="classSpell.html">Spell</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classHero.html#afa43491d74ab56bc6efcaa6027b2e130">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHero.html#afa43491d74ab56bc6efcaa6027b2e130">clear</a>(){</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        weapon.clear();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        armor.clear();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        spell.clear();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classHero.html#af0b61c6468687c003324fbdc7cc37faf">   59</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classHero.html#af0b61c6468687c003324fbdc7cc37faf">dealDamage</a>(<span class="keywordtype">float</span> damage){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="comment">// Reduce damage by armor</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        damage = armor.<a class="code hl_function" href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">effect</a>(damage);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        health -= damage;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classHero.html#a0de4db383b66e85feb4fa601f5b0b1f8">   66</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classHero.html#a0de4db383b66e85feb4fa601f5b0b1f8">useAttack</a>(){</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> weapon.<a class="code hl_function" href="classWeapon.html#ab198208d65636075ec9c3d094fbc5c4e">effect</a>(strength);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classHero.html#abc3caa1ceb90545c5c170d00bdb96905">   71</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classHero.html#abc3caa1ceb90545c5c170d00bdb96905">useSpell</a>(){</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> spell.<a class="code hl_function" href="classSpell.html#adb4db00d4bba4b79f46ecfdd5761dca6">effect</a>(mana);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// SECTION: CONSTRUCTORS------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">   78</a></span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(): <a class="code hl_class" href="classHero.html">Hero</a>(Race::Human){}</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(Race race, <span class="keywordtype">float</span> strength, <span class="keywordtype">float</span> mana, <span class="keywordtype">float</span> health, <span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a>&amp; weapon, <span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a>&amp; armor, <span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a>&amp; spell){</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        this-&gt;race = race;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        this-&gt;strength = strength;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        this-&gt;mana = mana;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        this-&gt;health = health;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        this-&gt;weapon = weapon;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        this-&gt;armor = armor;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        this-&gt;spell = spell;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHero.html">Hero</a> &amp;other) : <a class="code hl_class" href="classHero.html">Hero</a>(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell){}</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// SECTION: OPERATORS---------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">   96</a></span>    <a class="code hl_class" href="classHero.html">Hero</a>&amp; <a class="code hl_function" href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHero.html">Hero</a>&amp; other){</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            this-&gt;race = other.race;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            this-&gt;strength = other.strength;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            this-&gt;mana = other.mana;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            this-&gt;health = other.health;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            this-&gt;weapon = other.weapon;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            this-&gt;armor = other.armor;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            this-&gt;spell = other.spell;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    };</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; os, <a class="code hl_class" href="classHero.html">Hero</a>&amp; hero);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">friend</span> std::istream&amp; operator &gt;&gt; (std::istream&amp; in,  <a class="code hl_class" href="classHero.html">Hero</a>&amp; cl);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// SECTION: GETTERS AND SETTERS</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">   81</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">Hero</a>(Race race){</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        this-&gt; race = race;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">switch</span> (race) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">case</span> Human:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                strength = 30;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                mana = 20;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                health = 50;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">case</span> Mage:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                strength = 10;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                mana = 40;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                health = 50;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">case</span> Warrior:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                strength = 40;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                mana = 10;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                health = 50;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        weapon = <a class="code hl_class" href="classWeapon.html">Weapon</a>(<span class="stringliteral">&quot;Basic Sword&quot;</span>, <span class="stringliteral">&quot;This is a basic steel sword&quot;</span>, 20, WeaponType);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        spell = <a class="code hl_class" href="classSpell.html">Spell</a>(<span class="stringliteral">&quot;Fire Ball&quot;</span>, <span class="stringliteral">&quot;The fireball is the default spell of the player&quot;</span>, 20, SpellType);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(Race race, <span class="keywordtype">float</span> strength, <span class="keywordtype">float</span> mana, <span class="keywordtype">float</span> health, <span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a>&amp; weapon, <span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a>&amp; armor, <span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a>&amp; spell){</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        this-&gt;race = race;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        this-&gt;strength = strength;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        this-&gt;mana = mana;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        this-&gt;health = health;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        this-&gt;weapon = weapon;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        this-&gt;armor = armor;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        this-&gt;spell = spell;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    Race getRace()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> race;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> setRace(Race newRace) {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        Hero::race = newRace;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">float</span> getStrength()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> strength;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> setStrength(<span class="keywordtype">float</span> newStrength) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        Hero::strength = newStrength;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">float</span> getMana()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">return</span> mana;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">void</span> setMana(<span class="keywordtype">float</span> newMana) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        Hero::mana = newMana;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">float</span> getHealth()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">return</span> health;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> setHealth(<span class="keywordtype">float</span> newHealth) {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        Hero::health = newHealth;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a> &amp;getWeapon()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> weapon;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> setWeapon(<span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a> &amp;newWeapon) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        Hero::weapon = newWeapon;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHero.html">Hero</a> &amp;other) : <a class="code hl_class" href="classHero.html">Hero</a>(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell){}</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// SECTION: OPERATORS---------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">  121</a></span>    <a class="code hl_class" href="classHero.html">Hero</a>&amp; <a class="code hl_function" href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classHero.html">Hero</a>&amp; other){</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            this-&gt;race = other.race;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            this-&gt;strength = other.strength;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            this-&gt;mana = other.mana;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            this-&gt;health = other.health;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            this-&gt;weapon = other.weapon;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            this-&gt;armor = other.armor;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            this-&gt;spell = other.spell;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    };</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">friend</span> ostream&amp; operator&lt;&lt;(ostream&amp; os, <a class="code hl_class" href="classHero.html">Hero</a>&amp; hero);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">friend</span> std::istream&amp; operator &gt;&gt; (std::istream&amp; in,  <a class="code hl_class" href="classHero.html">Hero</a>&amp; cl);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// SECTION: GETTERS AND SETTERS</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    Race getRace()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> race;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> setRace(Race newRace) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        Hero::race = newRace;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">float</span> getStrength()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">return</span> strength;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> setStrength(<span class="keywordtype">float</span> newStrength) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        Hero::strength = newStrength;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a> &amp;getArmor()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> armor;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">float</span> getMana()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> mana;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> setArmor(<span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a> &amp;newArmor) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        Hero::armor = newArmor;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> setMana(<span class="keywordtype">float</span> newMana) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        Hero::mana = newMana;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a> &amp;getSpell()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">return</span> spell;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">float</span> getHealth()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">return</span> health;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">void</span> setSpell(<span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a> &amp;newSpell) {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        Hero::spell = newSpell;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">void</span> setHealth(<span class="keywordtype">float</span> newHealth) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        Hero::health = newHealth;</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>};</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>ostream&amp; operator&lt;&lt;(ostream&amp; os, <a class="code hl_class" href="classHero.html">Hero</a>&amp; hero)</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>{</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    os&lt;&lt;<span class="stringliteral">&quot;Hero(&quot;</span>;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">switch</span> (hero.race) {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">case</span> Human:</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            os&lt;&lt;<span class="stringliteral">&quot;Human&quot;</span>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">case</span> Mage:</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            os&lt;&lt;<span class="stringliteral">&quot;Mage&quot;</span>;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">case</span> Warrior:</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            os&lt;&lt;<span class="stringliteral">&quot;Warrior&quot;</span>;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    os&lt;&lt;<span class="stringliteral">&quot;):&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;hero.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; hero.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; hero.health &lt;&lt; endl;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    os&lt;&lt;<span class="stringliteral">&quot;Weapon: &quot;</span> &lt;&lt; hero.weapon &lt;&lt; endl;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; hero.armor &lt;&lt; endl;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    os&lt;&lt;<span class="stringliteral">&quot;Spell: &quot;</span> &lt;&lt; hero.spell &lt;&lt; endl;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a> &amp;getWeapon()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">return</span> weapon;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> setWeapon(<span class="keyword">const</span> <a class="code hl_class" href="classWeapon.html">Weapon</a> &amp;newWeapon) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        Hero::weapon = newWeapon;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a> &amp;getArmor()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">return</span> armor;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> setArmor(<span class="keyword">const</span> <a class="code hl_class" href="classArmor.html">Armor</a> &amp;newArmor) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        Hero::armor = newArmor;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a> &amp;getSpell()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">return</span> spell;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> setSpell(<span class="keyword">const</span> <a class="code hl_class" href="classSpell.html">Spell</a> &amp;newSpell) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        Hero::spell = newSpell;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>};</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">/* This accepts input from istream in format:</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment"> *      - Race</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment"> *      - strength</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment"> *      - mana</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment"> *      - health</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment"> *      - Weapon</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment"> *      - Armor</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment"> *      - Spell</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>std::istream&amp; operator &gt;&gt; (std::istream&amp; in, <a class="code hl_class" href="classHero.html">Hero</a>&amp; cl){</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordtype">string</span> race;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    getline(in, race);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Human&quot;</span>) cl.race = Human;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Mage&quot;</span>) cl.race = Mage;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Warrior&quot;</span>) cl.race = Warrior;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;File does not provide a valid race for the player&quot;</span> );</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    in&gt;&gt;cl.strength;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    in&gt;&gt;cl.mana;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    in&gt;&gt;cl.health;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="comment">// Skip line</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordtype">char</span> next;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    in&gt;&gt;cl.weapon;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    in&gt;&gt;cl.armor;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    in&gt;&gt;cl.spell;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">return</span> in;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>ostream&amp; operator&lt;&lt;(ostream&amp; os, <a class="code hl_class" href="classHero.html">Hero</a>&amp; hero)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>{</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    os&lt;&lt;<span class="stringliteral">&quot;Hero(&quot;</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">switch</span> (hero.race) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">case</span> Human:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            os&lt;&lt;<span class="stringliteral">&quot;Human&quot;</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">case</span> Mage:</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            os&lt;&lt;<span class="stringliteral">&quot;Mage&quot;</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">case</span> Warrior:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            os&lt;&lt;<span class="stringliteral">&quot;Warrior&quot;</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    os&lt;&lt;<span class="stringliteral">&quot;):&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;hero.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; hero.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; hero.health &lt;&lt; endl;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    os&lt;&lt;<span class="stringliteral">&quot;Weapon: &quot;</span> &lt;&lt; hero.weapon &lt;&lt; endl;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; hero.armor &lt;&lt; endl;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    os&lt;&lt;<span class="stringliteral">&quot;Spell: &quot;</span> &lt;&lt; hero.spell &lt;&lt; endl;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>}</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">/* This accepts input from istream in format:</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment"> *      - Race</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment"> *      - strength</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment"> *      - mana</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment"> *      - health</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment"> *      - Weapon</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment"> *      - Armor</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment"> *      - Spell</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>std::istream&amp; operator &gt;&gt; (std::istream&amp; in, <a class="code hl_class" href="classHero.html">Hero</a>&amp; cl){</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">string</span> race;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    getline(in, race);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Human&quot;</span>) cl.race = Human;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Mage&quot;</span>) cl.race = Mage;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Warrior&quot;</span>) cl.race = Warrior;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;File does not provide a valid race for the player&quot;</span> );</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    in&gt;&gt;cl.strength;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    in&gt;&gt;cl.mana;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    in&gt;&gt;cl.health;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">// Skip line</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordtype">char</span> next;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    in&gt;&gt;cl.weapon;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    in&gt;&gt;cl.armor;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    in&gt;&gt;cl.spell;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">return</span> in;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
 <div class="ttc" id="aclassArmor_html"><div class="ttname"><a href="classArmor.html">Armor</a></div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00004">Armor.cpp:4</a></div></div>
+<div class="ttc" id="aclassArmor_html_a3dff941cec4145530e25b94ae1ecfa5f"><div class="ttname"><a href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">Armor::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00017">Armor.cpp:17</a></div></div>
 <div class="ttc" id="aclassHero_html"><div class="ttname"><a href="classHero.html">Hero</a></div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00007">Hero.cpp:7</a></div></div>
+<div class="ttc" id="aclassHero_html_a0de4db383b66e85feb4fa601f5b0b1f8"><div class="ttname"><a href="classHero.html#a0de4db383b66e85feb4fa601f5b0b1f8">Hero::useAttack</a></div><div class="ttdeci">float useAttack()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00066">Hero.cpp:66</a></div></div>
 <div class="ttc" id="aclassHero_html_a0f9d8cced41cb9b477430583f61d00e9"><div class="ttname"><a href="classHero.html#a0f9d8cced41cb9b477430583f61d00e9">Hero::save</a></div><div class="ttdeci">void save(ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00030">Hero.cpp:30</a></div></div>
-<div class="ttc" id="aclassHero_html_a27c2fe99399cf8370aec5161ea59c25a"><div class="ttname"><a href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">Hero::operator=</a></div><div class="ttdeci">Hero &amp; operator=(const Hero &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00096">Hero.cpp:96</a></div></div>
-<div class="ttc" id="aclassHero_html_a5219d245f1ac1d9f433e3f0e932aaae4"><div class="ttname"><a href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">Hero::Hero</a></div><div class="ttdeci">Hero(Race race)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00056">Hero.cpp:56</a></div></div>
-<div class="ttc" id="aclassHero_html_ab5920677a4b5cb59d6f513922d037dca"><div class="ttname"><a href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero::Hero</a></div><div class="ttdeci">Hero()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00053">Hero.cpp:53</a></div></div>
+<div class="ttc" id="aclassHero_html_a27c2fe99399cf8370aec5161ea59c25a"><div class="ttname"><a href="classHero.html#a27c2fe99399cf8370aec5161ea59c25a">Hero::operator=</a></div><div class="ttdeci">Hero &amp; operator=(const Hero &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00121">Hero.cpp:121</a></div></div>
+<div class="ttc" id="aclassHero_html_a5219d245f1ac1d9f433e3f0e932aaae4"><div class="ttname"><a href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">Hero::Hero</a></div><div class="ttdeci">Hero(Race race)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00081">Hero.cpp:81</a></div></div>
+<div class="ttc" id="aclassHero_html_ab5920677a4b5cb59d6f513922d037dca"><div class="ttname"><a href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero::Hero</a></div><div class="ttdeci">Hero()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00078">Hero.cpp:78</a></div></div>
+<div class="ttc" id="aclassHero_html_abc3caa1ceb90545c5c170d00bdb96905"><div class="ttname"><a href="classHero.html#abc3caa1ceb90545c5c170d00bdb96905">Hero::useSpell</a></div><div class="ttdeci">float useSpell()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00071">Hero.cpp:71</a></div></div>
+<div class="ttc" id="aclassHero_html_af0b61c6468687c003324fbdc7cc37faf"><div class="ttname"><a href="classHero.html#af0b61c6468687c003324fbdc7cc37faf">Hero::dealDamage</a></div><div class="ttdeci">void dealDamage(float damage)</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00059">Hero.cpp:59</a></div></div>
+<div class="ttc" id="aclassHero_html_afa43491d74ab56bc6efcaa6027b2e130"><div class="ttname"><a href="classHero.html#afa43491d74ab56bc6efcaa6027b2e130">Hero::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">This method is used to clear the items of the hero.</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00051">Hero.cpp:51</a></div></div>
 <div class="ttc" id="aclassSpell_html"><div class="ttname"><a href="classSpell.html">Spell</a></div><div class="ttdef"><b>Definition:</b> <a href="Spell_8cpp_source.html#l00004">Spell.cpp:4</a></div></div>
+<div class="ttc" id="aclassSpell_html_adb4db00d4bba4b79f46ecfdd5761dca6"><div class="ttname"><a href="classSpell.html#adb4db00d4bba4b79f46ecfdd5761dca6">Spell::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Spell_8cpp_source.html#l00019">Spell.cpp:19</a></div></div>
 <div class="ttc" id="aclassWeapon_html"><div class="ttname"><a href="classWeapon.html">Weapon</a></div><div class="ttdef"><b>Definition:</b> <a href="Weapon_8cpp_source.html#l00005">Weapon.cpp:5</a></div></div>
+<div class="ttc" id="aclassWeapon_html_ab198208d65636075ec9c3d094fbc5c4e"><div class="ttname"><a href="classWeapon.html#ab198208d65636075ec9c3d094fbc5c4e">Weapon::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Weapon_8cpp_source.html#l00019">Weapon.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

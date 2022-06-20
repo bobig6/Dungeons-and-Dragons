@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isactivated_0',['isActivated',['../classSpell.html#a630e54d599df17e5dd847e2f8428b24c',1,'Spell']]]
+  ['map_0',['map',['../classGameController.html#acb9a122ec25edc8e7efbdc23b7312bf5',1,'GameController']]]
 ];

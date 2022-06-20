@@ -74,6 +74,15 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f9d8cced41cb9b477430583f61d00e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a0f9d8cced41cb9b477430583f61d00e9">save</a> (ostream &amp;os)</td></tr>
 <tr class="separator:a0f9d8cced41cb9b477430583f61d00e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa43491d74ab56bc6efcaa6027b2e130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#afa43491d74ab56bc6efcaa6027b2e130">clear</a> ()</td></tr>
+<tr class="memdesc:afa43491d74ab56bc6efcaa6027b2e130"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to clear the items of the hero.  <a href="classHero.html#afa43491d74ab56bc6efcaa6027b2e130">More...</a><br /></td></tr>
+<tr class="separator:afa43491d74ab56bc6efcaa6027b2e130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b61c6468687c003324fbdc7cc37faf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#af0b61c6468687c003324fbdc7cc37faf">dealDamage</a> (float damage)</td></tr>
+<tr class="separator:af0b61c6468687c003324fbdc7cc37faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de4db383b66e85feb4fa601f5b0b1f8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a0de4db383b66e85feb4fa601f5b0b1f8">useAttack</a> ()</td></tr>
+<tr class="separator:a0de4db383b66e85feb4fa601f5b0b1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3caa1ceb90545c5c170d00bdb96905"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#abc3caa1ceb90545c5c170d00bdb96905">useSpell</a> ()</td></tr>
+<tr class="separator:abc3caa1ceb90545c5c170d00bdb96905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5920677a4b5cb59d6f513922d037dca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a> ()</td></tr>
 <tr class="separator:ab5920677a4b5cb59d6f513922d037dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5219d245f1ac1d9f433e3f0e932aaae4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a5219d245f1ac1d9f433e3f0e932aaae4">Hero</a> (Race race)</td></tr>
@@ -148,9 +157,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Default constructor creates a <a class="el" href="classHero.html">Hero</a> with race Human and no items </p>
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00053">53</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>: <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(Race::Human){}</div>
-<div class="ttc" id="aclassHero_html_ab5920677a4b5cb59d6f513922d037dca"><div class="ttname"><a href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero::Hero</a></div><div class="ttdeci">Hero()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00053">Hero.cpp:53</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00078">78</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>: <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(Race::Human){}</div>
+<div class="ttc" id="aclassHero_html_ab5920677a4b5cb59d6f513922d037dca"><div class="ttname"><a href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero::Hero</a></div><div class="ttdeci">Hero()</div><div class="ttdef"><b>Definition:</b> <a href="Hero_8cpp_source.html#l00078">Hero.cpp:78</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -179,30 +188,30 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Constructor for hero gives default items and stats according to the race </p>
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00056">56</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>                            {</div>
-<div class="line"><span class="lineno">   57</span>        this-&gt; race = race;</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">switch</span> (race) {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">case</span> Human:</div>
-<div class="line"><span class="lineno">   60</span>                strength = 30;</div>
-<div class="line"><span class="lineno">   61</span>                mana = 20;</div>
-<div class="line"><span class="lineno">   62</span>                health = 50;</div>
-<div class="line"><span class="lineno">   63</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">case</span> Mage:</div>
-<div class="line"><span class="lineno">   65</span>                strength = 10;</div>
-<div class="line"><span class="lineno">   66</span>                mana = 40;</div>
-<div class="line"><span class="lineno">   67</span>                health = 50;</div>
-<div class="line"><span class="lineno">   68</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">case</span> Warrior:</div>
-<div class="line"><span class="lineno">   70</span>                strength = 40;</div>
-<div class="line"><span class="lineno">   71</span>                mana = 10;</div>
-<div class="line"><span class="lineno">   72</span>                health = 50;</div>
-<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
-<div class="line"><span class="lineno">   75</span>        weapon = <a class="code hl_class" href="classWeapon.html">Weapon</a>();</div>
-<div class="line"><span class="lineno">   76</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>();</div>
-<div class="line"><span class="lineno">   77</span>        spell = <a class="code hl_class" href="classSpell.html">Spell</a>();</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00081">81</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                            {</div>
+<div class="line"><span class="lineno">   82</span>        this-&gt; race = race;</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">switch</span> (race) {</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">case</span> Human:</div>
+<div class="line"><span class="lineno">   85</span>                strength = 30;</div>
+<div class="line"><span class="lineno">   86</span>                mana = 20;</div>
+<div class="line"><span class="lineno">   87</span>                health = 50;</div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">case</span> Mage:</div>
+<div class="line"><span class="lineno">   90</span>                strength = 10;</div>
+<div class="line"><span class="lineno">   91</span>                mana = 40;</div>
+<div class="line"><span class="lineno">   92</span>                health = 50;</div>
+<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">case</span> Warrior:</div>
+<div class="line"><span class="lineno">   95</span>                strength = 40;</div>
+<div class="line"><span class="lineno">   96</span>                mana = 10;</div>
+<div class="line"><span class="lineno">   97</span>                health = 50;</div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>        weapon = <a class="code hl_class" href="classWeapon.html">Weapon</a>(<span class="stringliteral">&quot;Basic Sword&quot;</span>, <span class="stringliteral">&quot;This is a basic steel sword&quot;</span>, 20, WeaponType);</div>
+<div class="line"><span class="lineno">  101</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>();</div>
+<div class="line"><span class="lineno">  102</span>        spell = <a class="code hl_class" href="classSpell.html">Spell</a>(<span class="stringliteral">&quot;Fire Ball&quot;</span>, <span class="stringliteral">&quot;The fireball is the default spell of the player&quot;</span>, 20, SpellType);</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
 <div class="ttc" id="aclassArmor_html"><div class="ttname"><a href="classArmor.html">Armor</a></div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00004">Armor.cpp:4</a></div></div>
 <div class="ttc" id="aclassSpell_html"><div class="ttname"><a href="classSpell.html">Spell</a></div><div class="ttdef"><b>Definition:</b> <a href="Spell_8cpp_source.html#l00004">Spell.cpp:4</a></div></div>
 <div class="ttc" id="aclassWeapon_html"><div class="ttname"><a href="classWeapon.html">Weapon</a></div><div class="ttdef"><b>Definition:</b> <a href="Weapon_8cpp_source.html#l00005">Weapon.cpp:5</a></div></div>
@@ -273,16 +282,16 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00080">80</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                                                                                           {</div>
-<div class="line"><span class="lineno">   81</span>        this-&gt;race = race;</div>
-<div class="line"><span class="lineno">   82</span>        this-&gt;strength = strength;</div>
-<div class="line"><span class="lineno">   83</span>        this-&gt;mana = mana;</div>
-<div class="line"><span class="lineno">   84</span>        this-&gt;health = health;</div>
-<div class="line"><span class="lineno">   85</span>        this-&gt;weapon = weapon;</div>
-<div class="line"><span class="lineno">   86</span>        this-&gt;armor = armor;</div>
-<div class="line"><span class="lineno">   87</span>        this-&gt;spell = spell;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00105">105</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>                                                                                                                           {</div>
+<div class="line"><span class="lineno">  106</span>        this-&gt;race = race;</div>
+<div class="line"><span class="lineno">  107</span>        this-&gt;strength = strength;</div>
+<div class="line"><span class="lineno">  108</span>        this-&gt;mana = mana;</div>
+<div class="line"><span class="lineno">  109</span>        this-&gt;health = health;</div>
+<div class="line"><span class="lineno">  110</span>        this-&gt;weapon = weapon;</div>
+<div class="line"><span class="lineno">  111</span>        this-&gt;armor = armor;</div>
+<div class="line"><span class="lineno">  112</span>        this-&gt;spell = spell;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -310,12 +319,81 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00090">90</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>: <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell){}</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00115">115</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>: <a class="code hl_function" href="classHero.html#ab5920677a4b5cb59d6f513922d037dca">Hero</a>(other.race, other.strength, other.mana, other.health, other.weapon, other.armor, other.spell){}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afa43491d74ab56bc6efcaa6027b2e130" name="afa43491d74ab56bc6efcaa6027b2e130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa43491d74ab56bc6efcaa6027b2e130">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hero::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is used to clear the items of the hero. </p>
+
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00051">51</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                {</div>
+<div class="line"><span class="lineno">   52</span>        weapon.clear();</div>
+<div class="line"><span class="lineno">   53</span>        armor.clear();</div>
+<div class="line"><span class="lineno">   54</span>        spell.clear();</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af0b61c6468687c003324fbdc7cc37faf" name="af0b61c6468687c003324fbdc7cc37faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b61c6468687c003324fbdc7cc37faf">&#9670;&nbsp;</a></span>dealDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hero::dealDamage </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reduces the damage to the player by the armor percent and then deals the remaining damage </p>
+
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00059">59</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                 {</div>
+<div class="line"><span class="lineno">   60</span>        <span class="comment">// Reduce damage by armor</span></div>
+<div class="line"><span class="lineno">   61</span>        damage = armor.<a class="code hl_function" href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">effect</a>(damage);</div>
+<div class="line"><span class="lineno">   62</span>        health -= damage;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="ttc" id="aclassArmor_html_a3dff941cec4145530e25b94ae1ecfa5f"><div class="ttname"><a href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">Armor::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00017">Armor.cpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a205bc2f152bf1d4aa3088dc32cb210d7" name="a205bc2f152bf1d4aa3088dc32cb210d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a205bc2f152bf1d4aa3088dc32cb210d7">&#9670;&nbsp;</a></span>getArmor()</h2>
 
@@ -339,10 +417,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00156">156</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>                                  {</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">return</span> armor;</div>
-<div class="line"><span class="lineno">  158</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00181">181</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>                                  {</div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">return</span> armor;</div>
+<div class="line"><span class="lineno">  183</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -369,10 +447,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00139">139</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                            {</div>
-<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">return</span> health;</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00164">164</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                            {</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">return</span> health;</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,10 +477,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00131">131</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                          {</div>
-<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">return</span> mana;</div>
-<div class="line"><span class="lineno">  133</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00156">156</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>                          {</div>
+<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">return</span> mana;</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,10 +507,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00115">115</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                         {</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> race;</div>
-<div class="line"><span class="lineno">  117</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00140">140</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>                         {</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">return</span> race;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -459,10 +537,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00164">164</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>                                  {</div>
-<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">return</span> spell;</div>
-<div class="line"><span class="lineno">  166</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00189">189</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                                  {</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">return</span> spell;</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -489,10 +567,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00123">123</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                              {</div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span> strength;</div>
-<div class="line"><span class="lineno">  125</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00148">148</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                              {</div>
+<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">return</span> strength;</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -519,10 +597,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00147">147</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>                                    {</div>
-<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">return</span> weapon;</div>
-<div class="line"><span class="lineno">  149</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00172">172</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                                    {</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">return</span> weapon;</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -551,19 +629,19 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Assignment operator for the <a class="el" href="classHero.html">Hero</a> class </p>
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00096">96</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                                      {</div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><span class="lineno">   98</span>            this-&gt;race = other.race;</div>
-<div class="line"><span class="lineno">   99</span>            this-&gt;strength = other.strength;</div>
-<div class="line"><span class="lineno">  100</span>            this-&gt;mana = other.mana;</div>
-<div class="line"><span class="lineno">  101</span>            this-&gt;health = other.health;</div>
-<div class="line"><span class="lineno">  102</span>            this-&gt;weapon = other.weapon;</div>
-<div class="line"><span class="lineno">  103</span>            this-&gt;armor = other.armor;</div>
-<div class="line"><span class="lineno">  104</span>            this-&gt;spell = other.spell;</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  107</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00121">121</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                      {</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
+<div class="line"><span class="lineno">  123</span>            this-&gt;race = other.race;</div>
+<div class="line"><span class="lineno">  124</span>            this-&gt;strength = other.strength;</div>
+<div class="line"><span class="lineno">  125</span>            this-&gt;mana = other.mana;</div>
+<div class="line"><span class="lineno">  126</span>            this-&gt;health = other.health;</div>
+<div class="line"><span class="lineno">  127</span>            this-&gt;weapon = other.weapon;</div>
+<div class="line"><span class="lineno">  128</span>            this-&gt;armor = other.armor;</div>
+<div class="line"><span class="lineno">  129</span>            this-&gt;spell = other.spell;</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  132</span>    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -647,10 +725,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00160">160</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>                                         {</div>
-<div class="line"><span class="lineno">  161</span>        Hero::armor = newArmor;</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00185">185</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>                                         {</div>
+<div class="line"><span class="lineno">  186</span>        Hero::armor = newArmor;</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -678,10 +756,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00143">143</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>                                    {</div>
-<div class="line"><span class="lineno">  144</span>        Hero::health = newHealth;</div>
-<div class="line"><span class="lineno">  145</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00168">168</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                    {</div>
+<div class="line"><span class="lineno">  169</span>        Hero::health = newHealth;</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -709,10 +787,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00135">135</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                {</div>
-<div class="line"><span class="lineno">  136</span>        Hero::mana = newMana;</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00160">160</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>                                {</div>
+<div class="line"><span class="lineno">  161</span>        Hero::mana = newMana;</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -740,10 +818,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00119">119</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>                               {</div>
-<div class="line"><span class="lineno">  120</span>        Hero::race = newRace;</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00144">144</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>                               {</div>
+<div class="line"><span class="lineno">  145</span>        Hero::race = newRace;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -771,10 +849,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00168">168</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>                                         {</div>
-<div class="line"><span class="lineno">  169</span>        Hero::spell = newSpell;</div>
-<div class="line"><span class="lineno">  170</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00193">193</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>                                         {</div>
+<div class="line"><span class="lineno">  194</span>        Hero::spell = newSpell;</div>
+<div class="line"><span class="lineno">  195</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -802,10 +880,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00127">127</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>                                        {</div>
-<div class="line"><span class="lineno">  128</span>        Hero::strength = newStrength;</div>
-<div class="line"><span class="lineno">  129</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00152">152</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>                                        {</div>
+<div class="line"><span class="lineno">  153</span>        Hero::strength = newStrength;</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -833,10 +911,74 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00151">151</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>                                            {</div>
-<div class="line"><span class="lineno">  152</span>        Hero::weapon = newWeapon;</div>
-<div class="line"><span class="lineno">  153</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00176">176</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                                            {</div>
+<div class="line"><span class="lineno">  177</span>        Hero::weapon = newWeapon;</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0de4db383b66e85feb4fa601f5b0b1f8" name="a0de4db383b66e85feb4fa601f5b0b1f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0de4db383b66e85feb4fa601f5b0b1f8">&#9670;&nbsp;</a></span>useAttack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Hero::useAttack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Applies the effect of the weapon to the strength of the player </p>
+
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00066">66</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                     {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> weapon.<a class="code hl_function" href="classWeapon.html#ab198208d65636075ec9c3d094fbc5c4e">effect</a>(strength);</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="ttc" id="aclassWeapon_html_ab198208d65636075ec9c3d094fbc5c4e"><div class="ttname"><a href="classWeapon.html#ab198208d65636075ec9c3d094fbc5c4e">Weapon::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Weapon_8cpp_source.html#l00019">Weapon.cpp:19</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abc3caa1ceb90545c5c170d00bdb96905" name="abc3caa1ceb90545c5c170d00bdb96905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3caa1ceb90545c5c170d00bdb96905">&#9670;&nbsp;</a></span>useSpell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Hero::useSpell </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Applies the effect of the spell to the mana of the player </p>
+
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00071">71</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                    {</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span> spell.<a class="code hl_function" href="classSpell.html#adb4db00d4bba4b79f46ecfdd5761dca6">effect</a>(mana);</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="ttc" id="aclassSpell_html_adb4db00d4bba4b79f46ecfdd5761dca6"><div class="ttname"><a href="classSpell.html#adb4db00d4bba4b79f46ecfdd5761dca6">Spell::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Spell_8cpp_source.html#l00019">Spell.cpp:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -875,30 +1017,30 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00175">175</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
-<div class="line"><span class="lineno">  177</span>    os&lt;&lt;<span class="stringliteral">&quot;Hero(&quot;</span>;</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">switch</span> (hero.race) {</div>
-<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">case</span> Human:</div>
-<div class="line"><span class="lineno">  181</span>            os&lt;&lt;<span class="stringliteral">&quot;Human&quot;</span>;</div>
-<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">case</span> Mage:</div>
-<div class="line"><span class="lineno">  184</span>            os&lt;&lt;<span class="stringliteral">&quot;Mage&quot;</span>;</div>
-<div class="line"><span class="lineno">  185</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">case</span> Warrior:</div>
-<div class="line"><span class="lineno">  187</span>            os&lt;&lt;<span class="stringliteral">&quot;Warrior&quot;</span>;</div>
-<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  189</span>    }</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>    os&lt;&lt;<span class="stringliteral">&quot;):&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><span class="lineno">  192</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;hero.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; hero.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; hero.health &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  193</span>    os&lt;&lt;<span class="stringliteral">&quot;Weapon: &quot;</span> &lt;&lt; hero.weapon &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  194</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; hero.armor &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  195</span>    os&lt;&lt;<span class="stringliteral">&quot;Spell: &quot;</span> &lt;&lt; hero.spell &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> os;</div>
-<div class="line"><span class="lineno">  198</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00200">200</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>    os&lt;&lt;<span class="stringliteral">&quot;Hero(&quot;</span>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">switch</span> (hero.race) {</div>
+<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">case</span> Human:</div>
+<div class="line"><span class="lineno">  206</span>            os&lt;&lt;<span class="stringliteral">&quot;Human&quot;</span>;</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">case</span> Mage:</div>
+<div class="line"><span class="lineno">  209</span>            os&lt;&lt;<span class="stringliteral">&quot;Mage&quot;</span>;</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordflow">case</span> Warrior:</div>
+<div class="line"><span class="lineno">  212</span>            os&lt;&lt;<span class="stringliteral">&quot;Warrior&quot;</span>;</div>
+<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    os&lt;&lt;<span class="stringliteral">&quot;):&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><span class="lineno">  217</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;hero.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; hero.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; hero.health &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  218</span>    os&lt;&lt;<span class="stringliteral">&quot;Weapon: &quot;</span> &lt;&lt; hero.weapon &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  219</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; hero.armor &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  220</span>    os&lt;&lt;<span class="stringliteral">&quot;Spell: &quot;</span> &lt;&lt; hero.spell &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> os;</div>
+<div class="line"><span class="lineno">  223</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -936,32 +1078,32 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00209">209</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  209</span>                                                  {</div>
-<div class="line"><span class="lineno">  210</span>    <span class="keywordtype">string</span> race;</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>    getline(in, race);</div>
-<div class="line"><span class="lineno">  213</span> </div>
-<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Human&quot;</span>) cl.race = Human;</div>
-<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Mage&quot;</span>) cl.race = Mage;</div>
-<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Warrior&quot;</span>) cl.race = Warrior;</div>
-<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;File does not provide a valid race for the player&quot;</span> );</div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>    in&gt;&gt;cl.strength;</div>
-<div class="line"><span class="lineno">  220</span>    in&gt;&gt;cl.mana;</div>
-<div class="line"><span class="lineno">  221</span>    in&gt;&gt;cl.health;</div>
-<div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>    <span class="comment">// Skip line</span></div>
-<div class="line"><span class="lineno">  224</span>    <span class="keywordtype">char</span> next;</div>
-<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  226</span>    in&gt;&gt;cl.weapon;</div>
-<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  228</span>    in&gt;&gt;cl.armor;</div>
-<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  230</span>    in&gt;&gt;cl.spell;</div>
-<div class="line"><span class="lineno">  231</span> </div>
-<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">return</span> in;</div>
-<div class="line"><span class="lineno">  233</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Hero_8cpp_source.html#l00234">234</a> of file <a class="el" href="Hero_8cpp_source.html">Hero.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>                                                  {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordtype">string</span> race;</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    getline(in, race);</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Human&quot;</span>) cl.race = Human;</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Mage&quot;</span>) cl.race = Mage;</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(race == <span class="stringliteral">&quot;Warrior&quot;</span>) cl.race = Warrior;</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">else</span> <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;File does not provide a valid race for the player&quot;</span> );</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    in&gt;&gt;cl.strength;</div>
+<div class="line"><span class="lineno">  245</span>    in&gt;&gt;cl.mana;</div>
+<div class="line"><span class="lineno">  246</span>    in&gt;&gt;cl.health;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="comment">// Skip line</span></div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordtype">char</span> next;</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  251</span>    in&gt;&gt;cl.weapon;</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  253</span>    in&gt;&gt;cl.armor;</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  255</span>    in&gt;&gt;cl.spell;</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">return</span> in;</div>
+<div class="line"><span class="lineno">  258</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

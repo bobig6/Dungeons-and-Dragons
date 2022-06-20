@@ -13,109 +13,115 @@
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00009}00009 \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00010}00010     \textcolor{comment}{// SECTION: HELPER FUNCTIONS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00011}00011 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00012}00012     \textcolor{keywordtype}{void} save(ostream\& os)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00013}00013         os<<strength;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00014}00014         os<<mana;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00015}00015         os<<health;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00016}00016         armor.save(os);}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00017}00017     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00020}\mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{00020}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{levelUp}}(\textcolor{keywordtype}{float} level)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00021}00021         strength += level*10;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00022}00022         mana += level*10;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00023}00023         health += level*10;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00024}00024         armor.setPercent(armor.getPercent()+level*5);}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00025}00025     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00027}00027 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00028}00028     \textcolor{comment}{// SECTION: CONSTRUCTORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00029}00029     \mbox{\hyperlink{classMonster}{Monster}}() \{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00030}00030         strength = 25;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00031}00031         mana = 25;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00032}00032         health = 50;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00018}\mbox{\hyperlink{classMonster_a160712807fcb52ac133fc63f3f1b6130}{00018}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMonster_a160712807fcb52ac133fc63f3f1b6130}{save}}(ostream\& os)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00019}00019         os<<strength;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00020}00020         os<<mana;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00021}00021         os<<health;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00022}00022         armor.save(os);}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00026}\mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{00026}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{levelUp}}(\textcolor{keywordtype}{float} level)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00027}00027         level-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00028}00028         strength += level*10;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00029}00029         mana += level*10;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00030}00030         health += level*10;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00031}00031         armor.setPercent(armor.getPercent()+level*5);}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00032}00032     \}}
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00033}00033 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00034}00034         armor = \mbox{\hyperlink{classArmor}{Armor}}(\textcolor{stringliteral}{"{}Dragon Scales"{}}, \textcolor{stringliteral}{"{}The dragon scales decrease the damage done by 15\%"{}}, 15);}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00035}00035     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00036}00036 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00037}00037     \mbox{\hyperlink{classMonster}{Monster}}(\textcolor{keywordtype}{float} strength, \textcolor{keywordtype}{float} mana, \textcolor{keywordtype}{float} health, \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&armor) : strength(strength), mana(mana),}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00038}00038                                                                             health(health), armor(armor) \{\}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00039}00039 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00040}00040     \mbox{\hyperlink{classMonster}{Monster}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMonster}{Monster}} \&other) : \mbox{\hyperlink{classMonster}{Monster}}(other.strength, other.mana, other.health, other.armor)\{\}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00041}00041 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00042}00042 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00043}00043     \textcolor{comment}{// SECTION: OPERATORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00045}\mbox{\hyperlink{classMonster_a880b854b38a4de80455d13607bbe605f}{00045}} \textcolor{comment}{}    \mbox{\hyperlink{classMonster}{Monster}}\& \mbox{\hyperlink{classMonster_a880b854b38a4de80455d13607bbe605f}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMonster}{Monster}}\& other)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00046}00046         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00047}00047             this-\/>strength = other.strength;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00048}00048             this-\/>mana = other.mana;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00049}00049             this-\/>health = other.health;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00050}00050             this-\/>armor = other.armor;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00051}00051         \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00052}00052         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00053}00053     \};}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00035}\mbox{\hyperlink{classMonster_a7e03a1ebfb17f2da8f317d9c0eae6a17}{00035}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMonster_a7e03a1ebfb17f2da8f317d9c0eae6a17}{dealDamage}}(\textcolor{keywordtype}{float} damage)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00036}00036         \textcolor{comment}{// Reduce damage by armor}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00037}00037         damage = armor.\mbox{\hyperlink{classArmor_a3dff941cec4145530e25b94ae1ecfa5f}{effect}}(damage);}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00038}00038         health -\/= damage;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00041}00041     \textcolor{comment}{// SECTION: CONSTRUCTORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00042}00042     \mbox{\hyperlink{classMonster}{Monster}}() \{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00043}00043         strength = 25;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00044}00044         mana = 25;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00045}00045         health = 50;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00047}00047         armor = \mbox{\hyperlink{classArmor}{Armor}}(\textcolor{stringliteral}{"{}Dragon Scales"{}}, \textcolor{stringliteral}{"{}The dragon scales decrease the damage done by 15\%"{}}, 15, ArmorType);}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00050}00050     \mbox{\hyperlink{classMonster}{Monster}}(\textcolor{keywordtype}{float} strength, \textcolor{keywordtype}{float} mana, \textcolor{keywordtype}{float} health, \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&armor) : strength(strength), mana(mana),}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00051}00051                                                                             health(health), armor(armor) \{\}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00053}00053     \mbox{\hyperlink{classMonster}{Monster}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMonster}{Monster}} \&other) : \mbox{\hyperlink{classMonster}{Monster}}(other.strength, other.mana, other.health, other.armor)\{\}}
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00054}00054 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00055}00055     \textcolor{keyword}{friend} ostream\& \mbox{\hyperlink{classMonster_a9c601de6759f49a8820e9460bf9b1fde}{operator<<}}(ostream\& os, \mbox{\hyperlink{classMonster}{Monster}}\& cl);}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00056}00056     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{classMonster_a5501b17c1171a154531ba536c9496423}{operator>>}}(std::istream\& in,  \mbox{\hyperlink{classMonster}{Monster}}\& cl);}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00057}00057 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00058}00058 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00059}00059     \textcolor{comment}{//SECTION: GETTERS AND SETTERS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00060}00060 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00061}00061 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00062}00062 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00063}00063     \textcolor{keywordtype}{float} getStrength()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00064}00064         \textcolor{keywordflow}{return} strength;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00065}00065     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00066}00066 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00067}00067     \textcolor{keywordtype}{void} setStrength(\textcolor{keywordtype}{float} newStrength) \{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00068}00068         Monster::strength = newStrength;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00056}00056     \textcolor{comment}{// SECTION: OPERATORS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00058}\mbox{\hyperlink{classMonster_a880b854b38a4de80455d13607bbe605f}{00058}} \textcolor{comment}{}    \mbox{\hyperlink{classMonster}{Monster}}\& \mbox{\hyperlink{classMonster_a880b854b38a4de80455d13607bbe605f}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMonster}{Monster}}\& other)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00059}00059         \textcolor{keywordflow}{if}(\textcolor{keyword}{this} != \&other)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00060}00060             this-\/>strength = other.strength;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00061}00061             this-\/>mana = other.mana;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00062}00062             this-\/>health = other.health;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00063}00063             this-\/>armor = other.armor;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00065}00065         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00066}00066     \};}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00068}00068     \textcolor{keyword}{friend} ostream\& \mbox{\hyperlink{classMonster_a9c601de6759f49a8820e9460bf9b1fde}{operator<<}}(ostream\& os, \mbox{\hyperlink{classMonster}{Monster}}\& cl);}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00069}00069     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{classMonster_a5501b17c1171a154531ba536c9496423}{operator>>}}(std::istream\& in,  \mbox{\hyperlink{classMonster}{Monster}}\& cl);}
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00070}00070 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00071}00071     \textcolor{keywordtype}{float} getMana()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00072}00072         \textcolor{keywordflow}{return} mana;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00072}00072     \textcolor{comment}{//SECTION: GETTERS AND SETTERS-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00073}00073 }
 \DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00074}00074 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00075}00075     \textcolor{keywordtype}{void} setMana(\textcolor{keywordtype}{float} newMana) \{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00076}00076         Monster::mana = newMana;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00077}00077     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00078}00078 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00079}00079     \textcolor{keywordtype}{float} getHealth()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00080}00080         \textcolor{keywordflow}{return} health;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00081}00081     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00083}00083     \textcolor{keywordtype}{void} setHealth(\textcolor{keywordtype}{float} newHealth) \{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00084}00084         Monster::health = newHealth;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00085}00085     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00086}00086 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00087}00087     \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&getArmor()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00088}00088         \textcolor{keywordflow}{return} armor;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00089}00089     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00090}00090 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00091}00091     \textcolor{keywordtype}{void} setArmor(\textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&newArmor) \{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00092}00092         Monster::armor = newArmor;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00093}00093     \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00094}00094 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00095}00095 \};}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00096}00096 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00098}\mbox{\hyperlink{classMonster_a9c601de6759f49a8820e9460bf9b1fde}{00098}} ostream\& operator<<(ostream\& os, \mbox{\hyperlink{classMonster}{Monster}}\& cl)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00099}00099     os<<\textcolor{stringliteral}{"{}Monster: "{}}<<endl;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00100}00100 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00101}00101     os<<\textcolor{stringliteral}{"{}strength: "{}}<<cl.strength << \textcolor{stringliteral}{"{} | mana: "{}} << cl.mana << \textcolor{stringliteral}{"{} | health: "{}} << cl.health << endl;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00102}00102     os<<\textcolor{stringliteral}{"{}Armor: "{}} << cl.armor << endl;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00103}00103     \textcolor{keywordflow}{return} os;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00104}00104 \}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00105}00105 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00115}\mbox{\hyperlink{classMonster_a5501b17c1171a154531ba536c9496423}{00115}} std::istream\& operator >> (std::istream\& in, \mbox{\hyperlink{classMonster}{Monster}}\& cl)\{}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00116}00116     in>>cl.strength;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00117}00117     in>>cl.mana;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00118}00118     in>>cl.health;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00119}00119 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00120}00120     \textcolor{comment}{// Skip line}}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00121}00121     \textcolor{keywordtype}{char} next;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00122}00122     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00123}00123 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00124}00124     in>>cl.armor;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00125}00125 }
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00126}00126     \textcolor{keywordflow}{return} in;}
-\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00127}00127 \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00076}00076     \textcolor{keywordtype}{float} getStrength()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00077}00077         \textcolor{keywordflow}{return} strength;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00080}00080     \textcolor{keywordtype}{void} setStrength(\textcolor{keywordtype}{float} newStrength) \{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00081}00081         Monster::strength = newStrength;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00084}00084     \textcolor{keywordtype}{float} getMana()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00085}00085         \textcolor{keywordflow}{return} mana;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00088}00088     \textcolor{keywordtype}{void} setMana(\textcolor{keywordtype}{float} newMana) \{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00089}00089         Monster::mana = newMana;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00092}00092     \textcolor{keywordtype}{float} getHealth()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00093}00093         \textcolor{keywordflow}{return} health;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00096}00096     \textcolor{keywordtype}{void} setHealth(\textcolor{keywordtype}{float} newHealth) \{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00097}00097         Monster::health = newHealth;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00100}00100     \textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&getArmor()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00101}00101         \textcolor{keywordflow}{return} armor;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00104}00104     \textcolor{keywordtype}{void} setArmor(\textcolor{keyword}{const} \mbox{\hyperlink{classArmor}{Armor}} \&newArmor) \{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00105}00105         Monster::armor = newArmor;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00108}00108 \};}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00111}\mbox{\hyperlink{classMonster_a9c601de6759f49a8820e9460bf9b1fde}{00111}} ostream\& operator<<(ostream\& os, \mbox{\hyperlink{classMonster}{Monster}}\& cl)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00112}00112     os<<\textcolor{stringliteral}{"{}Monster: "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00114}00114     os<<\textcolor{stringliteral}{"{}strength: "{}}<<cl.strength << \textcolor{stringliteral}{"{} | mana: "{}} << cl.mana << \textcolor{stringliteral}{"{} | health: "{}} << cl.health << endl;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00115}00115     os<<\textcolor{stringliteral}{"{}Armor: "{}} << cl.armor << endl;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00116}00116     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00117}00117 \}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00128}\mbox{\hyperlink{classMonster_a5501b17c1171a154531ba536c9496423}{00128}} std::istream\& operator >> (std::istream\& in, \mbox{\hyperlink{classMonster}{Monster}}\& cl)\{}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00129}00129     in>>cl.strength;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00130}00130     in>>cl.mana;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00131}00131     in>>cl.health;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00133}00133     \textcolor{comment}{// Skip line}}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00134}00134     \textcolor{keywordtype}{char} next;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00135}00135     \textcolor{keywordflow}{while}(in.get(next)) \textcolor{keywordflow}{if} (next == \textcolor{charliteral}{'\(\backslash\)n'})  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00137}00137     in>>cl.armor;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00139}00139     \textcolor{keywordflow}{return} in;}
+\DoxyCodeLine{\Hypertarget{Monster_8cpp_source_l00140}00140 \}}
 
 \end{DoxyCode}

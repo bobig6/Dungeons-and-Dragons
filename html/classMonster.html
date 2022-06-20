@@ -76,6 +76,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a160712807fcb52ac133fc63f3f1b6130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d25c17e1cf0a08f41acb5d785006190"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a6d25c17e1cf0a08f41acb5d785006190">levelUp</a> (float level)</td></tr>
 <tr class="separator:a6d25c17e1cf0a08f41acb5d785006190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e03a1ebfb17f2da8f317d9c0eae6a17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a7e03a1ebfb17f2da8f317d9c0eae6a17">dealDamage</a> (float damage)</td></tr>
+<tr class="separator:a7e03a1ebfb17f2da8f317d9c0eae6a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22b0d03816034af9f8165cb0297e5e54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a22b0d03816034af9f8165cb0297e5e54">Monster</a> (float strength, float mana, float health, const <a class="el" href="classArmor.html">Armor</a> &amp;armor)</td></tr>
 <tr class="separator:a22b0d03816034af9f8165cb0297e5e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae395eaa16b17ea528404ac14d2c99c5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ae395eaa16b17ea528404ac14d2c99c5e">Monster</a> (const <a class="el" href="classMonster.html">Monster</a> &amp;other)</td></tr>
@@ -133,14 +135,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00029">29</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>              {</div>
-<div class="line"><span class="lineno">   30</span>        strength = 25;</div>
-<div class="line"><span class="lineno">   31</span>        mana = 25;</div>
-<div class="line"><span class="lineno">   32</span>        health = 50;</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>(<span class="stringliteral">&quot;Dragon Scales&quot;</span>, <span class="stringliteral">&quot;The dragon scales decrease the damage done by 15%&quot;</span>, 15);</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00042">42</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>              {</div>
+<div class="line"><span class="lineno">   43</span>        strength = 25;</div>
+<div class="line"><span class="lineno">   44</span>        mana = 25;</div>
+<div class="line"><span class="lineno">   45</span>        health = 50;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        armor = <a class="code hl_class" href="classArmor.html">Armor</a>(<span class="stringliteral">&quot;Dragon Scales&quot;</span>, <span class="stringliteral">&quot;The dragon scales decrease the damage done by 15%&quot;</span>, 15, ArmorType);</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
 <div class="ttc" id="aclassArmor_html"><div class="ttname"><a href="classArmor.html">Armor</a></div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00004">Armor.cpp:4</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -191,9 +193,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00037">37</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                                          : strength(strength), mana(mana),</div>
-<div class="line"><span class="lineno">   38</span>                                                                            health(health), armor(armor) {}</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00050">50</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                                          : strength(strength), mana(mana),</div>
+<div class="line"><span class="lineno">   51</span>                                                                            health(health), armor(armor) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -221,13 +223,48 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00040">40</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>: <a class="code hl_class" href="classMonster.html">Monster</a>(other.strength, other.mana, other.health, other.armor){}</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00053">53</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>: <a class="code hl_class" href="classMonster.html">Monster</a>(other.strength, other.mana, other.health, other.armor){}</div>
 <div class="ttc" id="aclassMonster_html"><div class="ttname"><a href="classMonster.html">Monster</a></div><div class="ttdef"><b>Definition:</b> <a href="Monster_8cpp_source.html#l00002">Monster.cpp:2</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7e03a1ebfb17f2da8f317d9c0eae6a17" name="a7e03a1ebfb17f2da8f317d9c0eae6a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e03a1ebfb17f2da8f317d9c0eae6a17">&#9670;&nbsp;</a></span>dealDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Monster::dealDamage </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reduces the damage dealt to the enemy by its armor percent </p>
+
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00035">35</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                 {</div>
+<div class="line"><span class="lineno">   36</span>        <span class="comment">// Reduce damage by armor</span></div>
+<div class="line"><span class="lineno">   37</span>        damage = armor.<a class="code hl_function" href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">effect</a>(damage);</div>
+<div class="line"><span class="lineno">   38</span>        health -= damage;</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="ttc" id="aclassArmor_html_a3dff941cec4145530e25b94ae1ecfa5f"><div class="ttname"><a href="classArmor.html#a3dff941cec4145530e25b94ae1ecfa5f">Armor::effect</a></div><div class="ttdeci">float effect(float obj) override</div><div class="ttdef"><b>Definition:</b> <a href="Armor_8cpp_source.html#l00017">Armor.cpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab24d47a53ce870ec4630fec55054a787" name="ab24d47a53ce870ec4630fec55054a787"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab24d47a53ce870ec4630fec55054a787">&#9670;&nbsp;</a></span>getArmor()</h2>
 
@@ -251,10 +288,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00087">87</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>                                  {</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> armor;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00100">100</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                  {</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> armor;</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -281,10 +318,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00079">79</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                            {</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">return</span> health;</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00092">92</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                            {</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">return</span> health;</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,10 +348,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00071">71</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                          {</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span> mana;</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00084">84</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                          {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> mana;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,10 +378,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00063">63</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                              {</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> strength;</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00076">76</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                              {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> strength;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -373,13 +410,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Levels up the monster by increasing every stat by 10 for every level and armor by 5 for every level </p>
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00020">20</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                             {</div>
-<div class="line"><span class="lineno">   21</span>        strength += level*10;</div>
-<div class="line"><span class="lineno">   22</span>        mana += level*10;</div>
-<div class="line"><span class="lineno">   23</span>        health += level*10;</div>
-<div class="line"><span class="lineno">   24</span>        armor.setPercent(armor.getPercent()+level*5);</div>
-<div class="line"><span class="lineno">   25</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00026">26</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                             {</div>
+<div class="line"><span class="lineno">   27</span>        level--;</div>
+<div class="line"><span class="lineno">   28</span>        strength += level*10;</div>
+<div class="line"><span class="lineno">   29</span>        mana += level*10;</div>
+<div class="line"><span class="lineno">   30</span>        health += level*10;</div>
+<div class="line"><span class="lineno">   31</span>        armor.setPercent(armor.getPercent()+level*5);</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -408,16 +446,16 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Assignment operator for the <a class="el" href="classMonster.html">Monster</a> class </p>
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00045">45</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                            {</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><span class="lineno">   47</span>            this-&gt;strength = other.strength;</div>
-<div class="line"><span class="lineno">   48</span>            this-&gt;mana = other.mana;</div>
-<div class="line"><span class="lineno">   49</span>            this-&gt;health = other.health;</div>
-<div class="line"><span class="lineno">   50</span>            this-&gt;armor = other.armor;</div>
-<div class="line"><span class="lineno">   51</span>        }</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   53</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00058">58</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                                            {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
+<div class="line"><span class="lineno">   60</span>            this-&gt;strength = other.strength;</div>
+<div class="line"><span class="lineno">   61</span>            this-&gt;mana = other.mana;</div>
+<div class="line"><span class="lineno">   62</span>            this-&gt;health = other.health;</div>
+<div class="line"><span class="lineno">   63</span>            this-&gt;armor = other.armor;</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   66</span>    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -444,14 +482,20 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Saves the monster in format:</p><ul>
+<li>strength</li>
+<li>mana</li>
+<li>health</li>
+<li>armor </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00012">12</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                          {</div>
-<div class="line"><span class="lineno">   13</span>        os&lt;&lt;strength;</div>
-<div class="line"><span class="lineno">   14</span>        os&lt;&lt;mana;</div>
-<div class="line"><span class="lineno">   15</span>        os&lt;&lt;health;</div>
-<div class="line"><span class="lineno">   16</span>        armor.save(os);</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00018">18</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                          {</div>
+<div class="line"><span class="lineno">   19</span>        os&lt;&lt;strength;</div>
+<div class="line"><span class="lineno">   20</span>        os&lt;&lt;mana;</div>
+<div class="line"><span class="lineno">   21</span>        os&lt;&lt;health;</div>
+<div class="line"><span class="lineno">   22</span>        armor.save(os);</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -479,10 +523,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00091">91</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>                                         {</div>
-<div class="line"><span class="lineno">   92</span>        Monster::armor = newArmor;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00104">104</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>                                         {</div>
+<div class="line"><span class="lineno">  105</span>        Monster::armor = newArmor;</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -510,10 +554,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00083">83</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                    {</div>
-<div class="line"><span class="lineno">   84</span>        Monster::health = newHealth;</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00096">96</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                    {</div>
+<div class="line"><span class="lineno">   97</span>        Monster::health = newHealth;</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -541,10 +585,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00075">75</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>                                {</div>
-<div class="line"><span class="lineno">   76</span>        Monster::mana = newMana;</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00088">88</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                {</div>
+<div class="line"><span class="lineno">   89</span>        Monster::mana = newMana;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,10 +616,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00067">67</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                        {</div>
-<div class="line"><span class="lineno">   68</span>        Monster::strength = newStrength;</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00080">80</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                                        {</div>
+<div class="line"><span class="lineno">   81</span>        Monster::strength = newStrength;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -615,14 +659,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Outputs information about monster to ostream </p>
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00098">98</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>                                             {</div>
-<div class="line"><span class="lineno">   99</span>    os&lt;&lt;<span class="stringliteral">&quot;Monster: &quot;</span>&lt;&lt;endl;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;cl.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; cl.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; cl.health &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  102</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; cl.armor &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> os;</div>
-<div class="line"><span class="lineno">  104</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00111">111</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>                                             {</div>
+<div class="line"><span class="lineno">  112</span>    os&lt;&lt;<span class="stringliteral">&quot;Monster: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    os&lt;&lt;<span class="stringliteral">&quot;strength: &quot;</span>&lt;&lt;cl.strength &lt;&lt; <span class="stringliteral">&quot; | mana: &quot;</span> &lt;&lt; cl.mana &lt;&lt; <span class="stringliteral">&quot; | health: &quot;</span> &lt;&lt; cl.health &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  115</span>    os&lt;&lt;<span class="stringliteral">&quot;Armor: &quot;</span> &lt;&lt; cl.armor &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> os;</div>
+<div class="line"><span class="lineno">  117</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -671,20 +715,20 @@ Friends</h2></td></tr>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00115">115</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                     {</div>
-<div class="line"><span class="lineno">  116</span>    in&gt;&gt;cl.strength;</div>
-<div class="line"><span class="lineno">  117</span>    in&gt;&gt;cl.mana;</div>
-<div class="line"><span class="lineno">  118</span>    in&gt;&gt;cl.health;</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="comment">// Skip line</span></div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordtype">char</span> next;</div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>    in&gt;&gt;cl.armor;</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> in;</div>
-<div class="line"><span class="lineno">  127</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Monster_8cpp_source.html#l00128">128</a> of file <a class="el" href="Monster_8cpp_source.html">Monster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>                                                     {</div>
+<div class="line"><span class="lineno">  129</span>    in&gt;&gt;cl.strength;</div>
+<div class="line"><span class="lineno">  130</span>    in&gt;&gt;cl.mana;</div>
+<div class="line"><span class="lineno">  131</span>    in&gt;&gt;cl.health;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">// Skip line</span></div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">char</span> next;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">while</span>(in.get(next)) <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;\n&#39;</span>)  <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    in&gt;&gt;cl.armor;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> in;</div>
+<div class="line"><span class="lineno">  140</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -5,29 +5,18 @@
 \DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00001}00001 }
 \DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00004}\mbox{\hyperlink{classSpell}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classSpell}{Spell}} : \textcolor{keyword}{public} \mbox{\hyperlink{classItem}{Item}}\{}
 \DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00005}00005 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00007}\mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{00007}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{isActivated}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00009}\mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{00009}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}} = 0;}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00010}00010 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00012}\mbox{\hyperlink{classSpell_a8471a06c405bd5ba16ba823c90380643}{00012}}     \mbox{\hyperlink{classSpell_a8471a06c405bd5ba16ba823c90380643}{Spell}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{\}}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00013}00013 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00015}\mbox{\hyperlink{classSpell_a614361c1702859a162e1572030166cb0}{00015}}     \mbox{\hyperlink{classSpell_a614361c1702859a162e1572030166cb0}{Spell}}() : \mbox{\hyperlink{classItem}{Item}}()\{\}}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00008}\mbox{\hyperlink{classSpell_a5ed2e4a6d79484f94c05c3287835f41c}{00008}}     \mbox{\hyperlink{classSpell_a5ed2e4a6d79484f94c05c3287835f41c}{Spell}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \textcolor{keywordtype}{float} \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, ItemType \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) \{\}}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00011}\mbox{\hyperlink{classSpell_a614361c1702859a162e1572030166cb0}{00011}}     \mbox{\hyperlink{classSpell_a614361c1702859a162e1572030166cb0}{Spell}}() : \mbox{\hyperlink{classItem}{Item}}(ItemType::SpellType)\{\}}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00014}\mbox{\hyperlink{classSpell_aae765935b097d7dd514a9afeed1ad8b6}{00014}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{classSpell_aae765935b097d7dd514a9afeed1ad8b6}{Spell}}(\textcolor{keyword}{const} \mbox{\hyperlink{classItem}{Item}} \&other) : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, other.\mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) \{\}}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00015}00015 }
 \DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00016}00016 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00018}\mbox{\hyperlink{classSpell_afa39ee1e67406847f9b26d8c110df456}{00018}}     \mbox{\hyperlink{classSpell_afa39ee1e67406847f9b26d8c110df456}{Spell}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSpell}{Spell}} \&other) : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{\}}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00020}00020 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00022}\mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{00022}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{effect}}(\textcolor{keywordtype}{float} obj)\textcolor{keyword}{ override}\{}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00023}00023         \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}} = (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00024}00024         \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{isActivated}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00025}00025         obj = obj + \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}};}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00026}00026         \textcolor{keywordflow}{return} obj;}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00027}00027     \}}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00028}00028 }
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00030}\mbox{\hyperlink{classSpell_a80c1c222a2c118580318b6e1e33199c5}{00030}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{classSpell_a80c1c222a2c118580318b6e1e33199c5}{deactivate}}(\textcolor{keywordtype}{float} obj)\{}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00031}00031         \mbox{\hyperlink{classSpell_a630e54d599df17e5dd847e2f8428b24c}{isActivated}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00032}00032         obj = obj -\/ \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}};}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00033}00033         \mbox{\hyperlink{classSpell_a72ae3c7e0e8228854c208cbf58163337}{effectBoost}} = 0;}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00034}00034         \textcolor{keywordflow}{return} obj;}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00035}00035     \}}
-\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00036}00036 \};}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00019}\mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{00019}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{classSpell_adb4db00d4bba4b79f46ecfdd5761dca6}{effect}}(\textcolor{keywordtype}{float} obj)\textcolor{keyword}{ override}\{}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00020}00020         \textcolor{keywordflow}{return} obj + (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{Spell_8cpp_source_l00023}00023 \};}
 
 \end{DoxyCode}

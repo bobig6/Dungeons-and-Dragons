@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['weapon_0',['Weapon',['../classWeapon.html',1,'Weapon'],['../classWeapon.html#a14ade8520463d7b2ab6dcfc1570f6dc3',1,'Weapon::Weapon(const string &amp;name, const string &amp;description, float percent)'],['../classWeapon.html#a42dbc46dd70319a24763992c4ebbd396',1,'Weapon::Weapon()'],['../classWeapon.html#ac0c75166822c7694cb0410b80a58d475',1,'Weapon::Weapon(const Weapon &amp;other)']]]
+  ['useattack_0',['useAttack',['../classHero.html#a0de4db383b66e85feb4fa601f5b0b1f8',1,'Hero']]],
+  ['usespell_1',['useSpell',['../classHero.html#abc3caa1ceb90545c5c170d00bdb96905',1,'Hero']]]
 ];

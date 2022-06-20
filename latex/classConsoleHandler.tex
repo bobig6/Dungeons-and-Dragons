@@ -9,7 +9,7 @@
 \item 
 void \mbox{\hyperlink{classConsoleHandler_a995f7811611ee826654db8f76b707d2f}{main}} ()
 \item 
-void \mbox{\hyperlink{classConsoleHandler_a9fee1f6a0ed86c7e5123cc854e56e80e}{game\+Start}} ()
+bool \mbox{\hyperlink{classConsoleHandler_ab6a28e85749fd6fd5e782d2ee38ac74e}{game\+Start}} ()
 \item 
 void \mbox{\hyperlink{classConsoleHandler_a7905a47e022e71d802b4439a65cb986d}{print\+Map}} ()
 \item 
@@ -27,19 +27,15 @@ void \mbox{\hyperlink{classConsoleHandler_a8bd08190af62cb9abf8aeb73c473a247}{hel
 \item 
 void \mbox{\hyperlink{classConsoleHandler_ac6e5f4c517e947a8f3ee62a884302811}{help\+Game\+Start}} ()
 \item 
-void \mbox{\hyperlink{classConsoleHandler_a3a719f4ac9b94f657fc220d92d97dcd9}{exit}} ()
-\item 
 bool \mbox{\hyperlink{classConsoleHandler_aae2104cc4bd7c9f329117df696d63ca2}{open}} (string name)
 \item 
 bool \mbox{\hyperlink{classConsoleHandler_ac505c6e76c00c45e29584f43fd5f2383}{new\+Game}} (string new\+\_\+name)
 \item 
-void \mbox{\hyperlink{classConsoleHandler_a62afd50bee445de9887a87c6eeec5e7b}{move}} ()
+bool \mbox{\hyperlink{classConsoleHandler_a2c70cb351ad38df8cb2e1a139fa33680}{move}} ()
 \item 
 void \mbox{\hyperlink{classConsoleHandler_ada8a929ea2093658aa675eb04e5b4793}{found\+Treasure}} ()
 \item 
-void \mbox{\hyperlink{classConsoleHandler_aba4a39f764e55e023cf22643a58e2ce0}{fight}} ()
-\item 
-void \mbox{\hyperlink{classConsoleHandler_aaa94b74456c1e3b18f3522f37415a3e0}{game\+Over}} ()
+bool \mbox{\hyperlink{classConsoleHandler_ad589a95faa6d34ddd6afb70251c405f7}{fight}} ()
 \item 
 void \mbox{\hyperlink{classConsoleHandler_a01454c9c15a065471d4255228be2199c}{level\+Completed}} ()
 \item 
@@ -50,7 +46,7 @@ void \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{ref
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 
@@ -63,13 +59,13 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00010}{10}} of f
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018                      : gameController()\{}
-\DoxyCodeLine{00019         fileName = \textcolor{stringliteral}{"{}Default.txt"{}};}
-\DoxyCodeLine{00020     \};}
+\DoxyCodeLine{00020                      : gameController()\{}
+\DoxyCodeLine{00021         fileName = \textcolor{stringliteral}{"{}Default.txt"{}};}
+\DoxyCodeLine{00022     \};}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a0788b2a4d5fa653cfbd9850032cd39dc}\label{classConsoleHandler_a0788b2a4d5fa653cfbd9850032cd39dc}} 
@@ -80,13 +76,13 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00018}{18}} of f
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022                                                                   : gameController(gameController) \{}
-\DoxyCodeLine{00023         fileName = \textcolor{stringliteral}{"{}Default.txt"{}};}
-\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00024                                                                   : gameController(gameController) \{}
+\DoxyCodeLine{00025         fileName = \textcolor{stringliteral}{"{}Default.txt"{}};}
+\DoxyCodeLine{00026     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_add917d66c1c1ff5f44662cc82f33f79d}\label{classConsoleHandler_add917d66c1c1ff5f44662cc82f33f79d}} 
@@ -97,18 +93,21 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00022}{22}} of f
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026                                             \{}
-\DoxyCodeLine{00027         gameController = \mbox{\hyperlink{classGameController}{GameController}}();}
-\DoxyCodeLine{00028         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}{loadFromFile}}(std::move(filename));}
-\DoxyCodeLine{00029         \textcolor{keywordflow}{if}(!isOpened)\{}
-\DoxyCodeLine{00030             cout<<\textcolor{stringliteral}{"{}Trying to open file with constructor failed"{}};}
-\DoxyCodeLine{00031             std::exit(1);}
-\DoxyCodeLine{00032         \}}
-\DoxyCodeLine{00033     \}}
+\DoxyCodeLine{00028                                             \{}
+\DoxyCodeLine{00029         gameController = \mbox{\hyperlink{classGameController}{GameController}}();}
+\DoxyCodeLine{00030         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}{loadFromFile}}(std::move(filename));}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{if}(!isOpened)\{}
+\DoxyCodeLine{00032             cout<<\textcolor{stringliteral}{"{}Trying to open file with constructor failed"{}};}
+\DoxyCodeLine{00033             gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a5453bb867dd27ccfdffc225b8edac198}{deleteField}}();}
+\DoxyCodeLine{00034             \textcolor{keyword}{delete} [] gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}};}
+\DoxyCodeLine{00035             gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.\mbox{\hyperlink{classHero_afa43491d74ab56bc6efcaa6027b2e130}{clear}}();}
+\DoxyCodeLine{00036             std::exit(1);}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038     \}}
 
 \end{DoxyCode}
 
@@ -122,14 +121,14 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00026}{26}} of f
 
 Closes the current file without saving and sets the filename to \char`\"{} \char`\"{} 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00151                 \{}
-\DoxyCodeLine{00152         cout<<\textcolor{stringliteral}{"{}Successfully closed "{}}<<fileName<<endl;}
-\DoxyCodeLine{00153         fileName = \textcolor{stringliteral}{"{} "{}};}
-\DoxyCodeLine{00154     \}}
+\DoxyCodeLine{00170                 \{}
+\DoxyCodeLine{00171         cout<<\textcolor{stringliteral}{"{}Successfully closed "{}}<<fileName<<endl;}
+\DoxyCodeLine{00172         fileName = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00173     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}\label{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}} 
@@ -140,62 +139,127 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00151}{151}} of 
 
 Creates a delimiter with a given size 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00135                             \{}
-\DoxyCodeLine{00136         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; ++i) \{}
-\DoxyCodeLine{00137             cout<<\textcolor{charliteral}{'-\/'};}
-\DoxyCodeLine{00138         \}}
-\DoxyCodeLine{00139         cout<<endl;}
-\DoxyCodeLine{00140     \}}
+\DoxyCodeLine{00154                             \{}
+\DoxyCodeLine{00155         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; ++i) \{}
+\DoxyCodeLine{00156             cout<<\textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{00157         \}}
+\DoxyCodeLine{00158         cout<<endl;}
+\DoxyCodeLine{00159     \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classConsoleHandler_a3a719f4ac9b94f657fc220d92d97dcd9}\label{classConsoleHandler_a3a719f4ac9b94f657fc220d92d97dcd9}} 
-\index{ConsoleHandler@{ConsoleHandler}!exit@{exit}}
-\index{exit@{exit}!ConsoleHandler@{ConsoleHandler}}
-\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
-{\footnotesize\ttfamily void Console\+Handler\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-This function handles the exit command. If a file is opened and not saved it prints a warning message. Else it just closes the program 
-
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00195}{195}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00195                \{}
-\DoxyCodeLine{00196         \textcolor{keywordflow}{if}(isSaved)\{}
-\DoxyCodeLine{00197             cout<<\textcolor{stringliteral}{"{}Exiting program..."{}};}
-\DoxyCodeLine{00198             std::exit(0);}
-\DoxyCodeLine{00199         \}}
-\DoxyCodeLine{00200         \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00201             \textcolor{keywordflow}{if}(fileName == \textcolor{stringliteral}{"{} "{}}) \{}
-\DoxyCodeLine{00202                 cout<<\textcolor{stringliteral}{"{}Exiting program..."{}};}
-\DoxyCodeLine{00203                 std::exit(0);}
-\DoxyCodeLine{00204             \}}
-\DoxyCodeLine{00205             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00206                 cout<<\textcolor{stringliteral}{"{}You have an open file with unsaved changes, please select close or save first."{}}<<endl;}
-\DoxyCodeLine{00207             \}}
-\DoxyCodeLine{00208         \}}
-\DoxyCodeLine{00209     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classConsoleHandler_aba4a39f764e55e023cf22643a58e2ce0}\label{classConsoleHandler_aba4a39f764e55e023cf22643a58e2ce0}} 
+\mbox{\Hypertarget{classConsoleHandler_ad589a95faa6d34ddd6afb70251c405f7}\label{classConsoleHandler_ad589a95faa6d34ddd6afb70251c405f7}} 
 \index{ConsoleHandler@{ConsoleHandler}!fight@{fight}}
 \index{fight@{fight}!ConsoleHandler@{ConsoleHandler}}
 \doxysubsubsection{\texorpdfstring{fight()}{fight()}}
-{\footnotesize\ttfamily void Console\+Handler\+::fight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Console\+Handler\+::fight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+This function is called when a player meets a monster. For a better game experience I decided to make the monsters not spawn randomly, but instead to be placed on the map by the game designer. 
 
-
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00303}{303}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00363}{363}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00303                 \{}
-\DoxyCodeLine{00304         isSaved = \textcolor{keyword}{false};}
-\DoxyCodeLine{00305     \}}
+\DoxyCodeLine{00363                 \{}
+\DoxyCodeLine{00364         isSaved = \textcolor{keyword}{false};}
+\DoxyCodeLine{00365         cout << \textcolor{stringliteral}{"{}You have met a Monster. A fight has begun:"{}} << endl;}
+\DoxyCodeLine{00366         \textcolor{comment}{// Create the monster}}
+\DoxyCodeLine{00367         \mbox{\hyperlink{classMonster}{Monster}} enemy = \mbox{\hyperlink{classMonster}{Monster}}();}
+\DoxyCodeLine{00368         enemy.\mbox{\hyperlink{classMonster_a6d25c17e1cf0a08f41acb5d785006190}{levelUp}}((\textcolor{keywordtype}{float})gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}});}
+\DoxyCodeLine{00369 }
+\DoxyCodeLine{00370         \textcolor{keywordtype}{float} heroHealth = gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getHealth();}
+\DoxyCodeLine{00371 }
+\DoxyCodeLine{00372         \textcolor{comment}{// Random pick who is first}}
+\DoxyCodeLine{00373         \textcolor{keywordtype}{bool} heroTurn = \textcolor{keyword}{false};}
+\DoxyCodeLine{00374         std::random\_device rd; \textcolor{comment}{// obtain a random number from hardware}}
+\DoxyCodeLine{00375         std::mt19937 gen(rd()); \textcolor{comment}{// seed the generator}}
+\DoxyCodeLine{00376         std::uniform\_int\_distribution<> distr(0, 100); \textcolor{comment}{// define the range}}
+\DoxyCodeLine{00377         \textcolor{keywordtype}{int} rando = distr(gen);}
+\DoxyCodeLine{00378         \textcolor{keywordflow}{if}(rando < 50) heroTurn = \textcolor{keyword}{true};}
+\DoxyCodeLine{00379         cout << \textcolor{stringliteral}{"{}Your stats: "{}}<<endl;}
+\DoxyCodeLine{00380         printHeroStats();}
+\DoxyCodeLine{00381         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
+\DoxyCodeLine{00382         cout << enemy;}
+\DoxyCodeLine{00383         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385 }
+\DoxyCodeLine{00386         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00387             \textcolor{comment}{// Hero's turn}}
+\DoxyCodeLine{00388             \textcolor{keywordflow}{if}(heroTurn)\{}
+\DoxyCodeLine{00389                 \textcolor{keywordtype}{float} total\_attack = 0;}
+\DoxyCodeLine{00390                 cout << \textcolor{stringliteral}{"{}Your turn:"{}} << endl;}
+\DoxyCodeLine{00391                 \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00392                     \textcolor{keywordtype}{string} decision;}
+\DoxyCodeLine{00393                     cout << \textcolor{stringliteral}{"{}Chose what to do (attack/spell): "{}} << endl; getline(cin, decision);}
+\DoxyCodeLine{00394                     \textcolor{keywordflow}{if}(decision == \textcolor{stringliteral}{"{}attack"{}})\{}
+\DoxyCodeLine{00395                         total\_attack = gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.\mbox{\hyperlink{classHero_a0de4db383b66e85feb4fa601f5b0b1f8}{useAttack}}();}
+\DoxyCodeLine{00396                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00397                     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(decision == \textcolor{stringliteral}{"{}spell"{}})\{}
+\DoxyCodeLine{00398                         total\_attack = gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.\mbox{\hyperlink{classHero_abc3caa1ceb90545c5c170d00bdb96905}{useSpell}}();}
+\DoxyCodeLine{00399                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00400                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00401                         cout << \textcolor{stringliteral}{"{}Invalid command. Try again: "{}} << endl;}
+\DoxyCodeLine{00402                     \}}
+\DoxyCodeLine{00403                 \}}
+\DoxyCodeLine{00404 }
+\DoxyCodeLine{00405                 enemy.dealDamage(total\_attack);}
+\DoxyCodeLine{00406                 heroTurn = \textcolor{keyword}{false};}
+\DoxyCodeLine{00407             \}}
+\DoxyCodeLine{00408             \textcolor{comment}{// Monster's turn}}
+\DoxyCodeLine{00409             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00410                 cout << \textcolor{stringliteral}{"{}Enemy's turn:"{}} << endl;}
+\DoxyCodeLine{00411                 \textcolor{keywordtype}{float} total\_attack = 0;}
+\DoxyCodeLine{00412                 rando = distr(gen);}
+\DoxyCodeLine{00413                 \textcolor{keywordflow}{if}(rando < 50) \{}
+\DoxyCodeLine{00414                     \textcolor{comment}{// Monster calls Attack}}
+\DoxyCodeLine{00415                     total\_attack = enemy.getStrength();}
+\DoxyCodeLine{00416                     cout << \textcolor{stringliteral}{"{}Monster chose to attack you"{}} << endl;}
+\DoxyCodeLine{00417                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00418                     \textcolor{comment}{// Monster calls Spell}}
+\DoxyCodeLine{00419                     total\_attack = enemy.getMana();}
+\DoxyCodeLine{00420                     cout << \textcolor{stringliteral}{"{}Monster chose to use a spell on you"{}} << endl;}
+\DoxyCodeLine{00421                 \}}
+\DoxyCodeLine{00422 }
+\DoxyCodeLine{00423                 gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.\mbox{\hyperlink{classHero_af0b61c6468687c003324fbdc7cc37faf}{dealDamage}}(total\_attack);}
+\DoxyCodeLine{00424 }
+\DoxyCodeLine{00425                 heroTurn = \textcolor{keyword}{true};}
+\DoxyCodeLine{00426             \}}
+\DoxyCodeLine{00427 }
+\DoxyCodeLine{00428             \textcolor{keywordtype}{string} c;}
+\DoxyCodeLine{00429             cout<< \textcolor{stringliteral}{"{}Type anything to continue: "{}}; cin>>c;}
+\DoxyCodeLine{00430 }
+\DoxyCodeLine{00431             \textcolor{comment}{// Refresh the screen}}
+\DoxyCodeLine{00432             system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00433             cout << \textcolor{stringliteral}{"{}Your stats: "{}}<<endl;}
+\DoxyCodeLine{00434             printHeroStats();}
+\DoxyCodeLine{00435             \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
+\DoxyCodeLine{00436             cout << enemy;}
+\DoxyCodeLine{00437             \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
+\DoxyCodeLine{00438 }
+\DoxyCodeLine{00439             \textcolor{keywordflow}{if}(gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getHealth() <= 0)\{}
+\DoxyCodeLine{00440                 cout << \textcolor{stringliteral}{"{}You died! You will be redirected to the Main Menu. You can load your last save."{}} << endl;}
+\DoxyCodeLine{00441                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00442             \}}
+\DoxyCodeLine{00443             \textcolor{keywordflow}{if}(enemy.getHealth() <= 0)\{}
+\DoxyCodeLine{00444                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00445             \}}
+\DoxyCodeLine{00446 }
+\DoxyCodeLine{00447         \}}
+\DoxyCodeLine{00448 }
+\DoxyCodeLine{00449         cout<<\textcolor{stringliteral}{"{}You won!!!"{}} << endl;}
+\DoxyCodeLine{00450         \textcolor{keywordflow}{if}(gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getHealth() < 0.5 * heroHealth)\{}
+\DoxyCodeLine{00451             gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setHealth(0.5f * heroHealth);}
+\DoxyCodeLine{00452             cout << \textcolor{stringliteral}{"{}You've taken too much damage. It's time to heal... Your health is restored to 50\% of it's original state: "{}} << gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getHealth() << \textcolor{stringliteral}{"{} points"{}} << endl;}
+\DoxyCodeLine{00453         \}}
+\DoxyCodeLine{00454 }
+\DoxyCodeLine{00455         \textcolor{keywordtype}{string} c;}
+\DoxyCodeLine{00456         cout<< \textcolor{stringliteral}{"{}Type anything to continue: "{}}; cin>>c;}
+\DoxyCodeLine{00457         \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00458         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00459     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_ada8a929ea2093658aa675eb04e5b4793}\label{classConsoleHandler_ada8a929ea2093658aa675eb04e5b4793}} 
@@ -206,37 +270,65 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00303}{303}} of 
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00311}{311}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00300                         \{}
-\DoxyCodeLine{00301         isSaved = \textcolor{keyword}{false};}
-\DoxyCodeLine{00302     \}}
+\DoxyCodeLine{00311                         \{}
+\DoxyCodeLine{00312         isSaved = \textcolor{keyword}{false};}
+\DoxyCodeLine{00313         system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00314         cout << \textcolor{stringliteral}{"{}You have found a treasure!!!"{}} << endl;}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316         \textcolor{comment}{// Picking random item from the list}}
+\DoxyCodeLine{00317         std::random\_device rd; \textcolor{comment}{// obtain a random number from hardware}}
+\DoxyCodeLine{00318         std::mt19937 gen(rd()); \textcolor{comment}{// seed the generator}}
+\DoxyCodeLine{00319         std::uniform\_int\_distribution<> distr(0, gameController.\mbox{\hyperlink{classGameController_ad85c5068db465de9a0a01d6bed475304}{tr\_size}}-\/1); \textcolor{comment}{// define the range}}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321         \textcolor{keywordtype}{int} tr\_index = distr(gen);}
+\DoxyCodeLine{00322 }
+\DoxyCodeLine{00323         cout << gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[tr\_index];}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{00325         \textcolor{keywordtype}{bool} equip = \textcolor{keyword}{false};}
+\DoxyCodeLine{00326         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00327             cout << endl << \textcolor{stringliteral}{"{}Do you want to equip it(yes/no): "{}};}
+\DoxyCodeLine{00328             \textcolor{keywordtype}{string} decision;}
+\DoxyCodeLine{00329             getline(cin, decision);}
+\DoxyCodeLine{00330             \textcolor{keywordflow}{if}(decision == \textcolor{stringliteral}{"{}yes"{}})\{}
+\DoxyCodeLine{00331                 equip = \textcolor{keyword}{true};}
+\DoxyCodeLine{00332                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00333             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(decision == \textcolor{stringliteral}{"{}no"{}})\{}
+\DoxyCodeLine{00334                 equip = \textcolor{keyword}{false};}
+\DoxyCodeLine{00335                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00336             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00337                 cout<<\textcolor{stringliteral}{"{}Answer not recognized. Try again: "{}};}
+\DoxyCodeLine{00338             \}}
+\DoxyCodeLine{00339         \}}
+\DoxyCodeLine{00340         \textcolor{keywordflow}{if}(!equip)\{}
+\DoxyCodeLine{00341             \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00342             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00343         \}}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{00345         \textcolor{keywordflow}{switch} (gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[tr\_index].getType()) \{}
+\DoxyCodeLine{00346             \textcolor{keywordflow}{case} WeaponType:}
+\DoxyCodeLine{00347                 gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setWeapon(\mbox{\hyperlink{classWeapon}{Weapon}}(gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[tr\_index]));}
+\DoxyCodeLine{00348                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00349             \textcolor{keywordflow}{case} ArmorType:}
+\DoxyCodeLine{00350                 gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setArmor(\mbox{\hyperlink{classArmor}{Armor}}(gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[tr\_index]));}
+\DoxyCodeLine{00351                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00352             \textcolor{keywordflow}{case} SpellType:}
+\DoxyCodeLine{00353                 gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setSpell(\mbox{\hyperlink{classSpell}{Spell}}(gameController.\mbox{\hyperlink{classGameController_ad34002ae74e376542cbf1a8cff28c99f}{treasures}}[tr\_index]));}
+\DoxyCodeLine{00354                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00355         \}}
+\DoxyCodeLine{00356         \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358     \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classConsoleHandler_aaa94b74456c1e3b18f3522f37415a3e0}\label{classConsoleHandler_aaa94b74456c1e3b18f3522f37415a3e0}} 
-\index{ConsoleHandler@{ConsoleHandler}!gameOver@{gameOver}}
-\index{gameOver@{gameOver}!ConsoleHandler@{ConsoleHandler}}
-\doxysubsubsection{\texorpdfstring{gameOver()}{gameOver()}}
-{\footnotesize\ttfamily void Console\+Handler\+::game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00306}{306}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00306                    \{}
-\DoxyCodeLine{00307         isSaved = \textcolor{keyword}{false};}
-\DoxyCodeLine{00308     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classConsoleHandler_a9fee1f6a0ed86c7e5123cc854e56e80e}\label{classConsoleHandler_a9fee1f6a0ed86c7e5123cc854e56e80e}} 
+\mbox{\Hypertarget{classConsoleHandler_ab6a28e85749fd6fd5e782d2ee38ac74e}\label{classConsoleHandler_ab6a28e85749fd6fd5e782d2ee38ac74e}} 
 \index{ConsoleHandler@{ConsoleHandler}!gameStart@{gameStart}}
 \index{gameStart@{gameStart}!ConsoleHandler@{ConsoleHandler}}
 \doxysubsubsection{\texorpdfstring{gameStart()}{gameStart()}}
-{\footnotesize\ttfamily void Console\+Handler\+::game\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Console\+Handler\+::game\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 This is the game mode. It allows the player to work with an opened file. The following commands are supported\+:
 \begin{DoxyItemize}
@@ -248,43 +340,56 @@ This is the game mode. It allows the player to work with an opened file. The fol
 \item exit 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00089                     \{}
-\DoxyCodeLine{00090         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
-\DoxyCodeLine{00091             \textcolor{keywordtype}{string} current\_command;}
-\DoxyCodeLine{00092             getline(cin, current\_command);}
-\DoxyCodeLine{00093             \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}save"{}})\{}
-\DoxyCodeLine{00094                 \mbox{\hyperlink{classConsoleHandler_aee103209584ead63b52dbcda277981ee}{save}}();}
-\DoxyCodeLine{00095             \}}
-\DoxyCodeLine{00096             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}saveAs"{}})\{}
-\DoxyCodeLine{00097                 \textcolor{keywordtype}{string} file;}
-\DoxyCodeLine{00098                 cout<<\textcolor{stringliteral}{"{}Name of the file you want to save to: "{}};}
-\DoxyCodeLine{00099                 getline(cin, file);}
-\DoxyCodeLine{00100                 \mbox{\hyperlink{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}{saveAs}}(file);}
+\DoxyCodeLine{00095                     \{}
+\DoxyCodeLine{00096         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00097             \textcolor{keywordtype}{string} current\_command;}
+\DoxyCodeLine{00098             getline(cin, current\_command);}
+\DoxyCodeLine{00099             \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}save"{}})\{}
+\DoxyCodeLine{00100                 \mbox{\hyperlink{classConsoleHandler_aee103209584ead63b52dbcda277981ee}{save}}();}
 \DoxyCodeLine{00101             \}}
-\DoxyCodeLine{00102             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}close"{}})\{}
-\DoxyCodeLine{00103                 \mbox{\hyperlink{classConsoleHandler_a4850e8f44a8ade8cf423df91fd524380}{close}}();}
-\DoxyCodeLine{00104                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00105             \}}
-\DoxyCodeLine{00106             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}exit"{}})\{}
-\DoxyCodeLine{00107                 \mbox{\hyperlink{classConsoleHandler_a3a719f4ac9b94f657fc220d92d97dcd9}{exit}}();}
-\DoxyCodeLine{00108             \}}
-\DoxyCodeLine{00109             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}help"{}})\{}
-\DoxyCodeLine{00110                 \mbox{\hyperlink{classConsoleHandler_ac6e5f4c517e947a8f3ee62a884302811}{helpGameStart}}();}
+\DoxyCodeLine{00102             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}saveAs"{}})\{}
+\DoxyCodeLine{00103                 \textcolor{keywordtype}{string} file;}
+\DoxyCodeLine{00104                 cout<<\textcolor{stringliteral}{"{}Name of the file you want to save to: "{}};}
+\DoxyCodeLine{00105                 getline(cin, file);}
+\DoxyCodeLine{00106                 \mbox{\hyperlink{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}{saveAs}}(file);}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}close"{}})\{}
+\DoxyCodeLine{00109                 \mbox{\hyperlink{classConsoleHandler_a4850e8f44a8ade8cf423df91fd524380}{close}}();}
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00111             \}}
-\DoxyCodeLine{00112             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}move"{}})\{}
-\DoxyCodeLine{00113                 \mbox{\hyperlink{classConsoleHandler_a62afd50bee445de9887a87c6eeec5e7b}{move}}();}
-\DoxyCodeLine{00114                 system(\textcolor{stringliteral}{"{}clear"{}});}
-\DoxyCodeLine{00115             \}}
-\DoxyCodeLine{00116             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00117                 cout<<\textcolor{stringliteral}{"{}Command not recognized."{}}<<endl;}
-\DoxyCodeLine{00118             \}}
-\DoxyCodeLine{00119 }
-\DoxyCodeLine{00120         \}}
-\DoxyCodeLine{00121     \}}
+\DoxyCodeLine{00112             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}exit"{}})\{}
+\DoxyCodeLine{00113                 \textcolor{keywordflow}{if}(isSaved)\{}
+\DoxyCodeLine{00114                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00115                 \}}
+\DoxyCodeLine{00116                 \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00117                     \textcolor{keywordflow}{if}(fileName == \textcolor{stringliteral}{"{} "{}}) \{}
+\DoxyCodeLine{00118                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00119                     \}}
+\DoxyCodeLine{00120                     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00121                         cout<<\textcolor{stringliteral}{"{}You have an open file with unsaved changes, please select close or save first."{}}<<endl;}
+\DoxyCodeLine{00122                     \}}
+\DoxyCodeLine{00123                 \}}
+\DoxyCodeLine{00124             \}}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}help"{}})\{}
+\DoxyCodeLine{00126                 \mbox{\hyperlink{classConsoleHandler_ac6e5f4c517e947a8f3ee62a884302811}{helpGameStart}}();}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}move"{}})\{}
+\DoxyCodeLine{00129                 \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classConsoleHandler_a2c70cb351ad38df8cb2e1a139fa33680}{move}}())\{}
+\DoxyCodeLine{00130                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00131                 \}}
+\DoxyCodeLine{00132                 system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00133             \}}
+\DoxyCodeLine{00134             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00135                 cout<<\textcolor{stringliteral}{"{}Command not recognized."{}}<<endl;}
+\DoxyCodeLine{00136             \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \}}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00140     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a8bd08190af62cb9abf8aeb73c473a247}\label{classConsoleHandler_a8bd08190af62cb9abf8aeb73c473a247}} 
@@ -295,18 +400,18 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00089}{89}} of f
 
 Prints info in main mode 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00173                \{}
-\DoxyCodeLine{00174         cout<<\textcolor{stringliteral}{"{}The following commands are supported in main mode: "{}}<<endl;}
-\DoxyCodeLine{00175         cout<<\textcolor{stringliteral}{"{}open                  opens a currently existing game file"{}}<<endl;}
-\DoxyCodeLine{00176         cout<<\textcolor{stringliteral}{"{}new game              creates new game with a given name"{}}<<endl;}
-\DoxyCodeLine{00177         cout<<\textcolor{stringliteral}{"{}help                  prints this information"{}}<<endl;}
-\DoxyCodeLine{00178         cout<<\textcolor{stringliteral}{"{}ls                    prints all the files in the current folder"{}}<<endl;}
-\DoxyCodeLine{00179         cout<<\textcolor{stringliteral}{"{}exit                  exits the program"{}}<<endl;}
-\DoxyCodeLine{00180     \}}
+\DoxyCodeLine{00192                \{}
+\DoxyCodeLine{00193         cout<<\textcolor{stringliteral}{"{}The following commands are supported in main mode: "{}}<<endl;}
+\DoxyCodeLine{00194         cout<<\textcolor{stringliteral}{"{}open                  opens a currently existing game file"{}}<<endl;}
+\DoxyCodeLine{00195         cout<<\textcolor{stringliteral}{"{}new game              creates new game with a given name"{}}<<endl;}
+\DoxyCodeLine{00196         cout<<\textcolor{stringliteral}{"{}help                  prints this information"{}}<<endl;}
+\DoxyCodeLine{00197         cout<<\textcolor{stringliteral}{"{}ls                    prints all the files in the current folder"{}}<<endl;}
+\DoxyCodeLine{00198         cout<<\textcolor{stringliteral}{"{}exit                  exits the program"{}}<<endl;}
+\DoxyCodeLine{00199     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_ac6e5f4c517e947a8f3ee62a884302811}\label{classConsoleHandler_ac6e5f4c517e947a8f3ee62a884302811}} 
@@ -317,19 +422,19 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00173}{173}} of 
 
 Prints info in game mode 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00183}{183}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00183                          \{}
-\DoxyCodeLine{00184         cout<<\textcolor{stringliteral}{"{}The following commands are supported in game mode: "{}}<<endl;}
-\DoxyCodeLine{00185         cout<<\textcolor{stringliteral}{"{}save                  saves the game in the currently loaded file"{}}<<endl;}
-\DoxyCodeLine{00186         cout<<\textcolor{stringliteral}{"{}saveAs                saves the game in a new file"{}}<<endl;}
-\DoxyCodeLine{00187         cout<<\textcolor{stringliteral}{"{}move                  starts the game. To exit the game enter q"{}}<<endl;}
-\DoxyCodeLine{00188         cout<<\textcolor{stringliteral}{"{}help                  prints this information"{}}<<endl;}
-\DoxyCodeLine{00189         cout<<\textcolor{stringliteral}{"{}close                 closes the file without saving"{}}<<endl;}
-\DoxyCodeLine{00190         cout<<\textcolor{stringliteral}{"{}exit                  exits the program"{}}<<endl;}
-\DoxyCodeLine{00191     \}}
+\DoxyCodeLine{00202                          \{}
+\DoxyCodeLine{00203         cout<<\textcolor{stringliteral}{"{}The following commands are supported in game mode: "{}}<<endl;}
+\DoxyCodeLine{00204         cout<<\textcolor{stringliteral}{"{}save                  saves the game in the currently loaded file"{}}<<endl;}
+\DoxyCodeLine{00205         cout<<\textcolor{stringliteral}{"{}saveAs                saves the game in a new file"{}}<<endl;}
+\DoxyCodeLine{00206         cout<<\textcolor{stringliteral}{"{}move                  starts the game. To exit the game enter q"{}}<<endl;}
+\DoxyCodeLine{00207         cout<<\textcolor{stringliteral}{"{}help                  prints this information"{}}<<endl;}
+\DoxyCodeLine{00208         cout<<\textcolor{stringliteral}{"{}close                 closes the file without saving"{}}<<endl;}
+\DoxyCodeLine{00209         cout<<\textcolor{stringliteral}{"{}exit                  exits the program"{}}<<endl;}
+\DoxyCodeLine{00210     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a01454c9c15a065471d4255228be2199c}\label{classConsoleHandler_a01454c9c15a065471d4255228be2199c}} 
@@ -338,16 +443,101 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00183}{183}} of 
 \doxysubsubsection{\texorpdfstring{levelCompleted()}{levelCompleted()}}
 {\footnotesize\ttfamily void Console\+Handler\+::level\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+This function is called when the level is complete. It gives the player the opportunity to increase his stats by 30 points When he does it tries to find a file for the next level. If it can\textquotesingle{}t it asks for a filename for the next level 
 
-
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00309}{309}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00464}{464}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00309                          \{}
-\DoxyCodeLine{00310         isSaved = \textcolor{keyword}{false};}
-\DoxyCodeLine{00311         gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}++;}
-\DoxyCodeLine{00312     \}}
+\DoxyCodeLine{00464                          \{}
+\DoxyCodeLine{00465         \textcolor{comment}{// Increases the level number and clears the screen}}
+\DoxyCodeLine{00466         isSaved = \textcolor{keyword}{false};}
+\DoxyCodeLine{00467         gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}++;}
+\DoxyCodeLine{00468         system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00469 }
+\DoxyCodeLine{00470         \textcolor{comment}{// Prints stats}}
+\DoxyCodeLine{00471         cout<<\textcolor{stringliteral}{"{}Congratulations!!! You have completed this level"{}}<<endl;}
+\DoxyCodeLine{00472         cout<<\textcolor{stringliteral}{"{}You have 30 bonus points to your skills:"{}}<<endl;}
+\DoxyCodeLine{00473         cout<<gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
+\DoxyCodeLine{00474 }
+\DoxyCodeLine{00475         \textcolor{keywordtype}{int} bonus = 30;}
+\DoxyCodeLine{00476         \textcolor{keywordtype}{int} strBonus = 0;}
+\DoxyCodeLine{00477         \textcolor{keywordtype}{int} manaBonus = 0;}
+\DoxyCodeLine{00478 }
+\DoxyCodeLine{00479         \textcolor{comment}{// This loop is for input of the bonus points}}
+\DoxyCodeLine{00480         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00481             bonus = 30;}
+\DoxyCodeLine{00482             strBonus = 0;}
+\DoxyCodeLine{00483             manaBonus = 0;}
+\DoxyCodeLine{00484 }
+\DoxyCodeLine{00485 }
+\DoxyCodeLine{00486             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00487                 cout << \textcolor{stringliteral}{"{}Give strength: "{}};}
+\DoxyCodeLine{00488                 \textcolor{keywordtype}{string} str;}
+\DoxyCodeLine{00489                 getline(cin, str);}
+\DoxyCodeLine{00490                 strBonus = stoi(str);}
+\DoxyCodeLine{00491                 \textcolor{keywordflow}{if} (strBonus > bonus || strBonus < 0) \{}
+\DoxyCodeLine{00492                     cout << \textcolor{stringliteral}{"{}Invalid value. Try again"{}} << endl;}
+\DoxyCodeLine{00493                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00494                     bonus -\/= strBonus;}
+\DoxyCodeLine{00495                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00496                 \}}
+\DoxyCodeLine{00497             \}}
+\DoxyCodeLine{00498 }
+\DoxyCodeLine{00499             cout << \textcolor{stringliteral}{"{}You have "{}} << bonus << \textcolor{stringliteral}{"{} points left"{}} << endl;}
+\DoxyCodeLine{00500             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00501                 cout << \textcolor{stringliteral}{"{}Give mana: "{}};}
+\DoxyCodeLine{00502                 \textcolor{keywordtype}{string} str;}
+\DoxyCodeLine{00503                 getline(cin, str);}
+\DoxyCodeLine{00504                 manaBonus = stoi(str);}
+\DoxyCodeLine{00505                 \textcolor{keywordflow}{if} (manaBonus > bonus || manaBonus < 0) \{}
+\DoxyCodeLine{00506                     cout << \textcolor{stringliteral}{"{}Invalid value. Try again"{}} << endl;}
+\DoxyCodeLine{00507                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00508                     bonus -\/= manaBonus;}
+\DoxyCodeLine{00509                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00510                 \}}
+\DoxyCodeLine{00511             \}}
+\DoxyCodeLine{00512 }
+\DoxyCodeLine{00513             cout << \textcolor{stringliteral}{"{}Points left for health: "{}} << bonus << endl;}
+\DoxyCodeLine{00514             cout << \textcolor{stringliteral}{"{}Do you want to save those points (y/n): "{}} << endl;}
+\DoxyCodeLine{00515             \textcolor{keywordtype}{char} res;}
+\DoxyCodeLine{00516             cin>>res;}
+\DoxyCodeLine{00517             \textcolor{keywordflow}{if}(res == \textcolor{charliteral}{'y'})\{}
+\DoxyCodeLine{00518                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00519             \}}
+\DoxyCodeLine{00520         \}}
+\DoxyCodeLine{00521 }
+\DoxyCodeLine{00522 }
+\DoxyCodeLine{00523         \textcolor{comment}{// Sets the bonus points}}
+\DoxyCodeLine{00524         gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setStrength(gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getStrength() + (\textcolor{keywordtype}{float})strBonus);}
+\DoxyCodeLine{00525         gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setMana(gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getMana() + (\textcolor{keywordtype}{float})manaBonus);}
+\DoxyCodeLine{00526         gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.setHealth(gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}}.getHealth() + (\textcolor{keywordtype}{float})bonus);}
+\DoxyCodeLine{00527 }
+\DoxyCodeLine{00528         \textcolor{comment}{// Trying to load the next level}}
+\DoxyCodeLine{00529         cout<<endl<<\textcolor{stringliteral}{"{}Loading next level...."{}}<<endl;}
+\DoxyCodeLine{00530         \textcolor{keywordtype}{string} next = \textcolor{stringliteral}{"{}Level"{}} + to\_string(gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{00531         cout<<\textcolor{stringliteral}{"{}Opening file: "{}} << next << endl;}
+\DoxyCodeLine{00532 }
+\DoxyCodeLine{00533         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_a7506314b73b0cf23789ba96afe4539be}{loadMapFromFile}}(next);}
+\DoxyCodeLine{00534         \textcolor{keywordflow}{if}(!isOpened) \{}
+\DoxyCodeLine{00535 }
+\DoxyCodeLine{00536             \textcolor{comment}{// If it doesn't find a file with that name it asks for a name for the next level}}
+\DoxyCodeLine{00537             cout << \textcolor{stringliteral}{"{}The next level seems to be missing."{}} << endl;}
+\DoxyCodeLine{00538 }
+\DoxyCodeLine{00539             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00540                 \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{00541                 cout << \textcolor{stringliteral}{"{}Type the file name of the next level: "{}};}
+\DoxyCodeLine{00542                 getline(cin, name);}
+\DoxyCodeLine{00543                 \textcolor{comment}{// Checks if there is a valid file with that name}}
+\DoxyCodeLine{00544                 \textcolor{keywordflow}{if}(gameController.\mbox{\hyperlink{classGameController_a7506314b73b0cf23789ba96afe4539be}{loadMapFromFile}}(name))\{}
+\DoxyCodeLine{00545                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00546                 \}}
+\DoxyCodeLine{00547             \}}
+\DoxyCodeLine{00548         \};}
+\DoxyCodeLine{00549         cout<<\textcolor{stringliteral}{"{}File opened successfully"{}}<<endl;}
+\DoxyCodeLine{00550         \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00551         \textcolor{comment}{// Returns to move()}}
+\DoxyCodeLine{00552     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a995f7811611ee826654db8f76b707d2f}\label{classConsoleHandler_a995f7811611ee826654db8f76b707d2f}} 
@@ -365,105 +555,112 @@ This is the main menu mode in the game. It supports the following commands\+:
 \item exit 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00044                \{}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
-\DoxyCodeLine{00047             \textcolor{keywordtype}{string} current\_command;}
-\DoxyCodeLine{00048             getline(cin, current\_command);}
-\DoxyCodeLine{00049             \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}open"{}})\{}
-\DoxyCodeLine{00050                 \textcolor{keywordtype}{string} file;}
-\DoxyCodeLine{00051                 cout<<\textcolor{stringliteral}{"{}Name of the file: "{}};}
-\DoxyCodeLine{00052                 getline(cin, file);}
-\DoxyCodeLine{00053                 \textcolor{keywordtype}{bool} isOpened = \mbox{\hyperlink{classConsoleHandler_aae2104cc4bd7c9f329117df696d63ca2}{open}}(file);}
-\DoxyCodeLine{00054                 \textcolor{keywordflow}{if}(isOpened) \mbox{\hyperlink{classConsoleHandler_a9fee1f6a0ed86c7e5123cc854e56e80e}{gameStart}}();}
-\DoxyCodeLine{00055             \}}
-\DoxyCodeLine{00056             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}new game"{}})\{}
-\DoxyCodeLine{00057                 \textcolor{keywordtype}{string} file;}
-\DoxyCodeLine{00058                 cout<<\textcolor{stringliteral}{"{}Name of the file: "{}};}
-\DoxyCodeLine{00059                 getline(cin, file);}
-\DoxyCodeLine{00060                 \textcolor{keywordtype}{bool} isOpened = \mbox{\hyperlink{classConsoleHandler_ac505c6e76c00c45e29584f43fd5f2383}{newGame}}(file);}
-\DoxyCodeLine{00061                 \textcolor{keywordflow}{if}(isOpened) \mbox{\hyperlink{classConsoleHandler_a9fee1f6a0ed86c7e5123cc854e56e80e}{gameStart}}();}
-\DoxyCodeLine{00062             \}}
-\DoxyCodeLine{00063             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}exit"{}})\{}
-\DoxyCodeLine{00064                 \mbox{\hyperlink{classConsoleHandler_a3a719f4ac9b94f657fc220d92d97dcd9}{exit}}();}
-\DoxyCodeLine{00065                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00066             \}}
-\DoxyCodeLine{00067             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}help"{}})\{}
-\DoxyCodeLine{00068                 \mbox{\hyperlink{classConsoleHandler_a8bd08190af62cb9abf8aeb73c473a247}{help}}();}
-\DoxyCodeLine{00069             \}}
-\DoxyCodeLine{00070             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}ls"{}})\{}
-\DoxyCodeLine{00071                 system(\textcolor{stringliteral}{"{}ls"{}});}
+\DoxyCodeLine{00049                \{}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00052             \textcolor{keywordtype}{bool} isGameOver = \textcolor{keyword}{false};}
+\DoxyCodeLine{00053             \textcolor{keywordtype}{string} current\_command;}
+\DoxyCodeLine{00054             getline(cin, current\_command);}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}open"{}})\{}
+\DoxyCodeLine{00056                 \textcolor{keywordtype}{string} file;}
+\DoxyCodeLine{00057                 cout<<\textcolor{stringliteral}{"{}Name of the file: "{}};}
+\DoxyCodeLine{00058                 getline(cin, file);}
+\DoxyCodeLine{00059                 \textcolor{keywordtype}{bool} isOpened = \mbox{\hyperlink{classConsoleHandler_aae2104cc4bd7c9f329117df696d63ca2}{open}}(file);}
+\DoxyCodeLine{00060                 \textcolor{keywordflow}{if}(isOpened) isGameOver = \mbox{\hyperlink{classConsoleHandler_ab6a28e85749fd6fd5e782d2ee38ac74e}{gameStart}}();}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}new game"{}})\{}
+\DoxyCodeLine{00063                 \textcolor{keywordtype}{string} file;}
+\DoxyCodeLine{00064                 cout<<\textcolor{stringliteral}{"{}Name of the file: "{}};}
+\DoxyCodeLine{00065                 getline(cin, file);}
+\DoxyCodeLine{00066                 \textcolor{keywordtype}{bool} isOpened = \mbox{\hyperlink{classConsoleHandler_ac505c6e76c00c45e29584f43fd5f2383}{newGame}}(file);}
+\DoxyCodeLine{00067                 \textcolor{keywordflow}{if}(isOpened) isGameOver = \mbox{\hyperlink{classConsoleHandler_ab6a28e85749fd6fd5e782d2ee38ac74e}{gameStart}}();}
+\DoxyCodeLine{00068             \}}
+\DoxyCodeLine{00069             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}exit"{}})\{}
+\DoxyCodeLine{00070                 cout<<\textcolor{stringliteral}{"{}Exiting program..."{}};}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00072             \}}
-\DoxyCodeLine{00073             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00074                 cout<<\textcolor{stringliteral}{"{}Command not recognized."{}}<<endl;}
+\DoxyCodeLine{00073             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}help"{}})\{}
+\DoxyCodeLine{00074                 \mbox{\hyperlink{classConsoleHandler_a8bd08190af62cb9abf8aeb73c473a247}{help}}();}
 \DoxyCodeLine{00075             \}}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077         \}}
-\DoxyCodeLine{00078     \}}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current\_command == \textcolor{stringliteral}{"{}ls"{}})\{}
+\DoxyCodeLine{00077                 system(\textcolor{stringliteral}{"{}ls"{}});}
+\DoxyCodeLine{00078             \}}
+\DoxyCodeLine{00079             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00080                 cout<<\textcolor{stringliteral}{"{}Command not recognized."{}}<<endl;}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082             \textcolor{keywordflow}{if}(isGameOver) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00083         \}}
+\DoxyCodeLine{00084     \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classConsoleHandler_a62afd50bee445de9887a87c6eeec5e7b}\label{classConsoleHandler_a62afd50bee445de9887a87c6eeec5e7b}} 
+\mbox{\Hypertarget{classConsoleHandler_a2c70cb351ad38df8cb2e1a139fa33680}\label{classConsoleHandler_a2c70cb351ad38df8cb2e1a139fa33680}} 
 \index{ConsoleHandler@{ConsoleHandler}!move@{move}}
 \index{move@{move}!ConsoleHandler@{ConsoleHandler}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
-{\footnotesize\ttfamily void Console\+Handler\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Console\+Handler\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 In this mode the player uses W,A,S,D to move in the map. To end the move you press q 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00256}{256}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00252                \{}
-\DoxyCodeLine{00253         \textcolor{comment}{// Refresh the screen}}
-\DoxyCodeLine{00254         \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
-\DoxyCodeLine{00255 }
-\DoxyCodeLine{00256         \textcolor{keywordtype}{char} c;}
-\DoxyCodeLine{00257 }
-\DoxyCodeLine{00258         \textcolor{comment}{// Set the terminal to raw mode}}
-\DoxyCodeLine{00259         \mbox{\hyperlink{classBufferToggle}{BufferToggle}} bf\{\};}
-\DoxyCodeLine{00260         bf.off();}
+\DoxyCodeLine{00256                \{}
+\DoxyCodeLine{00257         \textcolor{comment}{// Refresh the screen}}
+\DoxyCodeLine{00258         \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260         \textcolor{keywordtype}{char} c;}
 \DoxyCodeLine{00261 }
-\DoxyCodeLine{00262         \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
-\DoxyCodeLine{00263             c = (char)std::getchar();}
-\DoxyCodeLine{00264             \textcolor{comment}{// terminate when "{}q"{} is pressed}}
-\DoxyCodeLine{00265             \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'q'}) \{}
-\DoxyCodeLine{00266                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00267             \}}
-\DoxyCodeLine{00268             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)b \(\backslash\)b"{}};}
-\DoxyCodeLine{00269             \textcolor{keywordtype}{char} last\_char = \textcolor{charliteral}{' '};}
-\DoxyCodeLine{00270 }
-\DoxyCodeLine{00271             \textcolor{comment}{// check the input}}
-\DoxyCodeLine{00272             \textcolor{keywordflow}{switch} (c) \{}
-\DoxyCodeLine{00273                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'w'}:}
-\DoxyCodeLine{00274                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a5bee199487e3a0f51a878cd6e7bbe2e1}{moveUp}}();}
-\DoxyCodeLine{00275                     \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
-\DoxyCodeLine{00276                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00277                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:}
-\DoxyCodeLine{00278                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a259e1404524c5fa3546c3668960370e0}{moveLeft}}();}
+\DoxyCodeLine{00262         \textcolor{comment}{// Set the terminal to raw mode}}
+\DoxyCodeLine{00263         \mbox{\hyperlink{classBufferToggle}{BufferToggle}} bf\{\};}
+\DoxyCodeLine{00264         bf.off();}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266         \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00267             c = (char)std::getchar();}
+\DoxyCodeLine{00268             \textcolor{comment}{// terminate when "{}q"{} is pressed}}
+\DoxyCodeLine{00269             \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'q'}) \{}
+\DoxyCodeLine{00270                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00271             \}}
+\DoxyCodeLine{00272             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)b \(\backslash\)b"{}};}
+\DoxyCodeLine{00273             \textcolor{keywordtype}{char} last\_char = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275             \textcolor{comment}{// check the input}}
+\DoxyCodeLine{00276             \textcolor{keywordflow}{switch} (c) \{}
+\DoxyCodeLine{00277                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'w'}:}
+\DoxyCodeLine{00278                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a5bee199487e3a0f51a878cd6e7bbe2e1}{moveUp}}();}
 \DoxyCodeLine{00279                     \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
 \DoxyCodeLine{00280                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00281                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:}
-\DoxyCodeLine{00282                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a95d5b734c4e1ee7456b7b0c7db3e59c1}{moveDown}}();}
+\DoxyCodeLine{00281                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:}
+\DoxyCodeLine{00282                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a259e1404524c5fa3546c3668960370e0}{moveLeft}}();}
 \DoxyCodeLine{00283                     \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
 \DoxyCodeLine{00284                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00285                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'}:}
-\DoxyCodeLine{00286                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_aad55a208c94785bfde1852ff8c0f4cb0}{moveRight}}();}
+\DoxyCodeLine{00285                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{00286                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_a95d5b734c4e1ee7456b7b0c7db3e59c1}{moveDown}}();}
 \DoxyCodeLine{00287                     \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
 \DoxyCodeLine{00288                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00289             \}}
-\DoxyCodeLine{00290 }
-\DoxyCodeLine{00291             \textcolor{comment}{// Checking what is the player stepped onto}}
-\DoxyCodeLine{00292             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'M'}) fight();}
-\DoxyCodeLine{00293             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'T'}) foundTreasure();}
-\DoxyCodeLine{00294             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'0'}) levelCompleted();}
-\DoxyCodeLine{00295         \}}
-\DoxyCodeLine{00296         bf.on();}
-\DoxyCodeLine{00297     \}}
+\DoxyCodeLine{00289                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'}:}
+\DoxyCodeLine{00290                     last\_char = gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}}.\mbox{\hyperlink{classMap_aad55a208c94785bfde1852ff8c0f4cb0}{moveRight}}();}
+\DoxyCodeLine{00291                     \mbox{\hyperlink{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}{refresh}}();}
+\DoxyCodeLine{00292                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00293             \}}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295             \textcolor{comment}{// Checking what is the player stepped onto}}
+\DoxyCodeLine{00296             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'M'}) \{}
+\DoxyCodeLine{00297                 \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classConsoleHandler_ad589a95faa6d34ddd6afb70251c405f7}{fight}}()) \{}
+\DoxyCodeLine{00298                     bf.on();}
+\DoxyCodeLine{00299                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00300                 \}}
+\DoxyCodeLine{00301             \}}
+\DoxyCodeLine{00302             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'T'}) foundTreasure();}
+\DoxyCodeLine{00303             \textcolor{keywordflow}{if}(last\_char == \textcolor{charliteral}{'0'}) \mbox{\hyperlink{classConsoleHandler_a01454c9c15a065471d4255228be2199c}{levelCompleted}}();}
+\DoxyCodeLine{00304         \}}
+\DoxyCodeLine{00305         bf.on();}
+\DoxyCodeLine{00306         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00307     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_ac505c6e76c00c45e29584f43fd5f2383}\label{classConsoleHandler_ac505c6e76c00c45e29584f43fd5f2383}} 
@@ -474,38 +671,38 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00252}{252}} of 
 
 Creates a new game with a given name. It gives the player the opportunity to choose a race. Then it creates a new game with those parameters BUT DOESNT SAVE IT!!! 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00222                                  \{}
-\DoxyCodeLine{00223         fileName = std::move(new\_name);}
-\DoxyCodeLine{00224 }
-\DoxyCodeLine{00225         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
-\DoxyCodeLine{00226             \textcolor{comment}{// Get the race}}
-\DoxyCodeLine{00227             \textcolor{keywordtype}{string} race;}
-\DoxyCodeLine{00228             cout << \textcolor{stringliteral}{"{}Select race (Human | Mage | Warrior): "{}};}
-\DoxyCodeLine{00229             cin>>race;}
-\DoxyCodeLine{00230             \textcolor{comment}{//Determining the race}}
-\DoxyCodeLine{00231             \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Human"{}})\{}
-\DoxyCodeLine{00232                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Human);}
-\DoxyCodeLine{00233                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00234             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Mage"{}})\{}
-\DoxyCodeLine{00235                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Mage);}
-\DoxyCodeLine{00236                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00237             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Warrior"{}})\{}
-\DoxyCodeLine{00238                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Warrior);}
-\DoxyCodeLine{00239                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00240             \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{00241                 cout << \textcolor{stringliteral}{"{}Couldn't recognise this race. Try again."{}} << endl;}
-\DoxyCodeLine{00242             \}}
-\DoxyCodeLine{00243         \}}
-\DoxyCodeLine{00244 }
-\DoxyCodeLine{00245         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_a7506314b73b0cf23789ba96afe4539be}{loadMapFromFile}}(\textcolor{stringliteral}{"{}Level1.txt"{}});}
-\DoxyCodeLine{00246         \textcolor{keywordflow}{if}(!isOpened) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00247         cout<<\textcolor{stringliteral}{"{}Successfully created new game with name: "{}}<< fileName <<endl;}
-\DoxyCodeLine{00248         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00249     \}}
+\DoxyCodeLine{00226                                  \{}
+\DoxyCodeLine{00227         fileName = std::move(new\_name);}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229         \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00230             \textcolor{comment}{// Get the race}}
+\DoxyCodeLine{00231             \textcolor{keywordtype}{string} race;}
+\DoxyCodeLine{00232             cout << \textcolor{stringliteral}{"{}Select race (Human | Mage | Warrior): "{}};}
+\DoxyCodeLine{00233             getline(cin, race);}
+\DoxyCodeLine{00234             \textcolor{comment}{//Determining the race}}
+\DoxyCodeLine{00235             \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Human"{}})\{}
+\DoxyCodeLine{00236                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Human);}
+\DoxyCodeLine{00237                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00238             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Mage"{}})\{}
+\DoxyCodeLine{00239                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Mage);}
+\DoxyCodeLine{00240                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00241             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(race == \textcolor{stringliteral}{"{}Warrior"{}})\{}
+\DoxyCodeLine{00242                 gameController = \mbox{\hyperlink{classGameController}{GameController}}(Warrior);}
+\DoxyCodeLine{00243                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00244             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00245                 cout << \textcolor{stringliteral}{"{}Couldn't recognise this race. Try again."{}} << endl;}
+\DoxyCodeLine{00246             \}}
+\DoxyCodeLine{00247         \}}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_a7506314b73b0cf23789ba96afe4539be}{loadMapFromFile}}(\textcolor{stringliteral}{"{}Level1.txt"{}});}
+\DoxyCodeLine{00250         \textcolor{keywordflow}{if}(!isOpened) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00251         cout<<\textcolor{stringliteral}{"{}Successfully created new game with name: "{}}<< fileName <<endl;}
+\DoxyCodeLine{00252         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00253     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_aae2104cc4bd7c9f329117df696d63ca2}\label{classConsoleHandler_aae2104cc4bd7c9f329117df696d63ca2}} 
@@ -516,18 +713,18 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00222}{222}} of 
 
 Opens file with a given name. Returns false if unsuccessfull 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00212                           \{}
-\DoxyCodeLine{00213         fileName = name;}
-\DoxyCodeLine{00214         gameController = \mbox{\hyperlink{classGameController}{GameController}}();}
-\DoxyCodeLine{00215         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}{loadFromFile}}(std::move(name));}
-\DoxyCodeLine{00216         \textcolor{keywordflow}{if}(!isOpened) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00217         cout<<\textcolor{stringliteral}{"{}Successfully opened "{}}<< fileName <<endl;}
-\DoxyCodeLine{00218 }
-\DoxyCodeLine{00219     \}}
+\DoxyCodeLine{00214                           \{}
+\DoxyCodeLine{00215         fileName = name;}
+\DoxyCodeLine{00216         gameController = \mbox{\hyperlink{classGameController}{GameController}}();}
+\DoxyCodeLine{00217         \textcolor{keywordtype}{bool} isOpened = gameController.\mbox{\hyperlink{classGameController_ad4e44de67497b8ae9bdc5c90288e5ac7}{loadFromFile}}(std::move(name));}
+\DoxyCodeLine{00218         \textcolor{keywordflow}{if}(!isOpened) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00219         cout<<\textcolor{stringliteral}{"{}Successfully opened "{}}<< fileName <<endl;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a6a896b1737f93518227e681a50a21bf8}\label{classConsoleHandler_a6a896b1737f93518227e681a50a21bf8}} 
@@ -538,13 +735,13 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00212}{212}} of 
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00130                          \{}
-\DoxyCodeLine{00131         cout<<gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
-\DoxyCodeLine{00132     \}}
+\DoxyCodeLine{00149                          \{}
+\DoxyCodeLine{00150         cout<<gameController.\mbox{\hyperlink{classGameController_ad3eb9b5b9ea950f7b612cbc2660210e5}{hero}};}
+\DoxyCodeLine{00151     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a7905a47e022e71d802b4439a65cb986d}\label{classConsoleHandler_a7905a47e022e71d802b4439a65cb986d}} 
@@ -555,14 +752,14 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00130}{130}} of 
 
 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00125                    \{}
-\DoxyCodeLine{00126         cout<<\textcolor{stringliteral}{"{}Level "{}}<<gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}<<endl;}
-\DoxyCodeLine{00127         cout<<gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}};}
-\DoxyCodeLine{00128     \}}
+\DoxyCodeLine{00144                    \{}
+\DoxyCodeLine{00145         cout<<\textcolor{stringliteral}{"{}Level "{}}<<gameController.\mbox{\hyperlink{classGameController_a21cc090502aeb0b011486f0925f90951}{level}}<<endl;}
+\DoxyCodeLine{00146         cout<<gameController.\mbox{\hyperlink{classGameController_acb9a122ec25edc8e7efbdc23b7312bf5}{map}};}
+\DoxyCodeLine{00147     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}\label{classConsoleHandler_a226e3ec8324f3194416939f03d04ecfc}} 
@@ -573,18 +770,18 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00125}{125}} of 
 
 Clears the screen and then prints the map and the hero stats 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00315}{315}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00555}{555}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00315                   \{}
-\DoxyCodeLine{00316         std::system(\textcolor{stringliteral}{"{}clear"{}});}
-\DoxyCodeLine{00317         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(0);}
-\DoxyCodeLine{00318         printMap();}
-\DoxyCodeLine{00319         printHeroStats();}
-\DoxyCodeLine{00320         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
-\DoxyCodeLine{00321         isSaved = \textcolor{keyword}{false};}
-\DoxyCodeLine{00322     \}}
+\DoxyCodeLine{00555                   \{}
+\DoxyCodeLine{00556         std::system(\textcolor{stringliteral}{"{}clear"{}});}
+\DoxyCodeLine{00557         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(0);}
+\DoxyCodeLine{00558         printMap();}
+\DoxyCodeLine{00559         printHeroStats();}
+\DoxyCodeLine{00560         \mbox{\hyperlink{classConsoleHandler_a346fa035c1d9f9f02abd33a09cd71241}{delimiter}}(100);}
+\DoxyCodeLine{00561         isSaved = \textcolor{keyword}{false};}
+\DoxyCodeLine{00562     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_aee103209584ead63b52dbcda277981ee}\label{classConsoleHandler_aee103209584ead63b52dbcda277981ee}} 
@@ -595,13 +792,13 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00315}{315}} of 
 
 Saves the game at current file 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00146                \{}
-\DoxyCodeLine{00147         \mbox{\hyperlink{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}{saveAs}}(fileName);}
-\DoxyCodeLine{00148     \}}
+\DoxyCodeLine{00165                \{}
+\DoxyCodeLine{00166         \mbox{\hyperlink{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}{saveAs}}(fileName);}
+\DoxyCodeLine{00167     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}\label{classConsoleHandler_a68259062c168ae43d50c5ff6eabeaa0b}} 
@@ -612,24 +809,24 @@ Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00146}{146}} of 
 
 Saves the game in a file with a given name 
 
-Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
+Definition at line \mbox{\hyperlink{ConsoleHandler_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{ConsoleHandler_8cpp_source}{Console\+Handler.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00157                                    \{}
-\DoxyCodeLine{00158         \textcolor{comment}{// Opening the file}}
-\DoxyCodeLine{00159         ofstream out;}
-\DoxyCodeLine{00160         out.open(name, ios::out);}
-\DoxyCodeLine{00161         \textcolor{keywordflow}{if}(!out)\{}
-\DoxyCodeLine{00162             cout << \textcolor{stringliteral}{"{}Couldn't open file: "{}} << name<<endl;}
-\DoxyCodeLine{00163             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00164         \}}
-\DoxyCodeLine{00165 }
-\DoxyCodeLine{00166         gameController.\mbox{\hyperlink{classGameController_a69faa6d0bb273addddf358d87313b579}{save}}(out);}
-\DoxyCodeLine{00167         cout << \textcolor{stringliteral}{"{}Successfully saved file"{}} << endl;}
-\DoxyCodeLine{00168         isSaved = \textcolor{keyword}{true};}
-\DoxyCodeLine{00169         out.close();}
-\DoxyCodeLine{00170     \}}
+\DoxyCodeLine{00176                                    \{}
+\DoxyCodeLine{00177         \textcolor{comment}{// Opening the file}}
+\DoxyCodeLine{00178         ofstream out;}
+\DoxyCodeLine{00179         out.open(name, ios::out);}
+\DoxyCodeLine{00180         \textcolor{keywordflow}{if}(!out)\{}
+\DoxyCodeLine{00181             cout << \textcolor{stringliteral}{"{}Couldn't open file: "{}} << name<<endl;}
+\DoxyCodeLine{00182             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00183         \}}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185         gameController.\mbox{\hyperlink{classGameController_a69faa6d0bb273addddf358d87313b579}{save}}(out);}
+\DoxyCodeLine{00186         cout << \textcolor{stringliteral}{"{}Successfully saved file"{}} << endl;}
+\DoxyCodeLine{00187         isSaved = \textcolor{keyword}{true};}
+\DoxyCodeLine{00188         out.close();}
+\DoxyCodeLine{00189     \}}
 
 \end{DoxyCode}
 

@@ -9,11 +9,11 @@ Inheritance diagram for Weapon\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classWeapon_a14ade8520463d7b2ab6dcfc1570f6dc3}{Weapon}} (const string \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, const string \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}})
+\mbox{\hyperlink{classWeapon_a344779222efa1bb7a31a1ac5c555655d}{Weapon}} (const string \&\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, const string \&\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, float \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, Item\+Type \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}})
 \item 
 \mbox{\hyperlink{classWeapon_a42dbc46dd70319a24763992c4ebbd396}{Weapon}} ()
 \item 
-\mbox{\hyperlink{classWeapon_ac0c75166822c7694cb0410b80a58d475}{Weapon}} (const \mbox{\hyperlink{classWeapon}{Weapon}} \&other)
+\mbox{\hyperlink{classWeapon_a61a58b2fd33a4c8768cdf22e97bed3d9}{Weapon}} (const \mbox{\hyperlink{classItem}{Item}} \&other)
 \item 
 float \mbox{\hyperlink{classWeapon_ab198208d65636075ec9c3d094fbc5c4e}{effect}} (float obj) override
 \end{DoxyCompactItemize}
@@ -28,11 +28,11 @@ Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00005}{5}} of file \mbox
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classWeapon_a14ade8520463d7b2ab6dcfc1570f6dc3}\label{classWeapon_a14ade8520463d7b2ab6dcfc1570f6dc3}} 
+\mbox{\Hypertarget{classWeapon_a344779222efa1bb7a31a1ac5c555655d}\label{classWeapon_a344779222efa1bb7a31a1ac5c555655d}} 
 \index{Weapon@{Weapon}!Weapon@{Weapon}}
 \index{Weapon@{Weapon}!Weapon@{Weapon}}
 \doxysubsubsection{\texorpdfstring{Weapon()}{Weapon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Weapon\+::\+Weapon (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{description,  }\item[{float}]{percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Weapon\+::\+Weapon (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{description,  }\item[{float}]{percent,  }\item[{Item\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Constructor with name, description and percent 
 
@@ -40,7 +40,7 @@ Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00008}{8}} of file \mbox
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00008 : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}) \{\}}
+\DoxyCodeLine{00008 : \mbox{\hyperlink{classItem}{Item}}(\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, \mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, \mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, \mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}}) \{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWeapon_a42dbc46dd70319a24763992c4ebbd396}\label{classWeapon_a42dbc46dd70319a24763992c4ebbd396}} 
@@ -55,14 +55,14 @@ Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00011}{11}} of file \mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00011 : \mbox{\hyperlink{classItem}{Item}}() \{\}}
+\DoxyCodeLine{00011 : \mbox{\hyperlink{classItem}{Item}}(ItemType::WeaponType) \{\}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classWeapon_ac0c75166822c7694cb0410b80a58d475}\label{classWeapon_ac0c75166822c7694cb0410b80a58d475}} 
+\mbox{\Hypertarget{classWeapon_a61a58b2fd33a4c8768cdf22e97bed3d9}\label{classWeapon_a61a58b2fd33a4c8768cdf22e97bed3d9}} 
 \index{Weapon@{Weapon}!Weapon@{Weapon}}
 \index{Weapon@{Weapon}!Weapon@{Weapon}}
 \doxysubsubsection{\texorpdfstring{Weapon()}{Weapon()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Weapon\+::\+Weapon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classWeapon}{Weapon}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Weapon\+::\+Weapon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classItem}{Item}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 Copy constructor 
 
@@ -70,7 +70,7 @@ Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00014}{14}} of file \mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00014 : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}})\{\}}
+\DoxyCodeLine{00014 : \mbox{\hyperlink{classItem}{Item}}(other.\mbox{\hyperlink{classItem_a406cde7962a6b42a66b4a53c9a26db2c}{name}}, other.\mbox{\hyperlink{classItem_ab848d79aa5638d5699171e85fd676f0b}{description}}, other.\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}, other.\mbox{\hyperlink{classItem_a3a58b8b450282d765d8ab445b7e6a4e3}{type}})\{\}}
 
 \end{DoxyCode}
 
@@ -82,20 +82,20 @@ Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00014}{14}} of file \mbo
 \doxysubsubsection{\texorpdfstring{effect()}{effect()}}
 {\footnotesize\ttfamily float Weapon\+::effect (\begin{DoxyParamCaption}\item[{float}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
-This function increases the attack of the hero by certain percent 
+This function increases the attack of the hero by certain percent. The idea is that if the player choses to use attack, the damage dealt is strength + (weapon\+Percent)$\ast$strength. That way if the player is a warrior his strength will be bigger and it will make more sense to use his attack 
 
 Reimplemented from \mbox{\hyperlink{classItem_a07a294a4cd7e7a2e437c4f296ffe0be0}{Item}}.
 
 
 
-Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Weapon_8cpp_source}{Weapon.\+cpp}}.
+Definition at line \mbox{\hyperlink{Weapon_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{Weapon_8cpp_source}{Weapon.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00017                                     \{}
-\DoxyCodeLine{00018         obj = obj + (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
-\DoxyCodeLine{00019         \textcolor{keywordflow}{return} obj;}
-\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00019                                     \{}
+\DoxyCodeLine{00020         obj = obj + (\mbox{\hyperlink{classItem_a54d712442dea4ef68094e43e484f58eb}{percent}}/100)*obj;}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{return} obj;}
+\DoxyCodeLine{00022     \}}
 
 \end{DoxyCode}
 

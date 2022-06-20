@@ -159,24 +159,23 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Default constructor. Creates 10x10 matrix filled with [#] </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00098">98</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>         {</div>
-<div class="line"><span class="lineno">   99</span>        currentY = 0;</div>
-<div class="line"><span class="lineno">  100</span>        currentX = 0;</div>
-<div class="line"><span class="lineno">  101</span>        width = 10;</div>
-<div class="line"><span class="lineno">  102</span>        height = 10;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>        <span class="comment">// Creating new field with width 10 and height 10 and only filled with #</span></div>
-<div class="line"><span class="lineno">  105</span>        field = <span class="keyword">new</span> <span class="keywordtype">char</span>*[height];</div>
-<div class="line"><span class="lineno">  106</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">  107</span>        field[0][0] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; width; ++j) {</div>
-<div class="line"><span class="lineno">  110</span>                field[i][j] = <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><span class="lineno">  111</span>            }</div>
-<div class="line"><span class="lineno">  112</span>        }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00106">106</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>         {</div>
+<div class="line"><span class="lineno">  107</span>        currentY = 0;</div>
+<div class="line"><span class="lineno">  108</span>        currentX = 0;</div>
+<div class="line"><span class="lineno">  109</span>        width = 10;</div>
+<div class="line"><span class="lineno">  110</span>        height = 10;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>        <span class="comment">// Creating new field with width 10 and height 10 and only filled with #</span></div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">  114</span>        field[0][0] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; width; ++j) {</div>
+<div class="line"><span class="lineno">  117</span>                field[i][j] = <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><span class="lineno">  118</span>            }</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    }</div>
 <div class="ttc" id="aclassMap_html_ace49ceb3f957a6dc7faa8e1d82207038"><div class="ttname"><a href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">Map::allocField</a></div><div class="ttdeci">void allocField()</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00033">Map.cpp:33</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -216,18 +215,18 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Constructor for <a class="el" href="classMap.html">Map</a> class with only height and width. Creates field with all # </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00117">117</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>                               : width(width), height(height) {</div>
-<div class="line"><span class="lineno">  118</span>        currentX = 0;</div>
-<div class="line"><span class="lineno">  119</span>        currentY = 0;</div>
-<div class="line"><span class="lineno">  120</span>        field = <span class="keyword">new</span> <span class="keywordtype">char</span>*[height];</div>
-<div class="line"><span class="lineno">  121</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
-<div class="line"><span class="lineno">  124</span>                field[i][j] = <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><span class="lineno">  125</span>            }</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00124">124</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>                               : width(width), height(height) {</div>
+<div class="line"><span class="lineno">  125</span>        currentX = 0;</div>
+<div class="line"><span class="lineno">  126</span>        currentY = 0;</div>
+<div class="line"><span class="lineno">  127</span>        field = <span class="keyword">new</span> <span class="keywordtype">char</span>*[height];</div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
+<div class="line"><span class="lineno">  131</span>                field[i][j] = <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><span class="lineno">  132</span>            }</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -272,14 +271,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Constructor for <a class="el" href="classMap.html">Map</a> class. Creates new char** and calls the setter </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00130">130</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                                                 : width(width), height(height) {</div>
-<div class="line"><span class="lineno">  131</span>        currentX = 0;</div>
-<div class="line"><span class="lineno">  132</span>        currentY = 0;</div>
-<div class="line"><span class="lineno">  133</span>        field = <span class="keyword">new</span> <span class="keywordtype">char</span>*[height];</div>
-<div class="line"><span class="lineno">  134</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">  135</span>        setField(new_field, width, height);</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00137">137</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                 : width(width), height(height) {</div>
+<div class="line"><span class="lineno">  138</span>        currentX = 0;</div>
+<div class="line"><span class="lineno">  139</span>        currentY = 0;</div>
+<div class="line"><span class="lineno">  140</span><span class="comment">//        field = new char*[height];</span></div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">  142</span>        setField(new_field, width, height);</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,9 +306,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00138">138</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>: <a class="code hl_function" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>(other.field, other.width, other.height){}</div>
-<div class="ttc" id="aclassMap_html_a0f5ad0fd4563497b4214038cbca8b582"><div class="ttname"><a href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00098">Map.cpp:98</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00145">145</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>: <a class="code hl_function" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>(other.field, other.width, other.height){}</div>
+<div class="ttc" id="aclassMap_html_a0f5ad0fd4563497b4214038cbca8b582"><div class="ttname"><a href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00106">Map.cpp:106</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -336,10 +335,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00140">140</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>                   {</div>
-<div class="line"><span class="lineno">  141</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
-<div class="line"><span class="lineno">  142</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00147">147</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>                   {</div>
+<div class="line"><span class="lineno">  148</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
 <div class="ttc" id="aclassMap_html_a5453bb867dd27ccfdffc225b8edac198"><div class="ttname"><a href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">Map::deleteField</a></div><div class="ttdeci">void deleteField()</div><div class="ttdoc">This function deletes the whole field and deallocates the memory.</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00024">Map.cpp:24</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -410,7 +409,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
 <div class="line"><span class="lineno">   27</span>            <span class="keyword">delete</span> [] field[i];</div>
 <div class="line"><span class="lineno">   28</span>        }</div>
-<div class="line"><span class="lineno">   29</span>        <span class="keyword">delete</span> [] field;</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keyword">delete</span>[] field;</div>
 <div class="line"><span class="lineno">   30</span>    }</div>
 </div><!-- fragment -->
 </div>
@@ -439,23 +438,23 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >This function finds and sets the current hero position. It returns true if it finds it. If it doesnt find anything it sets the current position to (0,0), overrides the map and returns false </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00078">78</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                                  {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
-<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">if</span>(field[i][j] == <span class="charliteral">&#39;H&#39;</span>){</div>
-<div class="line"><span class="lineno">   82</span>                    currentY = i;</div>
-<div class="line"><span class="lineno">   83</span>                    currentX = j;</div>
-<div class="line"><span class="lineno">   84</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   85</span>                }</div>
-<div class="line"><span class="lineno">   86</span>            }</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
-<div class="line"><span class="lineno">   88</span>        cout &lt;&lt; <span class="stringliteral">&quot;This map doesnt have a hero in it. Putting the hero in (0,0) position&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><span class="lineno">   89</span>        currentX = 0;</div>
-<div class="line"><span class="lineno">   90</span>        currentY = 0;</div>
-<div class="line"><span class="lineno">   91</span>        field[0][0] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00086">86</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                  {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
+<div class="line"><span class="lineno">   89</span>                <span class="keywordflow">if</span>(field[i][j] == <span class="charliteral">&#39;H&#39;</span>){</div>
+<div class="line"><span class="lineno">   90</span>                    currentY = i;</div>
+<div class="line"><span class="lineno">   91</span>                    currentX = j;</div>
+<div class="line"><span class="lineno">   92</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   93</span>                }</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="line"><span class="lineno">   96</span>        cout &lt;&lt; <span class="stringliteral">&quot;This map doesnt have a hero in it. Putting the hero in (0,0) position&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><span class="lineno">   97</span>        currentX = 0;</div>
+<div class="line"><span class="lineno">   98</span>        currentY = 0;</div>
+<div class="line"><span class="lineno">   99</span>        field[0][0] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -482,10 +481,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00253">253</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  253</span>                            {</div>
-<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">return</span> currentX;</div>
-<div class="line"><span class="lineno">  255</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00262">262</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>                            {</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">return</span> currentX;</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -512,10 +511,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00261">261</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  261</span>                            {</div>
-<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">return</span> currentY;</div>
-<div class="line"><span class="lineno">  263</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00270">270</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  270</span>                            {</div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">return</span> currentY;</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,10 +541,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00217">217</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>                            {</div>
-<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">return</span> field;</div>
-<div class="line"><span class="lineno">  219</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00224">224</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>                            {</div>
+<div class="line"><span class="lineno">  225</span>        <span class="keywordflow">return</span> field;</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,10 +571,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00245">245</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  245</span>                          {</div>
-<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">return</span> height;</div>
-<div class="line"><span class="lineno">  247</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00254">254</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>                          {</div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">return</span> height;</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -602,10 +601,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00237">237</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  237</span>                         {</div>
-<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">return</span> width;</div>
-<div class="line"><span class="lineno">  239</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00246">246</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>                         {</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">return</span> width;</div>
+<div class="line"><span class="lineno">  248</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -634,10 +633,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >A function to load the map from a text file </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00072">72</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                             {</div>
-<div class="line"><span class="lineno">   73</span>        file&gt;&gt;(*this);</div>
-<div class="line"><span class="lineno">   74</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00080">80</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                             {</div>
+<div class="line"><span class="lineno">   81</span>        file&gt;&gt;(*this);</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -665,15 +664,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >This function moves the player down by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns ' ' as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts '.', which means that we can visit only once items and monsters </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00207">207</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  207</span>                   {</div>
-<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">if</span>(currentY+1 &gt;= height || field[currentY+1][currentX] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><span class="lineno">  209</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><span class="lineno">  210</span>        currentY++;</div>
-<div class="line"><span class="lineno">  211</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
-<div class="line"><span class="lineno">  212</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">return</span> prev;</div>
-<div class="line"><span class="lineno">  214</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00214">214</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>                   {</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">if</span>(currentY+1 &gt;= height || field[currentY+1][currentX] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><span class="lineno">  216</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno">  217</span>        currentY++;</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
+<div class="line"><span class="lineno">  219</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  220</span>        <span class="keywordflow">return</span> prev;</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -701,15 +700,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >This function moves the player right by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns ' ' as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts '.', which means that we can visit only once items and monsters </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00181">181</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>                   {</div>
-<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">if</span>(currentX-1 &lt; 0 || field[currentY][currentX-1] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><span class="lineno">  183</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><span class="lineno">  184</span>        currentX--;</div>
-<div class="line"><span class="lineno">  185</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
-<div class="line"><span class="lineno">  186</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">return</span> prev;</div>
-<div class="line"><span class="lineno">  188</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00188">188</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>                   {</div>
+<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">if</span>(currentX-1 &lt; 0 || field[currentY][currentX-1] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><span class="lineno">  190</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno">  191</span>        currentX--;</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
+<div class="line"><span class="lineno">  193</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">return</span> prev;</div>
+<div class="line"><span class="lineno">  195</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -737,15 +736,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >This function moves the player left by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns ' ' as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts '.', which means that we can visit only once items and monsters </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00168">168</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>                    {</div>
-<div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span>(currentX+1 &gt;= width || field[currentY][currentX+1] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><span class="lineno">  170</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><span class="lineno">  171</span>        currentX++;</div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
-<div class="line"><span class="lineno">  173</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">return</span> prev;</div>
-<div class="line"><span class="lineno">  175</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00175">175</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                    {</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">if</span>(currentX+1 &gt;= width || field[currentY][currentX+1] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><span class="lineno">  177</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno">  178</span>        currentX++;</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
+<div class="line"><span class="lineno">  180</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> prev;</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -773,15 +772,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >This function moves the player up by 1 character and returns the value of the new position If the player is at the corner or next to a wall it returns ' ' as the value which is an error state Else it moves the character by 1 char and returns the value of the new position At the old position it puts '.', which means that we can visit only once items and monsters </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00194">194</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>                 {</div>
-<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">if</span>(currentY-1 &lt; 0 || field[currentY-1][currentX] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><span class="lineno">  196</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><span class="lineno">  197</span>        currentY--;</div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
-<div class="line"><span class="lineno">  199</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">return</span> prev;</div>
-<div class="line"><span class="lineno">  201</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00201">201</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>                 {</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">if</span>(currentY-1 &lt; 0 || field[currentY-1][currentX] == <span class="charliteral">&#39;#&#39;</span>) <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><span class="lineno">  203</span>        field[currentY][currentX] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno">  204</span>        currentY--;</div>
+<div class="line"><span class="lineno">  205</span>        <span class="keywordtype">char</span> prev = field[currentY][currentX];</div>
+<div class="line"><span class="lineno">  206</span>        field[currentY][currentX] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">return</span> prev;</div>
+<div class="line"><span class="lineno">  208</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -809,18 +808,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00146">146</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>                                    {</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
-<div class="line"><span class="lineno">  148</span>            this-&gt;currentX = other.currentX;</div>
-<div class="line"><span class="lineno">  149</span>            this-&gt;currentY = other.currentY;</div>
-<div class="line"><span class="lineno">  150</span>            this-&gt;width = other.width;</div>
-<div class="line"><span class="lineno">  151</span>            this-&gt;height = other.height;</div>
-<div class="line"><span class="lineno">  152</span>            <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">  153</span>            setField(other.field, other.width, other.height);</div>
-<div class="line"><span class="lineno">  154</span>        }</div>
-<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  156</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00153">153</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>                                    {</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span> != &amp;other){</div>
+<div class="line"><span class="lineno">  155</span>            this-&gt;currentX = other.currentX;</div>
+<div class="line"><span class="lineno">  156</span>            this-&gt;currentY = other.currentY;</div>
+<div class="line"><span class="lineno">  157</span>            this-&gt;width = other.width;</div>
+<div class="line"><span class="lineno">  158</span>            this-&gt;height = other.height;</div>
+<div class="line"><span class="lineno">  159</span>            <span class="comment">//allocField();</span></div>
+<div class="line"><span class="lineno">  160</span>            setField(other.field, other.width, other.height);</div>
+<div class="line"><span class="lineno">  161</span>        }</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  163</span>    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -861,26 +860,34 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00041">41</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>                                            {</div>
-<div class="line"><span class="lineno">   42</span>        <span class="comment">// Backing up the map</span></div>
-<div class="line"><span class="lineno">   43</span>        <a class="code hl_class" href="classMap.html">Map</a> buff = <a class="code hl_function" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>(field, width, height);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        <span class="comment">// Setting the width and the height</span></div>
-<div class="line"><span class="lineno">   46</span>        setWight(newWidth);</div>
-<div class="line"><span class="lineno">   47</span>        setHeight(newHeight);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>        <span class="comment">// Resizing the field and putting the new values in</span></div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; buff.height; ++i) {</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; buff.width; ++j) {</div>
-<div class="line"><span class="lineno">   55</span>                field[i][j] = buff.field[i][j];</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
-<div class="line"><span class="lineno">   57</span>        }</div>
-<div class="line"><span class="lineno">   58</span>        <a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
-<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   42</span>        <span class="comment">// If smaller size is given the map is deleted and alloced again with new size</span></div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span>(newHeight &lt; height || newWidth &lt; width){</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
+<div class="line"><span class="lineno">   45</span>            setWight(newWidth);</div>
+<div class="line"><span class="lineno">   46</span>            setHeight(newHeight);</div>
+<div class="line"><span class="lineno">   47</span>            <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+<div class="line"><span class="lineno">   50</span>        <span class="comment">// Backing up the map</span></div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_class" href="classMap.html">Map</a> buff = <a class="code hl_function" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>(field, width, height);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>        <span class="comment">// Setting the width and the height</span></div>
+<div class="line"><span class="lineno">   54</span>        setWight(newWidth);</div>
+<div class="line"><span class="lineno">   55</span>        setHeight(newHeight);</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="comment">// Resizing the field and putting the new values in</span></div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; buff.height; ++i) {</div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; buff.width; ++j) {</div>
+<div class="line"><span class="lineno">   63</span>                field[i][j] = buff.field[i][j];</div>
+<div class="line"><span class="lineno">   64</span>            }</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
 <div class="ttc" id="aclassMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00007">Map.cpp:7</a></div></div>
-<div class="ttc" id="aclassMap_html_a4b75a9a56fa95046ea3822edf94f5298"><div class="ttname"><a href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">Map::findCurrentHeroPosition</a></div><div class="ttdeci">bool findCurrentHeroPosition()</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00078">Map.cpp:78</a></div></div>
+<div class="ttc" id="aclassMap_html_a4b75a9a56fa95046ea3822edf94f5298"><div class="ttname"><a href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">Map::findCurrentHeroPosition</a></div><div class="ttdeci">bool findCurrentHeroPosition()</div><div class="ttdef"><b>Definition:</b> <a href="Map_8cpp_source.html#l00086">Map.cpp:86</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -909,15 +916,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >A function to save the map into a text file </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00062">62</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>                           {</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
-<div class="line"><span class="lineno">   65</span>                os&lt;&lt;field[i][j];</div>
-<div class="line"><span class="lineno">   66</span>            }</div>
-<div class="line"><span class="lineno">   67</span>            os&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">   68</span>        }</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00070">70</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                           {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; height; ++i) {</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; width; ++j) {</div>
+<div class="line"><span class="lineno">   73</span>                os&lt;&lt;field[i][j];</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="line"><span class="lineno">   75</span>            os&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -945,10 +952,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00257">257</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  257</span>                                       {</div>
-<div class="line"><span class="lineno">  258</span>        Map::currentX = new_currentX;</div>
-<div class="line"><span class="lineno">  259</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00266">266</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  266</span>                                       {</div>
+<div class="line"><span class="lineno">  267</span>        Map::currentX = new_currentX;</div>
+<div class="line"><span class="lineno">  268</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -976,10 +983,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00265">265</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  265</span>                                       {</div>
-<div class="line"><span class="lineno">  266</span>        Map::currentY = new_currentY;</div>
-<div class="line"><span class="lineno">  267</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00274">274</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  274</span>                                       {</div>
+<div class="line"><span class="lineno">  275</span>        Map::currentY = new_currentY;</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1023,22 +1030,24 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00221">221</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  221</span>                                                                   {</div>
-<div class="line"><span class="lineno">  222</span>        setHeight(new_height);</div>
-<div class="line"><span class="lineno">  223</span>        setWight(new_width);</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>        <span class="comment">// Resizing the field and putting the new values in</span></div>
-<div class="line"><span class="lineno">  228</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
-<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; new_height; ++i) {</div>
-<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; new_width; ++j) {</div>
-<div class="line"><span class="lineno">  231</span>                field[i][j] = new_field[i][j];</div>
-<div class="line"><span class="lineno">  232</span>            }</div>
-<div class="line"><span class="lineno">  233</span>        }</div>
-<div class="line"><span class="lineno">  234</span>        <a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
-<div class="line"><span class="lineno">  235</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00228">228</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  228</span>                                                                   {</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>        <a class="code hl_function" href="classMap.html#a5453bb867dd27ccfdffc225b8edac198">deleteField</a>();</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>        setHeight(new_height);</div>
+<div class="line"><span class="lineno">  234</span>        setWight(new_width);</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>        <span class="comment">// Resizing the field and putting the new values in</span></div>
+<div class="line"><span class="lineno">  237</span>        <a class="code hl_function" href="classMap.html#ace49ceb3f957a6dc7faa8e1d82207038">allocField</a>();</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; new_height; ++i) {</div>
+<div class="line"><span class="lineno">  239</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; new_width; ++j) {</div>
+<div class="line"><span class="lineno">  240</span>                field[i][j] = new_field[i][j];</div>
+<div class="line"><span class="lineno">  241</span>            }</div>
+<div class="line"><span class="lineno">  242</span>        }</div>
+<div class="line"><span class="lineno">  243</span>        <a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
+<div class="line"><span class="lineno">  244</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1066,10 +1075,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00249">249</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  249</span>                                   {</div>
-<div class="line"><span class="lineno">  250</span>        Map::height = new_height;</div>
-<div class="line"><span class="lineno">  251</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00258">258</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>                                   {</div>
+<div class="line"><span class="lineno">  259</span>        Map::height = new_height;</div>
+<div class="line"><span class="lineno">  260</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1097,10 +1106,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00241">241</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  241</span>                                 {</div>
-<div class="line"><span class="lineno">  242</span>        Map::width = new_width;</div>
-<div class="line"><span class="lineno">  243</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00250">250</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>                                 {</div>
+<div class="line"><span class="lineno">  251</span>        Map::width = new_width;</div>
+<div class="line"><span class="lineno">  252</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1140,17 +1149,17 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Output map to ostream </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00272">272</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  273</span>{</div>
-<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; map.height; ++i) {</div>
-<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; map.width; ++j) {</div>
-<div class="line"><span class="lineno">  276</span>            os&lt;&lt;map.field[i][j];</div>
-<div class="line"><span class="lineno">  277</span>            os&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">  278</span>        }</div>
-<div class="line"><span class="lineno">  279</span>        os&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  280</span>    }</div>
-<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">return</span> os;</div>
-<div class="line"><span class="lineno">  282</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00281">281</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>{</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; map.height; ++i) {</div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; map.width; ++j) {</div>
+<div class="line"><span class="lineno">  285</span>            os&lt;&lt;map.field[i][j];</div>
+<div class="line"><span class="lineno">  286</span>            os&lt;&lt;<span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  287</span>        }</div>
+<div class="line"><span class="lineno">  288</span>        os&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">return</span> os;</div>
+<div class="line"><span class="lineno">  291</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1189,19 +1198,19 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Inputs map to istream </p>
 
-<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00285">285</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  286</span>{</div>
-<div class="line"><span class="lineno">  287</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; map.height; ++i) {</div>
-<div class="line"><span class="lineno">  288</span>        <span class="keywordtype">string</span> buff;</div>
-<div class="line"><span class="lineno">  289</span>        getline(is, buff);</div>
-<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">if</span>(buff.size() &lt; map.width) <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;Invalid format of the file or the map in the file has wrong dimensions&quot;</span> );</div>
-<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; map.width; ++j) {</div>
-<div class="line"><span class="lineno">  292</span>            map.field[i][j] = buff[j];</div>
-<div class="line"><span class="lineno">  293</span>        }</div>
-<div class="line"><span class="lineno">  294</span>    }</div>
-<div class="line"><span class="lineno">  295</span>    map.<a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
-<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">return</span> is;</div>
-<div class="line"><span class="lineno">  297</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Map_8cpp_source.html#l00294">294</a> of file <a class="el" href="Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>{</div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; map.height; ++i) {</div>
+<div class="line"><span class="lineno">  297</span>        <span class="keywordtype">string</span> buff;</div>
+<div class="line"><span class="lineno">  298</span>        getline(is, buff);</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordflow">if</span>(buff.size() &lt; map.width) <span class="keywordflow">throw</span> std::invalid_argument( <span class="stringliteral">&quot;Invalid format of the file or the map in the file has wrong dimensions&quot;</span> );</div>
+<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; map.width; ++j) {</div>
+<div class="line"><span class="lineno">  301</span>            map.field[i][j] = buff[j];</div>
+<div class="line"><span class="lineno">  302</span>        }</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span>    map.<a class="code hl_function" href="classMap.html#a4b75a9a56fa95046ea3822edf94f5298">findCurrentHeroPosition</a>();</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">return</span> is;</div>
+<div class="line"><span class="lineno">  306</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
